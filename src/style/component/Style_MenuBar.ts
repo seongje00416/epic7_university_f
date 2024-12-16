@@ -29,7 +29,8 @@ export const LogoDiv = styled.div`
     font-weight: bold;
     font-size: 20px;
     color: white;
-    width: 20%;
+    min-width: 20%;
+    padding-left: 10px;
     height: 100%;
     align-items: center;
     justify-content: center;

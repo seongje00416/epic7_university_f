@@ -7,8 +7,9 @@ const Router = () => {
         <BrowserRouter>
             <Layout>
                 <div style={{
-                    height: 'calc(100vh - 45px)',
                     position: 'fixed',
+                    height: '100vh',
+                    overflowY: 'auto',
                     top: '45px',
                     left: 0,
                     right: 0 }}>
