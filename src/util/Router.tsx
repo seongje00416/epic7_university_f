@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Layout from '../component/Layout'
-import EstimateHeroPage from '../page/EstimateHeroPage';
+import Layout from '@/component/Layout'
+import EstimateHeroPage from '@/page/EstimateHeroPage';
 
 const Router = () => {
     return (

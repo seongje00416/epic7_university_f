@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../common/CommonStyle';
+import { colors } from '@/common/CommonStyle';
 
 export const MenuNavBar = styled.nav`
     position: fixed;
@@ -29,7 +29,7 @@ export const LogoDiv = styled.div`
     font-weight: bold;
     font-size: 20px;
     color: white;
-    width: 10%;
+    width: 20%;
     height: 100%;
     align-items: center;
     justify-content: center;

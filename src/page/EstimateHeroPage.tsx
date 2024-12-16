@@ -1,10 +1,17 @@
-
+import { Container, PageWrapper, HeroCard, InputCard } from "@/style/Style_EstimateHeroPage.ts";
 
 const EstimateHeroPage = () => {
     return (
-        <div>
+        <Container>
+            <PageWrapper>
+                <HeroCard>
 
-        </div>
+                </HeroCard>
+                <InputCard>
+
+                </InputCard>
+            </PageWrapper>
+        </Container>
     )
 }
 

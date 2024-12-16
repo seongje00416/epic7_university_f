@@ -1,4 +1,4 @@
-import { Container, PageWrapper } from "../style/Style_MainPage.ts";
+import { Container, PageWrapper } from "@/style/Style_MainPage.ts";
 
 const MainPage: React.FC = () => {
     return (

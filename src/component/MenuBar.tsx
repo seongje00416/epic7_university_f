@@ -1,5 +1,5 @@
 import React from 'react';
-import { MenuNavBar, LogoDiv } from '../style/component/Style_MenuBar';
+import { MenuNavBar, LogoDiv } from '@/style/component/Style_MenuBar';
 
 const MenuBar: React.FC = () => {
 
