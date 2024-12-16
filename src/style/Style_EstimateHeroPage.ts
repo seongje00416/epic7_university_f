@@ -12,3 +12,10 @@ export const PageWrapper = styled.div`
     width: 80%;
     background-color: ${colors.color_light};
 `
+
+export const HeroCard = styled.div`
+    width: 30%;
+    height: 50vh;
+    background-color: ${colors.color_mint};
+`
+
