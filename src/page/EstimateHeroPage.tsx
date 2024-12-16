@@ -25,6 +25,7 @@ import {
     SkillLevelLabel,
     SkillLevelOption,
 } from "@/style/Style_EstimateHeroPage.ts";
+import InputEquipment from '@/component/InputEquipment'
 
 const EstimateHeroPage = () => {
     return (
@@ -132,7 +133,7 @@ const EstimateHeroPage = () => {
                         </ItemContainer>
                     </HeroCard>
                     <InputCard>
-
+                        <InputEquipment />
                     </InputCard>
                 </CardContainer>
             </PageWrapper>

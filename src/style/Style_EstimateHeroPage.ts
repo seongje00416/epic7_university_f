@@ -110,14 +110,6 @@ export const HeroImage = styled.img`
     z-index: 1;
 `
 
-// (우측) 정보 입력 카드
-export const InputCard = styled.div`
-    width: 45%;
-    height: 100%;
-    border-radius: 5px;
-    background-color: ${colors.color_natural};
-    overflow-y: auto;
-`
 //      장비칸 컨테이너
 export const ItemContainer = styled.div`
     display: flex;
@@ -224,5 +216,61 @@ export const SkillLevelLabel = styled.select`
 export const SkillLevelOption = styled.option`
     background-color: white;
     color: black;
+`
+
+
+// (우측) 정보 입력 카드
+export const InputCard = styled.div`
+    width: 45%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: ${colors.color_natural};
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+`
+
+// 장비 정보 입력
+export const EquipmentContainer = styled.div`
+    display: flex;
+    width: 100%;
+    height: 80%;
+    flex-direction: column;
+    justify-content: center;
+    background-color: ${colors.color_mint};
+    margin-inline: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+`
+
+export const EquipmentWrapper = styled.div`
+    display: flex;
+    gap: 15px;
+    padding-inline: 15px;
+    margin-block: 10px;
+`
+
+export const EquipmentLabel = styled.label`
+    flex: 1.5;
+    font-weight: bold;
+    text-align: center;
+`
+
+export const EquipmentSelect = styled.select`
+    flex: 2;
+    text-align: center;
+    font-size: 14px;
+    padding: 3px;
+`
+
+export const EquipmentOption = styled.option`
+
+`
+
+export const EquipmentSubSelect = styled.select`
+    flex: 5;
+`
+
+export const EquipmentInput = styled.input`
+    flex: 5;
 `
 
