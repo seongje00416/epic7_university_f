@@ -11,6 +11,7 @@ import {
 } from "@/style/Style_EstimateHeroPage.ts";
 import { useState } from "react";
 import {EquipOption, EquipSet, Grade, Level, EquipOptionEnum, EquipSetEnum, EquipGradeEnum, EquipLevelEnum } from "@/types/Equipment.ts";
+import { useItemForm } from "@/component/hook/useItemForm.ts";
 
 interface Props {
     onChangeIcon: (itemType:string) => void,
@@ -34,6 +35,8 @@ const InputEquipment: React.FC<Props> = ( {onChangeIcon, itemType} ) => {
     const [ subValue4, setSubValue4 ] = useState(0);
 
     const changeEquipmentIcon = () => {
+        console.log( equipSet + " " + enhance + " " + grade );
+
         const equipType = itemType.toUpperCase();
         let huntMob = "";
         if( equipSet === "SPEED" || equipSet === "HIT" || equipSet === "CRITICAL" ) huntMob = "WYVERN";
