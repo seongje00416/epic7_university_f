@@ -35,6 +35,10 @@ import { useState } from "react";
 const EstimateHeroPage = () => {
     const [ item, setItem ] = useState("none");
 
+    const changeInputCard = ( itemType:string ) => {
+        setItem(itemType);
+    }
+
     return (
         <Container>
             <PageWrapper>
@@ -94,16 +98,16 @@ const EstimateHeroPage = () => {
                         <HeroImage src = '/src/assets/sylvan_sage_vivian_stand.png' />
                         <ItemContainer>
                             <SpecialItemWrapper>
-                                <ExclusiveItemBlank> dd </ExclusiveItemBlank>
-                                <ArtifactBlank> oo </ArtifactBlank>
+                                <ExclusiveItemBlank onClick={ () => { changeInputCard("exclusive")} }></ExclusiveItemBlank>
+                                <ArtifactBlank onClick={ () => { changeInputCard("artifact")} }></ArtifactBlank>
                             </SpecialItemWrapper>
                             <EquipmentItemWrapper>
-                                <EquipmentItemBlank> dd </EquipmentItemBlank>
-                                <EquipmentItemBlank> dd </EquipmentItemBlank>
-                                <EquipmentItemBlank> dd </EquipmentItemBlank>
-                                <EquipmentItemBlank> dd </EquipmentItemBlank>
-                                <EquipmentItemBlank> dd </EquipmentItemBlank>
-                                <EquipmentItemBlank> dd </EquipmentItemBlank>
+                                <EquipmentItemBlank onClick={ () => { changeInputCard("item")} } > 무기 </EquipmentItemBlank>
+                                <EquipmentItemBlank onClick={ () => { changeInputCard("item")} } > 목걸이 </EquipmentItemBlank>
+                                <EquipmentItemBlank onClick={ () => { changeInputCard("item")} } > 투구 </EquipmentItemBlank>
+                                <EquipmentItemBlank onClick={ () => { changeInputCard("item")} } > 반지 </EquipmentItemBlank>
+                                <EquipmentItemBlank onClick={ () => { changeInputCard("item")} } > 갑옷 </EquipmentItemBlank>
+                                <EquipmentItemBlank onClick={ () => { changeInputCard("item")} } > 신발 </EquipmentItemBlank>
                             </EquipmentItemWrapper>
                             <SkillWrapper>
                                 <SkillSet>
@@ -140,12 +144,10 @@ const EstimateHeroPage = () => {
                         </ItemContainer>
                     </HeroCard>
                     <InputCard>
-                        <DefaultInputBox>
-                            입력할 장비를 선택하세요.
-                        </DefaultInputBox>
-                        {/* <InputArtifact />
-                        <InputEquipment />
-                        <InputExclusiveItem /> */ }
+                        { item === "none" && <DefaultInputBox> 장비를 선택해주세요. </DefaultInputBox> }
+                        { item === "artifact" && <InputArtifact />}
+                        { item === "exclusive" && <InputExclusiveItem />}
+                        { item === "item" && <InputEquipment />}
                     </InputCard>
                 </CardContainer>
             </PageWrapper>

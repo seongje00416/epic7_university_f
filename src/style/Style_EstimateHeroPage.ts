@@ -136,6 +136,10 @@ export const ArtifactBlank = styled.div`
     width: 5vw;
     height: 5vw;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    &:hover {
+        cursor: pointer;
+        opacity: 80%;
+    }
 `
 
 export const ExclusiveItemBlank = styled.div`
@@ -160,6 +164,10 @@ export const ExclusiveItemBlank = styled.div`
             0% 25%,     /* 0 */
             31% 21%
     );
+    &:hover {
+        cursor: pointer;
+        opacity: 80%;
+    }
 `
 
 //      장비 및 장신구
@@ -182,6 +190,10 @@ export const EquipmentItemBlank = styled.div`
     opacity: 65%;
     width: 4vw;
     height: 4vw;
+    &:hover {
+        cursor: pointer;
+        opacity: 80%;
+    }
 `
 //      스킬 강화 및 스킬트리
 export const SkillWrapper = styled.div`
@@ -211,6 +223,9 @@ export const SkillLevelLabel = styled.select`
     padding: 3px;
     border-radius: 15px;
     border: 1px solid darkorange;
+    &:hover {
+        cursor: pointer;
+    }
 `
 
 export const SkillLevelOption = styled.option`
@@ -291,10 +306,13 @@ export const SpecialItemContainer = styled.div`
     text-align: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 80%;
     gap: 15px;
     overflow-y: auto;
     overflow-x: hidden;
+    background-color: ${colors.color_mint};
+    margin-inline: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 `
 
 // 아티팩트 정보 입력
