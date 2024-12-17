@@ -25,6 +25,10 @@ import {
     SkillLevelLabel,
     SkillLevelOption,
     DefaultInputBox,
+    EquipmentItemImage,
+    EquipmentItemGradeImage,
+    EquipmentItemShowWrapper,
+    AnnouncementText,
 } from "@/style/Style_EstimateHeroPage.ts";
 import InputEquipment from '@/component/InputCard/InputEquipment.tsx'
 import InputExclusiveItem from "@/component/InputCard/InputExclusiveItem.tsx";
@@ -34,17 +38,36 @@ import { useState } from "react";
 
 const EstimateHeroPage = () => {
     const [ item, setItem ] = useState("none");
+    const [ weaponIcon, setWeaponIcon ] = useState(["none", "none"]);
+    const [ helmetIcon, setHelmetIcon ] = useState(["none", "none"]);
+    const [ armorIcon, setArmorIcon ] = useState(["none", "none"]);
+    const [ necklaceIcon, setNecklaceIcon ] = useState(["none", "none"]);
+    const [ ringIcon, setRingIcon ] = useState(["none", "none"]);
+    const [ bootsIcon, setBootsIcon ] = useState(["none", "none"]);
 
     const changeInputCard = ( itemType:string ) => {
         setItem(itemType);
     }
+    const handleEquipmentIconChange = (itemType: string) => {
+        const equipGrade = itemType.split( "_" )[0]
+        const equipHunt = itemType.split( "_" )[1]
+        const equipType = itemType.split( "_" )[2]
+
+        if( equipType === "WEAPON" ) setWeaponIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_weapon.png" ] );
+        if( equipType === "HELMET" ) setHelmetIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_helmet.png" ] );
+        if( equipType === "ARMOR" ) setArmorIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_armor.png" ] );
+        if( equipType === "NECKLACE" ) setNecklaceIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_necklace.png" ] );
+        if( equipType === "RING" ) setRingIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_ring.png" ] );
+        if( equipType === "BOOTS" ) setBootsIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_boots.png" ] );
+    };
 
     return (
         <Container>
             <PageWrapper>
                 <AnnouncementContainer>
                     <AnnouncementCard>
-                        * 영웅 레벨은 각 등급별 만렙을 기준으로 측정됩니다.
+                        <AnnouncementText> * 영웅 레벨은 각 등급별 만렙을 기준으로 측정됩니다. </AnnouncementText>
+                        <AnnouncementText> * 장비 이미지는 모두 90레벨 제련템으로 표시되지만 실제 능력치는 입력한 값으로 적용됩니다. </AnnouncementText>
                     </AnnouncementCard>
                 </AnnouncementContainer>
                 <SelectContainer>
@@ -102,12 +125,66 @@ const EstimateHeroPage = () => {
                                 <ArtifactBlank onClick={ () => { changeInputCard("artifact")} }></ArtifactBlank>
                             </SpecialItemWrapper>
                             <EquipmentItemWrapper>
-                                <EquipmentItemBlank onClick={ () => { changeInputCard("item")} } > 무기 </EquipmentItemBlank>
-                                <EquipmentItemBlank onClick={ () => { changeInputCard("item")} } > 목걸이 </EquipmentItemBlank>
-                                <EquipmentItemBlank onClick={ () => { changeInputCard("item")} } > 투구 </EquipmentItemBlank>
-                                <EquipmentItemBlank onClick={ () => { changeInputCard("item")} } > 반지 </EquipmentItemBlank>
-                                <EquipmentItemBlank onClick={ () => { changeInputCard("item")} } > 갑옷 </EquipmentItemBlank>
-                                <EquipmentItemBlank onClick={ () => { changeInputCard("item")} } > 신발 </EquipmentItemBlank>
+                                <EquipmentItemBlank id="equip_icon_weapon" onClick={ () => { changeInputCard("weapon")} } >
+                                    { weaponIcon[0] === "none" && "무기" }
+                                    {
+                                        weaponIcon[0] !== "none" &&
+                                        <EquipmentItemShowWrapper>
+                                            <EquipmentItemImage src={'/src/assets/' + weaponIcon[1] }/>
+                                            <EquipmentItemGradeImage src={'/src/assets/' + weaponIcon[0] }/>
+                                        </EquipmentItemShowWrapper>
+                                    }
+                                </EquipmentItemBlank>
+                                <EquipmentItemBlank onClick={ () => { changeInputCard("necklace")} } >
+                                    { necklaceIcon[0] === "none" && "목걸이" }
+                                    {
+                                        necklaceIcon[0] !== "none" &&
+                                        <EquipmentItemShowWrapper>
+                                            <EquipmentItemImage src={'/src/assets/' + necklaceIcon[1] } />
+                                            <EquipmentItemGradeImage src={'/src/assets/' + necklaceIcon[0] }/>
+                                        </EquipmentItemShowWrapper>
+                                    }
+                                </EquipmentItemBlank>
+                                <EquipmentItemBlank onClick={ () => { changeInputCard("helmet")} } >
+                                    { helmetIcon[0] === "none" && "투구" }
+                                    {
+                                        helmetIcon[0] !== "none" &&
+                                        <EquipmentItemShowWrapper>
+                                            <EquipmentItemImage src={'/src/assets/' + helmetIcon[1] } />
+                                            <EquipmentItemGradeImage src={'/src/assets/' + helmetIcon[0] }/>
+                                        </EquipmentItemShowWrapper>
+                                    }
+                                </EquipmentItemBlank>
+                                <EquipmentItemBlank onClick={ () => { changeInputCard("ring")} } >
+                                    { ringIcon[0] === "none" && "반지" }
+                                    {
+                                        ringIcon[0] !== "none" &&
+                                        <EquipmentItemShowWrapper>
+                                            <EquipmentItemImage src={'/src/assets/' + ringIcon[1] } />
+                                            <EquipmentItemGradeImage src={'/src/assets/' + ringIcon[0] }/>
+                                        </EquipmentItemShowWrapper>
+                                    }
+                                </EquipmentItemBlank>
+                                <EquipmentItemBlank onClick={ () => { changeInputCard("armor")} } >
+                                    { armorIcon[0] === "none" && "갑옷" }
+                                    {
+                                        armorIcon[0] !== "none" &&
+                                        <EquipmentItemShowWrapper>
+                                            <EquipmentItemImage src={'/src/assets/' + armorIcon[1] } />
+                                            <EquipmentItemGradeImage src={'/src/assets/' + armorIcon[0] }/>
+                                        </EquipmentItemShowWrapper>
+                                    }
+                                </EquipmentItemBlank>
+                                <EquipmentItemBlank onClick={ () => { changeInputCard("boots")} } >
+                                    { bootsIcon[0] === "none" && "신발" }
+                                    {
+                                        bootsIcon[0] !== "none" &&
+                                        <EquipmentItemShowWrapper>
+                                            <EquipmentItemImage src={'/src/assets/' + bootsIcon[1] } />
+                                            <EquipmentItemGradeImage src={'/src/assets/' + bootsIcon[0] }/>
+                                        </EquipmentItemShowWrapper>
+                                    }
+                                </EquipmentItemBlank>
                             </EquipmentItemWrapper>
                             <SkillWrapper>
                                 <SkillSet>
@@ -147,7 +224,12 @@ const EstimateHeroPage = () => {
                         { item === "none" && <DefaultInputBox> 장비를 선택해주세요. </DefaultInputBox> }
                         { item === "artifact" && <InputArtifact />}
                         { item === "exclusive" && <InputExclusiveItem />}
-                        { item === "item" && <InputEquipment />}
+                        { item === "weapon" && <InputEquipment onChangeIcon={handleEquipmentIconChange} itemType="weapon"/>}
+                        { item === "helmet" && <InputEquipment onChangeIcon={handleEquipmentIconChange} itemType="helmet"/>}
+                        { item === "armor" && <InputEquipment onChangeIcon={handleEquipmentIconChange} itemType="armor"/>}
+                        { item === "necklace" && <InputEquipment onChangeIcon={handleEquipmentIconChange} itemType="necklace"/>}
+                        { item === "ring" && <InputEquipment onChangeIcon={handleEquipmentIconChange} itemType="ring"/>}
+                        { item === "boots" && <InputEquipment onChangeIcon={handleEquipmentIconChange} itemType="boots"/>}
                     </InputCard>
                 </CardContainer>
             </PageWrapper>

@@ -43,11 +43,15 @@ export const AnnouncementCard = styled.div`
     width: calc( 80% + 15px );
     background-color: ${colors.color_natural};
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 20vh;
+`
+
+export const AnnouncementText = styled.div`
     font-weight: bold;
     font-size: 18px;
-    height: 20vh;
 `
 
 // 고정 정보 선택 카드
@@ -190,10 +194,28 @@ export const EquipmentItemBlank = styled.div`
     opacity: 65%;
     width: 4vw;
     height: 4vw;
+    position: relative;
     &:hover {
         cursor: pointer;
         opacity: 80%;
     }
+`
+export const EquipmentItemShowWrapper = styled.div`
+    position: relative;
+    width: 100%;
+    height: 100%;
+`
+export const EquipmentItemImage = styled.img`
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 10;
+`
+
+export const EquipmentItemGradeImage = styled.img`
+    width: 100%;
+    height: auto;
+    z-index: 1;
 `
 //      스킬 강화 및 스킬트리
 export const SkillWrapper = styled.div`
@@ -271,6 +293,7 @@ export const EquipmentWrapper = styled.div`
     gap: 15px;
     padding-inline: 15px;
     margin-block: 10px;
+    justify-content: center;
 `
 
 export const EquipmentLabel = styled.label`
@@ -296,6 +319,31 @@ export const EquipmentSubSelect = styled.select`
 
 export const EquipmentInput = styled.input`
     flex: 5;
+`
+
+export const ClearButton = styled.div`
+    width: 20%;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    border: 2px solid gray;
+    margin-top: 15px;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+`
+export const SubmitButton = styled.div`
+    width: 20%;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 2px solid green;
+    margin-top: 15px;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    }
 `
 
 // 전용장비 및 아티팩트
