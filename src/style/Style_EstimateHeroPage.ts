@@ -189,7 +189,7 @@ export const SkillWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 `
 export const SkillSet = styled.div`
     display: flex;
@@ -210,7 +210,7 @@ export const SkillLevelLabel = styled.select`
     color: white;
     padding: 3px;
     border-radius: 15px;
-    border: 2px solid darkorange;
+    border: 1px solid darkorange;
 `
 
 export const SkillLevelOption = styled.option`
@@ -224,10 +224,19 @@ export const InputCard = styled.div`
     width: 45%;
     height: 100%;
     border-radius: 5px;
+    justify-content: center;
     background-color: ${colors.color_natural};
     overflow-y: auto;
     display: flex;
     align-items: center;
+`
+
+export const DefaultInputBox = styled.div`
+    text-align: center;
+    font-size: 20px;
+    color: gray;
+    opacity: 65%;
+    font-weight: bold;
 `
 
 // 장비 정보 입력
@@ -272,5 +281,102 @@ export const EquipmentSubSelect = styled.select`
 
 export const EquipmentInput = styled.input`
     flex: 5;
+`
+
+// 전용장비 및 아티팩트
+export const SpecialItemContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+`
+
+// 아티팩트 정보 입력
+export const ArtifactWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 35px;
+`
+
+export const ArtifactOption = styled.div`
+    width: 15%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+`
+
+export const ArtifactNameLabel = styled.label`
+    font-weight: bold;
+`
+
+//      아티팩트 필터
+export const ArtifactFilterWrapper = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+`
+export const ArtifactFilterLabel = styled.label`
+    font-weight: bold;
+    text-align: center;
+`
+export const ArtifactFilterSelect = styled.select`
+    width: 30%;
+    padding: 5px;
+    text-align: center;
+`
+export const ArtifactFilterOption = styled.option`
+    
+`
+
+// 전용장비 정보 입력
+export const ExclusiveItemWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    gap: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid rgba( 0, 0, 0, 0);
+    &:hover {
+        border: 1px solid gray;
+        cursor: pointer;
+    }
+`
+
+export const ExclusiveEquipmentOption = styled.div`
+    width: 15%;
+    height: auto;
+`
+
+export const ExclusiveEquipmentDescription = styled.div`
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+`
+
+// 공통
+export const SpecialItemLabel = styled.label`
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 20px;
+`
+
+export const SpecialItemImage = styled.img`
+    width: 100%;
+    height: auto;
 `
 

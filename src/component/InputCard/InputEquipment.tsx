@@ -6,7 +6,7 @@ import {
     EquipmentOption,
     EquipmentInput,
     EquipmentSubSelect,
-} from "@/style/Style_EstimateHeroPage";
+} from "@/style/Style_EstimateHeroPage.ts";
 
 const InputEquipment = () => {
     return (

@@ -24,10 +24,17 @@ import {
     SkillSet,
     SkillLevelLabel,
     SkillLevelOption,
+    DefaultInputBox,
 } from "@/style/Style_EstimateHeroPage.ts";
-import InputEquipment from '@/component/InputEquipment'
+import InputEquipment from '@/component/InputCard/InputEquipment.tsx'
+import InputExclusiveItem from "@/component/InputCard/InputExclusiveItem.tsx";
+import InputArtifact from "@/component/InputCard/InputArtifact.tsx";
+
+import { useState } from "react";
 
 const EstimateHeroPage = () => {
+    const [ item, setItem ] = useState("none");
+
     return (
         <Container>
             <PageWrapper>
@@ -133,7 +140,12 @@ const EstimateHeroPage = () => {
                         </ItemContainer>
                     </HeroCard>
                     <InputCard>
+                        <DefaultInputBox>
+                            입력할 장비를 선택하세요.
+                        </DefaultInputBox>
+                        {/* <InputArtifact />
                         <InputEquipment />
+                        <InputExclusiveItem /> */ }
                     </InputCard>
                 </CardContainer>
             </PageWrapper>
