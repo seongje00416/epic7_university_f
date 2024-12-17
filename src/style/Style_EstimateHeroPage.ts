@@ -9,8 +9,8 @@ export const Container = styled.div`
 `
 
 export const PageWrapper = styled.div`
-    width: 85%;
-    background-color: ${colors.color_green};
+    width: 100%;
+    background-color: ${colors.color_light};
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -41,12 +41,13 @@ export const CardContainer = styled.div`
 // 공지 카드
 export const AnnouncementCard = styled.div`
     width: calc( 80% + 15px );
-    background-color: ${colors.color_natural};
+    background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 20vh;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 `
 
 export const AnnouncementText = styled.div`
@@ -59,11 +60,12 @@ export const SelectCard = styled.div`
     width: calc( 80% + 15px );
     height: 10vh;
     border-radius: 5px;
-    background-color: ${colors.color_natural};
+    background-color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 `
 
 export const InputGroup = styled.div`
@@ -98,12 +100,13 @@ export const HeroCard = styled.div`
     width: 35%;
     height: 100%;
     border-radius: 5px;
-    background-color: ${colors.color_natural};
+    background-color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow-y: auto;
     position: relative;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 `
 
 export const HeroImage = styled.img`
@@ -187,11 +190,14 @@ export const EquipmentItemWrapper = styled.div`
     row-gap: 1%;
 `
 
-export const EquipmentItemBlank = styled.div`
+interface Props {
+    isFilled: boolean
+}
+export const EquipmentItemBlank = styled.div<Props>`
     border-radius: 5px;
     background-color: black;
     border: 1px solid gray;
-    opacity: 65%;
+    opacity: ${ props => (props.isFilled ? '1' : '0.65') };
     width: 4vw;
     height: 4vw;
     position: relative;
@@ -262,10 +268,11 @@ export const InputCard = styled.div`
     height: 100%;
     border-radius: 5px;
     justify-content: center;
-    background-color: ${colors.color_natural};
+    background-color: whitesmoke;
     overflow-y: auto;
     display: flex;
     align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 `
 
 export const DefaultInputBox = styled.div`
@@ -283,9 +290,8 @@ export const EquipmentContainer = styled.div`
     height: 80%;
     flex-direction: column;
     justify-content: center;
-    background-color: ${colors.color_mint};
+    background-color: whitesmoke;
     margin-inline: 20px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 `
 
 export const EquipmentWrapper = styled.div`

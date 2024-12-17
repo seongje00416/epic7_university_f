@@ -38,12 +38,12 @@ import { useState } from "react";
 
 const EstimateHeroPage = () => {
     const [ item, setItem ] = useState("none");
-    const [ weaponIcon, setWeaponIcon ] = useState(["none", "none"]);
-    const [ helmetIcon, setHelmetIcon ] = useState(["none", "none"]);
-    const [ armorIcon, setArmorIcon ] = useState(["none", "none"]);
-    const [ necklaceIcon, setNecklaceIcon ] = useState(["none", "none"]);
-    const [ ringIcon, setRingIcon ] = useState(["none", "none"]);
-    const [ bootsIcon, setBootsIcon ] = useState(["none", "none"]);
+    const [ weaponIcon, setWeaponIcon ] = useState(["none", "none", false ]);
+    const [ helmetIcon, setHelmetIcon ] = useState(["none", "none", false ]);
+    const [ armorIcon, setArmorIcon ] = useState(["none", "none", false ]);
+    const [ necklaceIcon, setNecklaceIcon ] = useState(["none", "none", false ]);
+    const [ ringIcon, setRingIcon ] = useState(["none", "none", false ]);
+    const [ bootsIcon, setBootsIcon ] = useState(["none", "none", false ]);
 
     const changeInputCard = ( itemType:string ) => {
         setItem(itemType);
@@ -53,12 +53,12 @@ const EstimateHeroPage = () => {
         const equipHunt = itemType.split( "_" )[1]
         const equipType = itemType.split( "_" )[2]
 
-        if( equipType === "WEAPON" ) setWeaponIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_weapon.png" ] );
-        if( equipType === "HELMET" ) setHelmetIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_helmet.png" ] );
-        if( equipType === "ARMOR" ) setArmorIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_armor.png" ] );
-        if( equipType === "NECKLACE" ) setNecklaceIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_necklace.png" ] );
-        if( equipType === "RING" ) setRingIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_ring.png" ] );
-        if( equipType === "BOOTS" ) setBootsIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_boots.png" ] );
+        if( equipType === "WEAPON" ) setWeaponIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_weapon.png", true ] );
+        if( equipType === "HELMET" ) setHelmetIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_helmet.png", true ] );
+        if( equipType === "ARMOR" ) setArmorIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_armor.png", true ] );
+        if( equipType === "NECKLACE" ) setNecklaceIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_necklace.png", true ] );
+        if( equipType === "RING" ) setRingIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_ring.png", true ] );
+        if( equipType === "BOOTS" ) setBootsIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_boots.png", true ] );
     };
 
     return (
@@ -125,7 +125,7 @@ const EstimateHeroPage = () => {
                                 <ArtifactBlank onClick={ () => { changeInputCard("artifact")} }></ArtifactBlank>
                             </SpecialItemWrapper>
                             <EquipmentItemWrapper>
-                                <EquipmentItemBlank id="equip_icon_weapon" onClick={ () => { changeInputCard("weapon")} } >
+                                <EquipmentItemBlank isFilled={weaponIcon[2] as boolean} id="equip_icon_weapon" onClick={ () => { changeInputCard("weapon")} } >
                                     { weaponIcon[0] === "none" && "무기" }
                                     {
                                         weaponIcon[0] !== "none" &&
@@ -135,7 +135,7 @@ const EstimateHeroPage = () => {
                                         </EquipmentItemShowWrapper>
                                     }
                                 </EquipmentItemBlank>
-                                <EquipmentItemBlank onClick={ () => { changeInputCard("necklace")} } >
+                                <EquipmentItemBlank isFilled={necklaceIcon[2] as boolean} onClick={ () => { changeInputCard("necklace")} } >
                                     { necklaceIcon[0] === "none" && "목걸이" }
                                     {
                                         necklaceIcon[0] !== "none" &&
@@ -145,7 +145,7 @@ const EstimateHeroPage = () => {
                                         </EquipmentItemShowWrapper>
                                     }
                                 </EquipmentItemBlank>
-                                <EquipmentItemBlank onClick={ () => { changeInputCard("helmet")} } >
+                                <EquipmentItemBlank isFilled={helmetIcon[2] as boolean} onClick={ () => { changeInputCard("helmet")} } >
                                     { helmetIcon[0] === "none" && "투구" }
                                     {
                                         helmetIcon[0] !== "none" &&
@@ -155,7 +155,7 @@ const EstimateHeroPage = () => {
                                         </EquipmentItemShowWrapper>
                                     }
                                 </EquipmentItemBlank>
-                                <EquipmentItemBlank onClick={ () => { changeInputCard("ring")} } >
+                                <EquipmentItemBlank isFilled={ringIcon[2] as boolean} onClick={ () => { changeInputCard("ring")} } >
                                     { ringIcon[0] === "none" && "반지" }
                                     {
                                         ringIcon[0] !== "none" &&
@@ -165,7 +165,7 @@ const EstimateHeroPage = () => {
                                         </EquipmentItemShowWrapper>
                                     }
                                 </EquipmentItemBlank>
-                                <EquipmentItemBlank onClick={ () => { changeInputCard("armor")} } >
+                                <EquipmentItemBlank isFilled={armorIcon[2] as boolean} onClick={ () => { changeInputCard("armor")} } >
                                     { armorIcon[0] === "none" && "갑옷" }
                                     {
                                         armorIcon[0] !== "none" &&
@@ -175,7 +175,7 @@ const EstimateHeroPage = () => {
                                         </EquipmentItemShowWrapper>
                                     }
                                 </EquipmentItemBlank>
-                                <EquipmentItemBlank onClick={ () => { changeInputCard("boots")} } >
+                                <EquipmentItemBlank isFilled={bootsIcon[2] as boolean} onClick={ () => { changeInputCard("boots")} } >
                                     { bootsIcon[0] === "none" && "신발" }
                                     {
                                         bootsIcon[0] !== "none" &&
