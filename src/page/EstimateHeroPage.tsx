@@ -46,6 +46,11 @@ import {
     EstimateEquipmentImage,
     EstimateEquipmentDescriptionLabel,
     EstimateEquipmentDescriptionValueLabel,
+    EstimateEquipmentRow,
+    EstimateEquipmentGradeImage,
+    EstimateEquipmentDescriptionLine,
+    DescriptionLine,
+    ItemEstimatedGradeLabel, EstimateHeroIcon, EstimateHeroImage, EstimateHeroGrade, EstimateHeroScore,
 } from "@/style/Style_EstimateHeroPage.ts";
 import InputEquipment from '@/component/InputCard/InputEquipment.tsx'
 import InputExclusiveItem from "@/component/InputCard/InputExclusiveItem.tsx";
@@ -256,7 +261,7 @@ const EstimateHeroPage = () => {
                             Object.entries( HeroStatEnum ).map( ( [key, value] ) => (
                                     <StatResultWrapper>
                                         <StatResultLabel> { value } </StatResultLabel>
-                                        <StatResultValueLabel id={ "LABEL_" + key }> </StatResultValueLabel>
+                                        <StatResultValueLabel id={ "LABEL_" + key }> 255 </StatResultValueLabel>
                                     </StatResultWrapper>
                                 )
                             )
@@ -273,17 +278,204 @@ const EstimateHeroPage = () => {
                     <EstimateResultCard>
                         <EstimateEquipmentContainer>
                             <EstimateEquipmentWrapper>
-                                <EstimateEquipmentIcon>
-                                    <EstimateEquipmentImage src="/src/assets/banshee_boots.png" />
-                                </EstimateEquipmentIcon>
-                                <EstimateEquipmentDescription>
-                                    <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
-                                    <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
-                                </EstimateEquipmentDescription>
+                                <EstimateEquipmentRow>
+                                    <EstimateEquipmentIcon>
+                                        <EstimateEquipmentImage src="/src/assets/banshee_weapon.png" />
+                                        <EstimateEquipmentGradeImage src="/src/assets/equip_epic.png" />
+                                        <ItemEstimatedGradeLabel color={"red"}> S </ItemEstimatedGradeLabel>
+                                    </EstimateEquipmentIcon>
+                                    <EstimateEquipmentDescriptionLine>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 속도 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 45 </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <DescriptionLine />
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명피해 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 23% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 속도의 세트 </EstimateEquipmentDescriptionLabel>
+                                        </EstimateEquipmentDescription>
+                                    </EstimateEquipmentDescriptionLine>
+                                    <EstimateEquipmentIcon>
+                                        <EstimateEquipmentImage src="/src/assets/banshee_weapon.png" />
+                                        <EstimateEquipmentGradeImage src="/src/assets/equip_epic.png" />
+                                        <ItemEstimatedGradeLabel color={"red"}> SS </ItemEstimatedGradeLabel>
+                                    </EstimateEquipmentIcon>
+                                    <EstimateEquipmentDescriptionLine>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 속도 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 45 </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <DescriptionLine />
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명피해 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 23% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 속도의 세트 </EstimateEquipmentDescriptionLabel>
+                                        </EstimateEquipmentDescription>
+                                    </EstimateEquipmentDescriptionLine>
+                                    <EstimateEquipmentIcon>
+                                        <EstimateEquipmentImage src="/src/assets/banshee_weapon.png" />
+                                        <EstimateEquipmentGradeImage src="/src/assets/equip_epic.png" />
+                                        <ItemEstimatedGradeLabel color={"blue"}> C </ItemEstimatedGradeLabel>
+                                    </EstimateEquipmentIcon>
+                                    <EstimateEquipmentDescriptionLine>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 속도 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 45 </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <DescriptionLine />
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명피해 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 23% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 속도의 세트 </EstimateEquipmentDescriptionLabel>
+                                        </EstimateEquipmentDescription>
+                                    </EstimateEquipmentDescriptionLine>
+                                </EstimateEquipmentRow>
+                                <EstimateEquipmentRow>
+                                    <EstimateEquipmentIcon>
+                                        <EstimateEquipmentImage src="/src/assets/banshee_weapon.png" />
+                                        <EstimateEquipmentGradeImage src="/src/assets/equip_epic.png" />
+                                        <ItemEstimatedGradeLabel color={"green"}> B </ItemEstimatedGradeLabel>
+                                    </EstimateEquipmentIcon>
+                                    <EstimateEquipmentDescriptionLine>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 속도 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 45 </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <DescriptionLine />
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명피해 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 23% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 속도의 세트 </EstimateEquipmentDescriptionLabel>
+                                        </EstimateEquipmentDescription>
+                                    </EstimateEquipmentDescriptionLine>
+                                    <EstimateEquipmentIcon>
+                                        <EstimateEquipmentImage src="/src/assets/banshee_weapon.png" />
+                                        <EstimateEquipmentGradeImage src="/src/assets/equip_epic.png" />
+                                        <ItemEstimatedGradeLabel color={"purple"}> A </ItemEstimatedGradeLabel>
+                                    </EstimateEquipmentIcon>
+                                    <EstimateEquipmentDescriptionLine>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 속도 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 45 </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <DescriptionLine />
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명피해 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 23% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 속도의 세트 </EstimateEquipmentDescriptionLabel>
+                                        </EstimateEquipmentDescription>
+                                    </EstimateEquipmentDescriptionLine>
+                                    <EstimateEquipmentIcon>
+                                        <EstimateEquipmentImage src="/src/assets/banshee_weapon.png" />
+                                        <EstimateEquipmentGradeImage src="/src/assets/equip_epic.png" />
+                                        <ItemEstimatedGradeLabel color={"darkred"}> SSS </ItemEstimatedGradeLabel>
+                                    </EstimateEquipmentIcon>
+                                    <EstimateEquipmentDescriptionLine>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 속도 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 45 </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <DescriptionLine />
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명피해 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 23% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                        </EstimateEquipmentDescription>
+                                        <EstimateEquipmentDescription>
+                                            <EstimateEquipmentDescriptionLabel> 속도의 세트 </EstimateEquipmentDescriptionLabel>
+                                        </EstimateEquipmentDescription>
+                                    </EstimateEquipmentDescriptionLine>
+                                </EstimateEquipmentRow>
                             </EstimateEquipmentWrapper>
                         </EstimateEquipmentContainer>
                         <EstimateHeroContainer>
-
+                            <EstimateHeroIcon>
+                                <EstimateHeroImage src="/src/assets/vivian_B_avatar.png" />
+                            </EstimateHeroIcon>
+                            <EstimateHeroGrade> SS </EstimateHeroGrade>
+                            <EstimateHeroScore> 83.5점</EstimateHeroScore>
                         </EstimateHeroContainer>
                     </EstimateResultCard>
                 </ResultContainer>

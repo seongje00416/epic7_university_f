@@ -50,7 +50,7 @@ export const ResultContainer = styled.div`
 // 공지 카드
 export const AnnouncementCard = styled.div`
     width: calc( 80% + 15px );
-    background-color: whitesmoke;
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,7 +69,7 @@ export const SelectCard = styled.div`
     width: calc( 80% + 15px );
     height: 10vh;
     border-radius: 5px;
-    background-color: whitesmoke;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,7 +109,9 @@ export const HeroCard = styled.div`
     width: 35%;
     height: 100%;
     border-radius: 5px;
-    background-color: whitesmoke;
+    background-image: url('/src/assets/base_menu.png');
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -277,7 +279,7 @@ export const InputCard = styled.div`
     height: 100%;
     border-radius: 5px;
     justify-content: center;
-    background-color: whitesmoke;
+    background-color: white;
     overflow-y: auto;
     display: flex;
     align-items: center;
@@ -299,7 +301,7 @@ export const EquipmentContainer = styled.div`
     height: 80%;
     flex-direction: column;
     justify-content: center;
-    background-color: whitesmoke;
+    background-color: white;
     margin-inline: 20px;
 `
 
@@ -463,10 +465,10 @@ export const SpecialItemImage = styled.img`
 
 // (하단 좌측) 영웅 스탯 카드
 export const HeroStatResultCard = styled.div`
-    width: 20%;
+    width: 15%;
     height: 100%;
     justify-content: center;
-    background-color: whitesmoke;
+    background-color: white;
     display: flex;
     flex-direction: column;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
@@ -474,7 +476,7 @@ export const HeroStatResultCard = styled.div`
 
 export const StatResultWrapper = styled.div`
     display: flex;
-    margin-block: 10px;
+    margin-block: 1%;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -510,47 +512,125 @@ export const SetEffectValueLabel = styled.label`
 
 // (하단 우측) 평가 결과 카드
 export const EstimateResultCard = styled.div`
-    width: 60%;
+    width: 65%;
     height: 100%;
-    background-color: whitesmoke;
+    background-image: url('/src/assets/rta_013.png');
+    background-size: cover;
     display: flex;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 `
 
 export const EstimateEquipmentContainer = styled.div`
-    display: grid;
+    display: flex;
+    width: 70%;
     justify-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    height: 100%;
-    column-gap: 50%;
-    row-gap: 1%;
 `
-
+// 장비 정리
 export const EstimateEquipmentWrapper = styled.div`
     display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 15px;
+    
+`
+export const EstimateEquipmentRow = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+    
 `
 export const EstimateEquipmentIcon = styled.div`
-    flex: 1;
-    
+    position: relative;
 `
 export const EstimateEquipmentImage = styled.img`
     width: 100%;
     height: auto;
+    position: absolute;
+    z-index: 10;
 `
+export const EstimateEquipmentGradeImage = styled.img`
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+`
+
 export const EstimateEquipmentDescription = styled.div`
-    flex: 3;
+    display: flex;
+    text-align: center;
+    width: 100%;
+`
+export const EstimateEquipmentDescriptionLine = styled.div`
+    display: flex;
+    width: 25%;
+    text-align: center;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: whitesmoke;
 `
 export const EstimateEquipmentDescriptionLabel = styled.label`
     font-weight: bold;
+    text-align: center;
+    flex: 1;
 `
 export const EstimateEquipmentDescriptionValueLabel = styled.label`
-    
+    text-align: center;
+    flex: 1;
 `
-
+export const DescriptionLine = styled.hr`
+    border: 1px solid black;
+    width: 80%;
+    opacity: 10%;
+`
+interface GradeProps {
+    color: string
+}
+export const ItemEstimatedGradeLabel = styled.label<GradeProps>`
+    font-weight: bold;
+    font-size: 30px;
+    display: flex;
+    color: ${ props => (props.color) };
+    justify-content: center;
+    align-items: center;
+`
+// 영웅 등급
 export const EstimateHeroContainer = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+export const EstimateHeroIcon = styled.div`
+    width: 70%;
+`
+export const EstimateHeroImage = styled.img`
+    width: 100%;
+    height: auto;
+`
+export const EstimateHeroGrade = styled.label`
+    font-weight: bold;
+    font-size: 54px;
+    color: lightyellow;
+    width: 70%;
+    background-color: rgba( 255, 255, 225, 20% );
+    border: solid 1px gray;
+    border-radius: 10px;
+    text-align: center;
+`
+export const EstimateHeroScore = styled.label`
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+`
+export const EstimateHeroRanking = styled.label`
+
 `
 
