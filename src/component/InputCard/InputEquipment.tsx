@@ -152,7 +152,7 @@ const InputEquipment: React.FC<Props> = ( {onChangeIcon, itemType} ) => {
             </EquipmentWrapper>
             <EquipmentWrapper>
                 <ClearButton> 초기화 </ClearButton>
-                <SubmitButton onClick={ () => changeEquipmentIcon()}> 확인 </SubmitButton>
+                <SubmitButton onClick={ () => changeEquipmentIcon()}> 적용 </SubmitButton>
             </EquipmentWrapper>
         </EquipmentContainer>
     );

@@ -29,10 +29,28 @@ import {
     EquipmentItemGradeImage,
     EquipmentItemShowWrapper,
     AnnouncementText,
+    ResultContainer,
+    HeroStatResultCard,
+    EstimateResultCard,
+    StatResultWrapper,
+    StatResultLabel,
+    StatResultValueLabel,
+    SetEffectLabel,
+    SetEffectWrapper,
+    SetEffectValueLabel,
+    EstimateEquipmentContainer,
+    EstimateHeroContainer,
+    EstimateEquipmentWrapper,
+    EstimateEquipmentIcon,
+    EstimateEquipmentDescription,
+    EstimateEquipmentImage,
+    EstimateEquipmentDescriptionLabel,
+    EstimateEquipmentDescriptionValueLabel,
 } from "@/style/Style_EstimateHeroPage.ts";
 import InputEquipment from '@/component/InputCard/InputEquipment.tsx'
 import InputExclusiveItem from "@/component/InputCard/InputExclusiveItem.tsx";
 import InputArtifact from "@/component/InputCard/InputArtifact.tsx";
+import { HeroStatEnum } from "@/types/Hero.ts";
 
 import { useState } from "react";
 
@@ -232,6 +250,43 @@ const EstimateHeroPage = () => {
                         { item === "boots" && <InputEquipment onChangeIcon={handleEquipmentIconChange} itemType="boots"/>}
                     </InputCard>
                 </CardContainer>
+                <ResultContainer>
+                    <HeroStatResultCard>
+                        {
+                            Object.entries( HeroStatEnum ).map( ( [key, value] ) => (
+                                    <StatResultWrapper>
+                                        <StatResultLabel> { value } </StatResultLabel>
+                                        <StatResultValueLabel id={ "LABEL_" + key }> </StatResultValueLabel>
+                                    </StatResultWrapper>
+                                )
+                            )
+                        }
+                        <StatResultWrapper>
+                            <SetEffectLabel> 세트효과 </SetEffectLabel>
+                            <SetEffectWrapper>
+                                <SetEffectValueLabel> 속도의 세트 </SetEffectValueLabel>
+                                <SetEffectValueLabel> 적중의 세트 </SetEffectValueLabel>
+                                <SetEffectValueLabel> 없음 </SetEffectValueLabel>
+                            </SetEffectWrapper>
+                        </StatResultWrapper>
+                    </HeroStatResultCard>
+                    <EstimateResultCard>
+                        <EstimateEquipmentContainer>
+                            <EstimateEquipmentWrapper>
+                                <EstimateEquipmentIcon>
+                                    <EstimateEquipmentImage src="/src/assets/banshee_boots.png" />
+                                </EstimateEquipmentIcon>
+                                <EstimateEquipmentDescription>
+                                    <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
+                                    <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                </EstimateEquipmentDescription>
+                            </EstimateEquipmentWrapper>
+                        </EstimateEquipmentContainer>
+                        <EstimateHeroContainer>
+
+                        </EstimateHeroContainer>
+                    </EstimateResultCard>
+                </ResultContainer>
             </PageWrapper>
         </Container>
     )

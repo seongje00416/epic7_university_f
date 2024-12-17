@@ -38,6 +38,15 @@ export const CardContainer = styled.div`
     align-items: center;
     gap: 15px;
 `
+
+export const ResultContainer = styled.div`
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+`
 // 공지 카드
 export const AnnouncementCard = styled.div`
     width: calc( 80% + 15px );
@@ -450,5 +459,98 @@ export const SpecialItemLabel = styled.label`
 export const SpecialItemImage = styled.img`
     width: 100%;
     height: auto;
+`
+
+// (하단 좌측) 영웅 스탯 카드
+export const HeroStatResultCard = styled.div`
+    width: 20%;
+    height: 100%;
+    justify-content: center;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+`
+
+export const StatResultWrapper = styled.div`
+    display: flex;
+    margin-block: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+`
+
+export const StatResultLabel = styled.label`
+    font-weight: bold;
+    width: 35%;
+`
+export const StatResultValueLabel = styled.label`
+    width: 35%;
+`
+
+export const SetEffectContainer = styled.div`
+    display: flex;
+    justify-content: center;
+`
+
+export const SetEffectWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+`
+
+export const SetEffectLabel = styled.label`
+    font-weight: bold;
+    width: 35%;
+`
+
+export const SetEffectValueLabel = styled.label`
+
+`
+
+// (하단 우측) 평가 결과 카드
+export const EstimateResultCard = styled.div`
+    width: 60%;
+    height: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+`
+
+export const EstimateEquipmentContainer = styled.div`
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 100%;
+    column-gap: 50%;
+    row-gap: 1%;
+`
+
+export const EstimateEquipmentWrapper = styled.div`
+    display: flex;
+`
+export const EstimateEquipmentIcon = styled.div`
+    flex: 1;
+    
+`
+export const EstimateEquipmentImage = styled.img`
+    width: 100%;
+    height: auto;
+`
+export const EstimateEquipmentDescription = styled.div`
+    flex: 3;
+`
+export const EstimateEquipmentDescriptionLabel = styled.label`
+    font-weight: bold;
+`
+export const EstimateEquipmentDescriptionValueLabel = styled.label`
+    
+`
+
+export const EstimateHeroContainer = styled.div`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 `
 
