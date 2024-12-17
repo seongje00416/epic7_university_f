@@ -81,7 +81,13 @@ export const InputGroup = styled.div`
     display: flex;
     justify-content: center;
     gap: 10px;
-    width: 23%;
+    width: 20%;
+`
+export const SubInputGroup = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 30%;
 `
 
 export const InputTitle = styled.label`
@@ -94,13 +100,29 @@ export const SelectBox = styled.select`
     border-radius: 5px;
     text-align: center;
     height: 30px;
-    width: 65%;
+    width: 70%;
+    font-size: 14px;
+`
+
+export const SubSelectBox = styled.select`
+    border-radius: 5px;
+    text-align: center;
+    height: 30px;
+    width: 25%;
     font-size: 14px;
 `
 
 export const Option = styled.option`
     font-weight: bold;
+`
+
+export const CheckBox = styled.input`
     
+`
+export const CheckBoxLabel = styled.label`
+    align-items: center;
+    justify-content: center;
+    display: flex;
 `
 
 
@@ -375,9 +397,8 @@ export const SpecialItemContainer = styled.div`
     gap: 15px;
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: ${colors.color_mint};
+    background-color: white;
     margin-inline: 20px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 `
 
 // 아티팩트 정보 입력
@@ -394,10 +415,17 @@ export const ArtifactOption = styled.div`
     display: flex;
     flex-direction: column;
     gap: 5px;
+    &:hover {
+        cursor: pointer;
+        opacity: 80%;
+    }
 `
 
 export const ArtifactNameLabel = styled.label`
     font-weight: bold;
+    &:hover {
+        cursor: pointer;
+    }
 `
 
 //      아티팩트 필터

@@ -50,7 +50,13 @@ import {
     EstimateEquipmentGradeImage,
     EstimateEquipmentDescriptionLine,
     DescriptionLine,
-    ItemEstimatedGradeLabel, EstimateHeroIcon, EstimateHeroImage, EstimateHeroGrade, EstimateHeroScore,
+    ItemEstimatedGradeLabel,
+    EstimateHeroIcon,
+    EstimateHeroImage,
+    EstimateHeroGrade,
+    EstimateHeroScore,
+    CheckBox,
+    SubSelectBox, CheckBoxLabel, SubInputGroup,
 } from "@/style/Style_EstimateHeroPage.ts";
 import InputEquipment from '@/component/InputCard/InputEquipment.tsx'
 import InputExclusiveItem from "@/component/InputCard/InputExclusiveItem.tsx";
@@ -124,9 +130,13 @@ const EstimateHeroPage = () => {
                             </SelectBox>
                         </InputGroup>
 
-                        <InputGroup>
+                        <SubInputGroup>
                             <InputTitle> 기억각인 </InputTitle>
-                            <SelectBox>
+                            <CheckBox type="radio"/>
+                            <CheckBoxLabel> 각인 해방 </CheckBoxLabel>
+                            <CheckBox type="radio"/>
+                            <CheckBoxLabel> 각인 집중 </CheckBoxLabel>
+                            <SubSelectBox>
                                 <Option> 잠김 </Option>
                                 <Option> D </Option>
                                 <Option> C </Option>
@@ -135,8 +145,8 @@ const EstimateHeroPage = () => {
                                 <Option> S </Option>
                                 <Option> SS </Option>
                                 <Option> SSS </Option>
-                            </SelectBox>
-                        </InputGroup>
+                            </SubSelectBox>
+                        </SubInputGroup>
                     </SelectCard>
                 </SelectContainer>
                 <CardContainer>
