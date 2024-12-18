@@ -102,18 +102,18 @@ const EstimateHeroPage = () => {
                 <SelectContainer>
                     <SelectCard>
                         <InputGroup>
-                            <InputTitle> 영웅 </InputTitle>
+                            <InputTitle> 태생 등급 </InputTitle>
                             <SelectBox>
-                                <Option> 숲의 현자 비비안 </Option>
-                                <Option> 집행관 빌트레드 </Option>
+                                <Option> ⭐⭐⭐⭐ </Option>
+                                <Option> ⭐⭐⭐⭐⭐ </Option>
                             </SelectBox>
                         </InputGroup>
 
                         <InputGroup>
-                            <InputTitle> 등급 </InputTitle>
+                            <InputTitle> 영웅 </InputTitle>
                             <SelectBox>
-                                <Option> ⭐⭐⭐⭐⭐ </Option>
-                                <Option> ⭐⭐⭐⭐⭐⭐ </Option>
+                                <Option> 숲의 현자 비비안 </Option>
+                                <Option> 집행관 빌트레드 </Option>
                             </SelectBox>
                         </InputGroup>
 
