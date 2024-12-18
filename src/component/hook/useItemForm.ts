@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { EquipSet, EquipOption, Grade, Level } from "@/types/Equipment.ts";
 
 interface EquipmentFormData {
@@ -135,7 +135,7 @@ export const useItemForm = () => {
     })
     const [ artifact, setArtifact ] = useState("")
 
-    const handleEquipementChange = ( parts:string, name:string, value:string ) => {
+    const handleEquipmentChange = ( parts:string, name:string, value:string ) => {
         switch( parts ) {
             case "WEAPON" :
                 setWeaponFormData( (prev) => ({ ...prev, [name]: value } ) )
@@ -445,7 +445,7 @@ export const useItemForm = () => {
             subValue4.toString().trim() !== ''
         )
     }
-    return (
+    return {
         weaponFormData,
         helmetFormData,
         armorFormData,
@@ -454,7 +454,7 @@ export const useItemForm = () => {
         bootsFormData,
         artifact,
         exclusiveFormData,
-        handleEquipementChange,
+        handleEquipmentChange,
         handleExclusiveChange,
         setArtifact,
         isArmorFormValid,
@@ -464,5 +464,5 @@ export const useItemForm = () => {
         isWeaponFormValid,
         isNecklaceFormValid,
         statValueValidate
-    )
+    }
 }

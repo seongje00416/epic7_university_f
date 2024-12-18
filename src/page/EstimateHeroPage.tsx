@@ -58,12 +58,14 @@ import {
     CheckBox,
     SubSelectBox, CheckBoxLabel, SubInputGroup,
 } from "@/style/Style_EstimateHeroPage.ts";
-import InputEquipment from '@/component/InputCard/InputEquipment.tsx'
+import InputEquipment, { Ref } from '@/component/InputCard/InputEquipment.tsx'
 import InputExclusiveItem from "@/component/InputCard/InputExclusiveItem.tsx";
 import InputArtifact from "@/component/InputCard/InputArtifact.tsx";
+
+import { useItemForm } from "@/component/hook/useItemForm.ts";
 import { HeroStatEnum } from "@/types/Hero.ts";
 
-import { useState } from "react";
+import {useRef, useState} from "react";
 
 const EstimateHeroPage = () => {
     const [ item, setItem ] = useState("none");
@@ -74,8 +76,27 @@ const EstimateHeroPage = () => {
     const [ ringIcon, setRingIcon ] = useState(["none", "none", false ]);
     const [ bootsIcon, setBootsIcon ] = useState(["none", "none", false ]);
 
+    const ref = useRef<Ref>(null);
+
+    const {
+        weaponFormData,
+        helmetFormData,
+        armorFormData,
+        necklaceFormData,
+        ringFormData,
+        bootsFormData,
+        artifact,
+        exclusiveFormData,
+        handleEquipmentChange,
+        handleExclusiveChange,
+        setArtifact,
+    } = useItemForm();
+
     const changeInputCard = ( itemType:string ) => {
         setItem(itemType);
+        setTimeout(() => {
+            ref.current?.settingInputCard();
+        }, 0);
     }
     const handleEquipmentIconChange = (itemType: string) => {
         const equipGrade = itemType.split( "_" )[0]
@@ -245,12 +266,12 @@ const EstimateHeroPage = () => {
                         { item === "none" && <DefaultInputBox> 장비를 선택해주세요. </DefaultInputBox> }
                         { item === "artifact" && <InputArtifact />}
                         { item === "exclusive" && <InputExclusiveItem />}
-                        { item === "weapon" && <InputEquipment onChangeIcon={handleEquipmentIconChange} itemType="weapon"/>}
-                        { item === "helmet" && <InputEquipment onChangeIcon={handleEquipmentIconChange} itemType="helmet"/>}
-                        { item === "armor" && <InputEquipment onChangeIcon={handleEquipmentIconChange} itemType="armor"/>}
-                        { item === "necklace" && <InputEquipment onChangeIcon={handleEquipmentIconChange} itemType="necklace"/>}
-                        { item === "ring" && <InputEquipment onChangeIcon={handleEquipmentIconChange} itemType="ring"/>}
-                        { item === "boots" && <InputEquipment onChangeIcon={handleEquipmentIconChange} itemType="boots"/>}
+                        { item === "weapon" && <InputEquipment ref={ref} onChangeIcon={handleEquipmentIconChange} formData={weaponFormData} handleChange={handleEquipmentChange} itemType="weapon"/>}
+                        { item === "helmet" && <InputEquipment ref={ref} onChangeIcon={handleEquipmentIconChange} formData={helmetFormData} handleChange={handleEquipmentChange} itemType="helmet"/>}
+                        { item === "armor" && <InputEquipment ref={ref} onChangeIcon={handleEquipmentIconChange} formData={armorFormData} handleChange={handleEquipmentChange} itemType="armor"/>}
+                        { item === "necklace" && <InputEquipment ref={ref} onChangeIcon={handleEquipmentIconChange} formData={necklaceFormData} handleChange={handleEquipmentChange} itemType="necklace"/>}
+                        { item === "ring" && <InputEquipment ref={ref} onChangeIcon={handleEquipmentIconChange} formData={ringFormData} handleChange={handleEquipmentChange} itemType="ring"/>}
+                        { item === "boots" && <InputEquipment ref={ref} onChangeIcon={handleEquipmentIconChange} formData={bootsFormData} handleChange={handleEquipmentChange} itemType="boots"/>}
                     </InputCard>
                 </CardContainer>
                 <ResultContainer>
