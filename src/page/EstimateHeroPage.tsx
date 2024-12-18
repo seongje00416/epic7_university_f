@@ -111,6 +111,7 @@ const EstimateHeroPage = () => {
         if( equipType === "BOOTS" ) setBootsIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_boots.png", true ] );
     };
 
+    console.log( weaponFormData )
     return (
         <Container>
             <PageWrapper>
@@ -306,32 +307,113 @@ const EstimateHeroPage = () => {
                                     <EstimateEquipmentIcon>
                                         <EstimateEquipmentImage src="/src/assets/banshee_weapon.png" />
                                         <EstimateEquipmentGradeImage src="/src/assets/equip_epic.png" />
+                                        { /* 점수에 따라 등급을 보여주기 */}
                                         <ItemEstimatedGradeLabel color={"red"}> S </ItemEstimatedGradeLabel>
                                     </EstimateEquipmentIcon>
                                     <EstimateEquipmentDescriptionLine>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> 속도 </EstimateEquipmentDescriptionLabel>
-                                            <EstimateEquipmentDescriptionValueLabel> 45 </EstimateEquipmentDescriptionValueLabel>
+                                            <EstimateEquipmentDescriptionLabel> 공격력 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> { weaponFormData.mainValue } </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <DescriptionLine />
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
-                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                            <EstimateEquipmentDescriptionLabel>
+                                                { weaponFormData.subOption1 === "NONE" && "-" }
+                                                { weaponFormData.subOption1 === "ATTACK_PER" && "공격력(%)" }
+                                                { weaponFormData.subOption1 === "HEALTH" && "생명력" }
+                                                { weaponFormData.subOption1 === "HEALTH_PER" && "생명력(%)" }
+                                                { weaponFormData.subOption1 === "SPEED" && "속도" }
+                                                { weaponFormData.subOption1 === "CRITICAL_HIT_CHANCE" && "치명확률" }
+                                                { weaponFormData.subOption1 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
+                                                { weaponFormData.subOption1 === "EFFECTIVENESS" && "효과적중" }
+                                                { weaponFormData.subOption1 === "EFFECT_RESISTANCE" && "효과저항" }
+                                            </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel>
+                                                { weaponFormData.subOption1 === "NONE" && "-" }
+                                                { weaponFormData.subOption1 === "ATTACK_PER" && weaponFormData.subValue1 + "%" }
+                                                { weaponFormData.subOption1 === "HEALTH" && weaponFormData.subValue1 }
+                                                { weaponFormData.subOption1 === "HEALTH_PER" && weaponFormData.subValue1  + "%" }
+                                                { weaponFormData.subOption1 === "SPEED" && weaponFormData.subValue1 }
+                                                { weaponFormData.subOption1 === "CRITICAL_HIT_CHANCE" && weaponFormData.subValue1  + "%" }
+                                                { weaponFormData.subOption1 === "CRITICAL_HIT_DAMAGE" && weaponFormData.subValue1  + "%" }
+                                                { weaponFormData.subOption1 === "EFFECTIVENESS" && weaponFormData.subValue1  + "%" }
+                                                { weaponFormData.subOption1 === "EFFECT_RESISTANCE" && weaponFormData.subValue1  + "%" }
+                                            </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> 치명피해 </EstimateEquipmentDescriptionLabel>
-                                            <EstimateEquipmentDescriptionValueLabel> 23% </EstimateEquipmentDescriptionValueLabel>
+                                            <EstimateEquipmentDescriptionLabel>
+                                                { weaponFormData.subOption2 === "NONE" && "-" }
+                                                { weaponFormData.subOption2 === "ATTACK_PER" && "공격력(%)" }
+                                                { weaponFormData.subOption2 === "HEALTH" && "생명력" }
+                                                { weaponFormData.subOption2 === "HEALTH_PER" && "생명력(%)" }
+                                                { weaponFormData.subOption2 === "SPEED" && "속도" }
+                                                { weaponFormData.subOption2 === "CRITICAL_HIT_CHANCE" && "치명확률" }
+                                                { weaponFormData.subOption2 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
+                                                { weaponFormData.subOption2 === "EFFECTIVENESS" && "효과적중" }
+                                                { weaponFormData.subOption2 === "EFFECT_RESISTANCE" && "효과저항" }
+                                            </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel>
+                                                { weaponFormData.subOption2 === "NONE" && "-" }
+                                                { weaponFormData.subOption2 === "ATTACK_PER" && weaponFormData.subValue2 + "%" }
+                                                { weaponFormData.subOption2 === "HEALTH" && weaponFormData.subValue2 }
+                                                { weaponFormData.subOption2 === "HEALTH_PER" && weaponFormData.subValue2  + "%" }
+                                                { weaponFormData.subOption2 === "SPEED" && weaponFormData.subValue2 }
+                                                { weaponFormData.subOption2 === "CRITICAL_HIT_CHANCE" && weaponFormData.subValue2  + "%" }
+                                                { weaponFormData.subOption2 === "CRITICAL_HIT_DAMAGE" && weaponFormData.subValue2  + "%" }
+                                                { weaponFormData.subOption2 === "EFFECTIVENESS" && weaponFormData.subValue2  + "%" }
+                                                { weaponFormData.subOption2 === "EFFECT_RESISTANCE" && weaponFormData.subValue2  + "%" }
+                                            </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
-                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                            <EstimateEquipmentDescriptionLabel>
+                                                { weaponFormData.subOption3 === "NONE" && "-" }
+                                                { weaponFormData.subOption3 === "ATTACK_PER" && "공격력(%)" }
+                                                { weaponFormData.subOption3 === "HEALTH" && "생명력" }
+                                                { weaponFormData.subOption3 === "HEALTH_PER" && "생명력(%)" }
+                                                { weaponFormData.subOption3 === "SPEED" && "속도" }
+                                                { weaponFormData.subOption3 === "CRITICAL_HIT_CHANCE" && "치명확률" }
+                                                { weaponFormData.subOption3 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
+                                                { weaponFormData.subOption3 === "EFFECTIVENESS" && "효과적중" }
+                                                { weaponFormData.subOption3 === "EFFECT_RESISTANCE" && "효과저항" }
+                                            </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel>
+                                                { weaponFormData.subOption3 === "NONE" && "-" }
+                                                { weaponFormData.subOption3 === "ATTACK_PER" && weaponFormData.subValue3 + "%" }
+                                                { weaponFormData.subOption3 === "HEALTH" && weaponFormData.subValue3 }
+                                                { weaponFormData.subOption3 === "HEALTH_PER" && weaponFormData.subValue3  + "%" }
+                                                { weaponFormData.subOption3 === "SPEED" && weaponFormData.subValue3 }
+                                                { weaponFormData.subOption3 === "CRITICAL_HIT_CHANCE" && weaponFormData.subValue3  + "%" }
+                                                { weaponFormData.subOption3 === "CRITICAL_HIT_DAMAGE" && weaponFormData.subValue3  + "%" }
+                                                { weaponFormData.subOption3 === "EFFECTIVENESS" && weaponFormData.subValue3  + "%" }
+                                                { weaponFormData.subOption3 === "EFFECT_RESISTANCE" && weaponFormData.subValue3  + "%" }
+                                            </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
-                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                            <EstimateEquipmentDescriptionLabel>
+                                                { weaponFormData.subOption4 === "NONE" && "-" }
+                                                { weaponFormData.subOption4 === "ATTACK_PER" && "공격력(%)" }
+                                                { weaponFormData.subOption4 === "HEALTH" && "생명력" }
+                                                { weaponFormData.subOption4 === "HEALTH_PER" && "생명력(%)" }
+                                                { weaponFormData.subOption4 === "SPEED" && "속도" }
+                                                { weaponFormData.subOption4 === "CRITICAL_HIT_CHANCE" && "치명확률" }
+                                                { weaponFormData.subOption4 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
+                                                { weaponFormData.subOption4 === "EFFECTIVENESS" && "효과적중" }
+                                                { weaponFormData.subOption4 === "EFFECT_RESISTANCE" && "효과저항" }
+                                            </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel>
+                                                { weaponFormData.subOption4 === "NONE" && "-" }
+                                                { weaponFormData.subOption4 === "ATTACK_PER" && weaponFormData.subValue4 + "%" }
+                                                { weaponFormData.subOption4 === "HEALTH" && weaponFormData.subValue4 }
+                                                { weaponFormData.subOption4 === "HEALTH_PER" && weaponFormData.subValue4  + "%" }
+                                                { weaponFormData.subOption4 === "SPEED" && weaponFormData.subValue4 }
+                                                { weaponFormData.subOption4 === "CRITICAL_HIT_CHANCE" && weaponFormData.subValue4  + "%" }
+                                                { weaponFormData.subOption4 === "CRITICAL_HIT_DAMAGE" && weaponFormData.subValue4  + "%" }
+                                                { weaponFormData.subOption4 === "EFFECTIVENESS" && weaponFormData.subValue4  + "%" }
+                                                { weaponFormData.subOption4 === "EFFECT_RESISTANCE" && weaponFormData.subValue4  + "%" }
+                                            </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> 속도의 세트 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionLabel> { weaponFormData.setEffect === "NONE" && "세트효과" } </EstimateEquipmentDescriptionLabel>
                                         </EstimateEquipmentDescription>
                                     </EstimateEquipmentDescriptionLine>
                                     <EstimateEquipmentIcon>
@@ -341,28 +423,28 @@ const EstimateHeroPage = () => {
                                     </EstimateEquipmentIcon>
                                     <EstimateEquipmentDescriptionLine>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> 속도 </EstimateEquipmentDescriptionLabel>
-                                            <EstimateEquipmentDescriptionValueLabel> 45 </EstimateEquipmentDescriptionValueLabel>
+                                            <EstimateEquipmentDescriptionLabel> 생명력 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> { helmetFormData.mainValue } </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <DescriptionLine />
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
-                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                            <EstimateEquipmentDescriptionLabel> { helmetFormData.subOption1 === "NONE" && "보조옵션1" } </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> { helmetFormData.subValue1 as number } </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> 치명피해 </EstimateEquipmentDescriptionLabel>
-                                            <EstimateEquipmentDescriptionValueLabel> 23% </EstimateEquipmentDescriptionValueLabel>
+                                            <EstimateEquipmentDescriptionLabel> { helmetFormData.subOption2 === "NONE" && "보조옵션2" } </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> { helmetFormData.subValue2 as number } </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
-                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                            <EstimateEquipmentDescriptionLabel> { helmetFormData.subOption3 === "NONE" && "보조옵션3" } </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> { helmetFormData.subValue3 as number } </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> 치명확률 </EstimateEquipmentDescriptionLabel>
-                                            <EstimateEquipmentDescriptionValueLabel> 100% </EstimateEquipmentDescriptionValueLabel>
+                                            <EstimateEquipmentDescriptionLabel> { helmetFormData.subOption4 === "NONE" && "보조옵션4" } </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> { helmetFormData.subValue4 as number } </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> 속도의 세트 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionLabel> { helmetFormData.setEffect === "NONE" && "세트효과" } </EstimateEquipmentDescriptionLabel>
                                         </EstimateEquipmentDescription>
                                     </EstimateEquipmentDescriptionLine>
                                     <EstimateEquipmentIcon>
@@ -372,8 +454,8 @@ const EstimateHeroPage = () => {
                                     </EstimateEquipmentIcon>
                                     <EstimateEquipmentDescriptionLine>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> 속도 </EstimateEquipmentDescriptionLabel>
-                                            <EstimateEquipmentDescriptionValueLabel> 45 </EstimateEquipmentDescriptionValueLabel>
+                                            <EstimateEquipmentDescriptionLabel> 방어력 </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel> { armorFormData.mainValue } </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <DescriptionLine />
                                         <EstimateEquipmentDescription>

@@ -1,7 +1,7 @@
 // 장비에 필요한 속성 타입 정의
 export type EquipSet =
     "ATTACK" | "DEFENSE" | "HEALTH" | "SPEED" | "CRITICAL" | "DESTRUCTION" | "HIT" | "RESIST" | "LIFESTEAL" | "COUNTER" | "UNITY" | "IMMUNITY" |
-    "RAGE" | "PENETRATION" | "REVENGE" | "INJURY" | "PROTECTION" | "TORRENT"
+    "RAGE" | "PENETRATION" | "REVENGE" | "INJURY" | "PROTECTION" | "TORRENT" | "NONE"
 export type Grade = "RARE" | "HEROIC" | "EPIC"
 export type EquipOption =
     "ATTACK" | "ATTACK_PER" | "HEALTH" | "HEALTH_PER" | "DEFENSE" | "DEFENSE_PER" | "SPEED" | "CRITICAL_HIT_CHANCE" | "CRITICAL_HIT_DAMAGE" |
@@ -44,7 +44,7 @@ export enum EquipOptionEnum {
     DEFENSE_PER = "방어력(%)",
     HEALTH = "생명력",
     HEALTH_PER = "생명력(%)",
-    SPEED = '속도"',
+    SPEED = '속도',
     CRITICAL_HIT_CHANCE = "치명확률",
     CRITICAL_HIT_DAMAGE = "치명피해",
     EFFECTIVENESS = "효과적중",
