@@ -7,7 +7,7 @@ export type EquipOption =
     "ATTACK" | "ATTACK_PER" | "HEALTH" | "HEALTH_PER" | "DEFENSE" | "DEFENSE_PER" | "SPEED" | "CRITICAL_HIT_CHANCE" | "CRITICAL_HIT_DAMAGE" |
     "EFFECTIVENESS" | "EFFECT_RESISTANCE" | "NONE"
 export type Level =
-    "D" | 0 | 71 | 75 | 78 | 80 | 85 | 88 | 90
+    "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H"
 
 // 장비에 필요한 열거형 정의
 export enum EquipSetEnum {

@@ -223,13 +223,10 @@ export const EquipmentItemWrapper = styled.div`
     row-gap: 1%;
 `
 
-interface Props {
-    isFilled: boolean
-}
-export const EquipmentItemBlank = styled.div<Props>`
+export const EquipmentItemBlank = styled.div<{ $isFilled: boolean }>`
     border-radius: 5px;
     background-color: black;
-    opacity: ${ props => (props.isFilled ? '1' : '0.65') };
+    opacity: ${ props => (props.$isFilled ? '1' : '0.65') };
     width: 4vw;
     height: 4vw;
     position: relative;

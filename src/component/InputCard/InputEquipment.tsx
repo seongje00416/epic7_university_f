@@ -9,7 +9,7 @@ import {
     ClearButton,
     SubmitButton,
 } from "@/style/Style_EstimateHeroPage.ts";
-import React, { useState, forwardRef, useImperativeHandle } from "react";
+import { useState, forwardRef, useImperativeHandle } from "react";
 import { EquipOption, EquipSet, Grade, Level, EquipOptionEnum, EquipSetEnum, EquipGradeEnum, EquipLevelEnum } from "@/types/Equipment.ts";
 import { useItemForm } from "@/component/hook/useItemForm.ts";
 
