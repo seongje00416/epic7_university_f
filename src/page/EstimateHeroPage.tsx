@@ -96,6 +96,7 @@ const EstimateHeroPage = () => {
                 <AnnouncementContainer>
                     <AnnouncementCard>
                         <AnnouncementText> * 영웅 레벨은 각 등급별 만렙을 기준으로 측정됩니다. </AnnouncementText>
+                        <AnnouncementText> * 영웅은 모두 6성 6각을 기준으로 측정됩니다. </AnnouncementText>
                         <AnnouncementText> * 장비 이미지는 모두 90레벨 제련템으로 표시되지만 실제 능력치는 입력한 값으로 적용됩니다. </AnnouncementText>
                     </AnnouncementCard>
                 </AnnouncementContainer>
@@ -114,19 +115,6 @@ const EstimateHeroPage = () => {
                             <SelectBox>
                                 <Option> 숲의 현자 비비안 </Option>
                                 <Option> 집행관 빌트레드 </Option>
-                            </SelectBox>
-                        </InputGroup>
-
-                        <InputGroup>
-                            <InputTitle> 각성 </InputTitle>
-                            <SelectBox>
-                                <Option> 0단계 </Option>
-                                <Option> 1단계 </Option>
-                                <Option> 2단계 </Option>
-                                <Option> 3단계 </Option>
-                                <Option> 4단계 </Option>
-                                <Option> 5단계 </Option>
-                                <Option> 6단계 </Option>
                             </SelectBox>
                         </InputGroup>
 
