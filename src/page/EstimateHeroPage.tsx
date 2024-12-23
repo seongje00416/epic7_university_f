@@ -56,16 +56,18 @@ import {
     EstimateHeroGrade,
     EstimateHeroScore,
     CheckBox,
-    SubSelectBox, CheckBoxLabel, SubInputGroup,
+    SubSelectBox, CheckBoxLabel, SubInputGroup, EquipmentOption,
 } from "@/style/Style_EstimateHeroPage.ts";
 import InputEquipment, { Ref } from '@/component/InputCard/InputEquipment.tsx'
 import InputExclusiveItem from "@/component/InputCard/InputExclusiveItem.tsx";
 import InputArtifact from "@/component/InputCard/InputArtifact.tsx";
 
 import { useItemForm } from "@/component/hook/useItemForm.ts";
-import { HeroStatEnum } from "@/types/Hero.ts";
+import { HeroStatEnum} from "@/types/Hero.ts";
 
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
+import {HeroShow, retrieveAllHero, retrieveBaseStat} from "@/service/api/heroApi.ts";
+import {EquipOptionEnum} from "@/types/Equipment.ts";
 
 const EstimateHeroPage = () => {
     const [ item, setItem ] = useState("none");
@@ -75,6 +77,19 @@ const EstimateHeroPage = () => {
     const [ necklaceIcon, setNecklaceIcon ] = useState(["none", "none", false ]);
     const [ ringIcon, setRingIcon ] = useState(["none", "none", false ]);
     const [ bootsIcon, setBootsIcon ] = useState(["none", "none", false ]);
+
+    const [ attack, setAttack ] = useState(0);
+    const [ defense, setDefense ] = useState(0);
+    const [ health, setHealth ] = useState(0);
+    const [ criticalChance, setCriticalChance ] = useState(0);
+    const [ criticalDamage, setCriticalDamage ] = useState(0);
+    const [ speed, setSpeed ] = useState(0);
+    const [ effectiveness, setEffectiveness ] = useState(0);
+    const [ effectResistance, setEffectResistance ] = useState(0);
+    const [ dualAttackChance, setDualAttackChance ] = useState(0);
+
+    const [ heros, setHeros ] = useState<HeroShow[]>([]);
+    const [ isLoading, setIsLoading ] = useState(false);
 
     const ref = useRef<Ref>(null);
 
@@ -92,6 +107,7 @@ const EstimateHeroPage = () => {
         setArtifact,
     } = useItemForm();
 
+    // 화면 컨트롤 함수
     const changeInputCard = ( itemType:string ) => {
         setItem(itemType);
         setTimeout(() => {
@@ -111,7 +127,35 @@ const EstimateHeroPage = () => {
         if( equipType === "BOOTS" ) setBootsIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_boots.png", true ] );
     };
 
-    console.log( weaponFormData )
+    // API 호출 함수
+    useEffect( () => {
+        const fetchHero = async () => {
+            setIsLoading(true)
+            try {
+                const response = await retrieveAllHero( 0, 20 )
+                setHeros( response.content )
+            } catch( err ){
+                console.error( err )
+            } finally {
+                setIsLoading(false)
+            }
+        }
+        fetchHero()
+    }, [ 0, 20 ] )
+
+    const settingBaseStat = async ( heroID:number ) => {
+        const response = await retrieveBaseStat( heroID )
+        setAttack( response.attack )
+        setDefense( response.defense )
+        setHealth( response.health )
+        setSpeed( response.speed )
+        setCriticalChance( response.criticalHitChance )
+        setCriticalDamage( response.criticalHitDamage )
+        setEffectiveness( response.effectiveness )
+        setEffectResistance( response.effectResistance )
+        setDualAttackChance( response.dualAttackChance )
+    }
+
     return (
         <Container>
             <PageWrapper>
@@ -135,10 +179,14 @@ const EstimateHeroPage = () => {
 
                         <InputGroup>
                             <InputTitle> 영웅 </InputTitle>
-                            <SelectBox>
+                            <SelectBox onChange={ (e) => settingBaseStat(Number(e.target.value) ) }>
                                 {/* 추후 DB에서 영웅 정보를 불러오는 방법으로 변경 예정 */}
-                                <Option> 숲의 현자 비비안 </Option>
-                                <Option> 집행관 빌트레드 </Option>
+                                {
+                                    heros.map( ( hero ) => (
+                                        <EquipmentOption key={hero.id} value={hero.id}> { hero.name } </EquipmentOption>
+                                    ))
+                                }
+                                <EquipmentOption> TEST </EquipmentOption>
                             </SelectBox>
                         </InputGroup>
 
@@ -285,7 +333,17 @@ const EstimateHeroPage = () => {
                             Object.entries( HeroStatEnum ).map( ( [key, value] ) => (
                                     <StatResultWrapper key={ "STAT_WRAPPER_" + key }>
                                         <StatResultLabel key={ "STAT_NAME_LABEL_" + key }> { value } </StatResultLabel>
-                                        <StatResultValueLabel key={ "LABEL_" + key }> 255 </StatResultValueLabel>
+                                        <StatResultValueLabel key={ "LABEL_" + key }>
+                                            {   key === "ATTACK" ? attack :
+                                                key === "DEFENSE" ? defense :
+                                                key === "HEALTH" ? health :
+                                                key === "SPEED" ? speed :
+                                                key === "CRITICAL_HIT_CHANCE" ? criticalChance :
+                                                key === "CRITICAL_HIT_DAMAGE" ? criticalDamage :
+                                                key === "EFFECTIVENESS" ? effectiveness :
+                                                key === "EFFECT_RESISTANCE" ? effectResistance : 0
+                                            }
+                                        </StatResultValueLabel>
                                     </StatResultWrapper>
                                 )
                             )

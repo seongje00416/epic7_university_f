@@ -9,3 +9,30 @@ export enum HeroStatEnum {
     EFFECT_RESISTANCE = "효과저항",
     DUAL_ATTACK_CHANCE = "협공확률"
 }
+
+export interface HeroStat {
+    attack: number
+    defense: number
+    health: number
+    speed: number
+    criticalHitChance: number
+    criticalHitDamage: number
+    effectiveness: number
+    effectResistance: number
+    dualAttackChance: number
+}
+
+export interface Hero {
+    id: number;
+    name: string;
+    grade: number;
+    imprintRelease: string;
+    irIncrease: number;
+    irBase: number;
+    importConcentration: string;
+    icIncrease: number;
+    icBase: number;
+    imageURL: string;
+    heroClass: string;
+    constellation: string;
+}
