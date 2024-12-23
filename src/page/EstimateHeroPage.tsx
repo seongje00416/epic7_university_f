@@ -67,7 +67,7 @@ import { HeroStatEnum} from "@/types/Hero.ts";
 
 import {useEffect, useRef, useState} from "react";
 import {HeroShow, retrieveAllHero, retrieveBaseStat} from "@/service/api/heroApi.ts";
-import {EquipOptionEnum} from "@/types/Equipment.ts";
+import { Equipment } from "@/types/Equipment.ts";
 
 const EstimateHeroPage = () => {
     const [ item, setItem ] = useState("none");
@@ -78,15 +78,22 @@ const EstimateHeroPage = () => {
     const [ ringIcon, setRingIcon ] = useState(["none", "none", false ]);
     const [ bootsIcon, setBootsIcon ] = useState(["none", "none", false ]);
 
-    const [ attack, setAttack ] = useState(0);
-    const [ defense, setDefense ] = useState(0);
-    const [ health, setHealth ] = useState(0);
-    const [ criticalChance, setCriticalChance ] = useState(0);
-    const [ criticalDamage, setCriticalDamage ] = useState(0);
-    const [ speed, setSpeed ] = useState(0);
-    const [ effectiveness, setEffectiveness ] = useState(0);
-    const [ effectResistance, setEffectResistance ] = useState(0);
-    const [ dualAttackChance, setDualAttackChance ] = useState(0);
+    const [ weapon, setWeapon ] = useState<Equipment[]>([])
+    const [ helmet, setHelmet ] = useState<Equipment[]>([])
+    const [ armor, setArmor ] = useState<Equipment[]>([])
+    const [ necklace, setNecklace ] = useState<Equipment[]>([])
+    const [ ring, setRing ] = useState<Equipment[]>([])
+    const [ boots, setBoots ] = useState<Equipment[]>([])
+
+    const [ attack, setAttack ] = useState([0, 0]);
+    const [ defense, setDefense ] = useState([0, 0]);
+    const [ health, setHealth ] = useState([0, 0]);
+    const [ criticalChance, setCriticalChance ] = useState([0, 0]);
+    const [ criticalDamage, setCriticalDamage ] = useState([0, 0]);
+    const [ speed, setSpeed ] = useState([0, 0]);
+    const [ effectiveness, setEffectiveness ] = useState([0, 0]);
+    const [ effectResistance, setEffectResistance ] = useState([0, 0]);
+    const [ dualAttackChance, setDualAttackChance ] = useState([0, 0]);
 
     const [ heros, setHeros ] = useState<HeroShow[]>([]);
     const [ isLoading, setIsLoading ] = useState(false);
@@ -127,6 +134,29 @@ const EstimateHeroPage = () => {
         if( equipType === "BOOTS" ) setBootsIcon( [ "equip_" + equipGrade.toLowerCase() + ".png", equipHunt.toLowerCase() + "_boots.png", true ] );
     };
 
+    // 장비 스탯 적용 함수
+    const applyEquipementStat = ( stat:string, value:number, isPercent: boolean ) => {
+        switch( stat ) {
+            case "ATTACK" :
+                {
+                    let updatedValue = 0;
+                    if( isPercent ) updatedValue = attack[0] + ( attack[0] * ( value / 100 ) )
+                    else updatedValue = attack[0] + value
+                    setAttack( [ attack[0], updatedValue ] );
+                    break
+                }
+            case "DEFENSE" :
+                {
+                    let updatedValue = 0;
+                    if( isPercent ) updatedValue = defense[0] + ( defense[0] * ( value / 100 ) )
+                    else updatedValue = defense[0] + value
+                    setDefense( [ defense[0], updatedValue ] );
+                    break
+                }
+        }
+    }
+
+
     // API 호출 함수
     useEffect( () => {
         const fetchHero = async () => {
@@ -143,17 +173,44 @@ const EstimateHeroPage = () => {
         fetchHero()
     }, [ 0, 20 ] )
 
+    // [ 기본 스탯, 장비 적용 스탯 ]
     const settingBaseStat = async ( heroID:number ) => {
         const response = await retrieveBaseStat( heroID )
-        setAttack( response.attack )
-        setDefense( response.defense )
-        setHealth( response.health )
-        setSpeed( response.speed )
-        setCriticalChance( response.criticalHitChance )
-        setCriticalDamage( response.criticalHitDamage )
-        setEffectiveness( response.effectiveness )
-        setEffectResistance( response.effectResistance )
-        setDualAttackChance( response.dualAttackChance )
+        setAttack( [ response.attack, response.attack ] )
+        setDefense( [ response.defense, response.defense ] )
+        setHealth( [ response.health, response.health ] )
+        setSpeed( [ response.speed, response.speed ] )
+        setCriticalChance( [ response.criticalHitChance, response.criticalHitChance ] )
+        setCriticalDamage( [ response.criticalHitDamage, response.criticalHitDamage ] )
+        setEffectiveness( [ response.effectiveness, response.effectiveness ] )
+        setEffectResistance( [ response.effectResistance, response.effectResistance ] )
+        setDualAttackChance( [ response.dualAttackChance, response.dualAttackChance ] )
+    }
+
+    // 장비 업데이트
+    const updateEquipment = ( option:string, type:string, value:string ) => {
+        switch(option) {
+            case "weapon":
+                setWeapon(prev => prev.map(item => ({...item, [type]: value})));
+                break;
+            case "helmet":
+                setHelmet(prev => prev.map(item => ({...item, [type]: value})));
+                break;
+            case "armor":
+                setArmor(prev => prev.map(item => ({...item, [type]: value})));
+                break;
+            case "necklace":
+                setNecklace(prev => prev.map(item => ({...item, [type]: value})));
+                break;
+            case "ring":
+                setRing(prev => prev.map(item => ({...item, [type]: value})));
+                break;
+            case "boots":
+                setBoots(prev => prev.map(item => ({...item, [type]: value})));
+                break;
+            default:
+                return "ERROR";
+        }
     }
 
     return (
@@ -180,13 +237,11 @@ const EstimateHeroPage = () => {
                         <InputGroup>
                             <InputTitle> 영웅 </InputTitle>
                             <SelectBox onChange={ (e) => settingBaseStat(Number(e.target.value) ) }>
-                                {/* 추후 DB에서 영웅 정보를 불러오는 방법으로 변경 예정 */}
                                 {
                                     heros.map( ( hero ) => (
                                         <EquipmentOption key={hero.id} value={hero.id}> { hero.name } </EquipmentOption>
                                     ))
                                 }
-                                <EquipmentOption> TEST </EquipmentOption>
                             </SelectBox>
                         </InputGroup>
 
@@ -334,14 +389,15 @@ const EstimateHeroPage = () => {
                                     <StatResultWrapper key={ "STAT_WRAPPER_" + key }>
                                         <StatResultLabel key={ "STAT_NAME_LABEL_" + key }> { value } </StatResultLabel>
                                         <StatResultValueLabel key={ "LABEL_" + key }>
-                                            {   key === "ATTACK" ? attack :
-                                                key === "DEFENSE" ? defense :
-                                                key === "HEALTH" ? health :
-                                                key === "SPEED" ? speed :
-                                                key === "CRITICAL_HIT_CHANCE" ? criticalChance :
-                                                key === "CRITICAL_HIT_DAMAGE" ? criticalDamage :
-                                                key === "EFFECTIVENESS" ? effectiveness :
-                                                key === "EFFECT_RESISTANCE" ? effectResistance : 0
+                                            {   key === "ATTACK" ? attack[1] :
+                                                key === "DEFENSE" ? defense[1] :
+                                                key === "HEALTH" ? health[1] :
+                                                key === "SPEED" ? speed[1] :
+                                                key === "CRITICAL_HIT_CHANCE" ? criticalChance[1] :
+                                                key === "CRITICAL_HIT_DAMAGE" ? criticalDamage[1] :
+                                                key === "EFFECTIVENESS" ? effectiveness[1] :
+                                                key === "EFFECT_RESISTANCE" ? effectResistance[1] :
+                                                key === "DUAL_ATTACK_CHANCE" ? dualAttackChance[1] : 0
                                             }
                                         </StatResultValueLabel>
                                     </StatResultWrapper>
