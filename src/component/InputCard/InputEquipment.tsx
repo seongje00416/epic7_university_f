@@ -32,10 +32,11 @@ interface EquipmentFormData {
 }
 
 interface Props {
-    onChangeIcon: (itemType:string) => void,
-    itemType: string
+    onChangeIcon: (itemType:string) => void;
+    itemType: string;
     formData: EquipmentFormData;
     handleChange: ( type:string, name:string, value:string ) => void;
+    heroStatUpdate: (stat:string, value:number, isPercent:boolean) => void;
 }
 
 export interface Ref {
@@ -76,6 +77,7 @@ const InputEquipment = forwardRef<Ref, Props>((props, ref) => {
         const equipType = props.itemType.toUpperCase();
         console.log( props.formData );
 
+        // 아이템 아이콘 변경
         let huntMob = "";
         if( equipSet === "SPEED" || equipSet === "HIT" || equipSet === "CRITICAL" ) huntMob = "WYVERN";
         if( equipSet === "ATTACK" || equipSet === "HEALTH" || equipSet === "DEFENSE" || equipSet === "PROTECTION" ) huntMob = "GOLEM";
@@ -83,6 +85,37 @@ const InputEquipment = forwardRef<Ref, Props>((props, ref) => {
         if( equipSet === "UNITY" || equipSet === "IMMUNITY" || equipSet === "RAGE" ) huntMob = "AZIMANAK";
         if( equipSet === "REVENGE" || equipSet === "INJURY" || equipSet === "PENETRATION" || equipSet === "TORRENT" ) huntMob = "CAIDES";
         props.onChangeIcon( grade.toUpperCase() + "_" + huntMob + "_" + equipType );
+
+        // 아이템 수치 적용
+        if( props.formData.mainOption === "ATTACK_PER" ) props.heroStatUpdate( "ATTACK", props.formData.mainValue, true )
+        else if( props.formData.mainOption === "DEFENSE_PER" ) props.heroStatUpdate( "DEFENSE", props.formData.mainValue, true )
+        else if( props.formData.mainOption === "HEALTH_PER" ) props.heroStatUpdate( "HEALTH", props.formData.mainValue, true )
+        else if( props.formData.mainOption === "NONE" ) console.log("PASS");
+        else props.heroStatUpdate( props.formData.mainOption, props.formData.mainValue, false )
+
+        if( props.formData.subOption1 === "ATTACK_PER" ) props.heroStatUpdate( "ATTACK", props.formData.subValue1, true )
+        else if( props.formData.subOption1 === "DEFENSE_PER" ) props.heroStatUpdate( "DEFENSE", props.formData.subValue1, true )
+        else if( props.formData.subOption1 === "HEALTH_PER" ) props.heroStatUpdate( "HEALTH", props.formData.subValue1, true )
+        else if( props.formData.subOption1 === "NONE" ) console.log("PASS");
+        else props.heroStatUpdate( props.formData.subOption1, props.formData.subValue1, false )
+
+        if( props.formData.subOption2 === "ATTACK_PER" ) props.heroStatUpdate( "ATTACK", props.formData.subValue2, true )
+        else if( props.formData.subOption2 === "DEFENSE_PER" ) props.heroStatUpdate( "DEFENSE", props.formData.subValue2, true )
+        else if( props.formData.subOption2 === "HEALTH_PER" ) props.heroStatUpdate( "HEALTH", props.formData.subValue2, true )
+        else if( props.formData.subOption2 === "NONE" ) console.log("PASS");
+        else props.heroStatUpdate( props.formData.subOption2, props.formData.subValue2, false )
+
+        if( props.formData.subOption3 === "ATTACK_PER" ) props.heroStatUpdate( "ATTACK", props.formData.subValue3, true )
+        else if( props.formData.subOption3 === "DEFENSE_PER" ) props.heroStatUpdate( "DEFENSE", props.formData.subValue3, true )
+        else if( props.formData.subOption3 === "HEALTH_PER" ) props.heroStatUpdate( "HEALTH", props.formData.subValue3, true )
+        else if( props.formData.subOption3 === "NONE" ) console.log("PASS");
+        else props.heroStatUpdate( props.formData.subOption3, props.formData.subValue3, false )
+
+        if( props.formData.subOption4 === "ATTACK_PER" ) props.heroStatUpdate( "ATTACK", props.formData.subValue4, true )
+        else if( props.formData.subOption4 === "DEFENSE_PER" ) props.heroStatUpdate( "DEFENSE", props.formData.subValue4, true )
+        else if( props.formData.subOption4 === "HEALTH_PER" ) props.heroStatUpdate( "HEALTH", props.formData.subValue4, true )
+        else if( props.formData.subOption4 === "NONE" ) console.log("PASS");
+        else props.heroStatUpdate( props.formData.subOption4, props.formData.subValue4, false )
     }
 
     const settingInputCard = () => {

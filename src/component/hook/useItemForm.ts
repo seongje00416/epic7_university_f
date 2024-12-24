@@ -28,7 +28,7 @@ interface ExclusiveItemFormData {
 export const useItemForm = () => {
     const [ weaponFormData, setWeaponFormData ] = useState<EquipmentFormData>({
         parts: 'WEAPON',
-        setEffect: "NONE",
+        setEffect: "ATTACK",
         enhance: 0,
         grade: "EPIC",
         level: "F",
@@ -45,7 +45,7 @@ export const useItemForm = () => {
     })
     const [ helmetFormData, setHelmetFormData ] = useState<EquipmentFormData>({
         parts: 'HELMET',
-        setEffect: "NONE",
+        setEffect: "ATTACK",
         enhance: 0,
         grade: "EPIC",
         level: "F",
@@ -62,7 +62,7 @@ export const useItemForm = () => {
     })
     const [ armorFormData, setArmorFormData ] = useState<EquipmentFormData>({
         parts: 'ARMOR',
-        setEffect: "NONE",
+        setEffect: "ATTACK",
         enhance: 0,
         grade: "EPIC",
         level: "F",
@@ -79,7 +79,7 @@ export const useItemForm = () => {
     })
     const [ necklaceFormData, setNecklaceFormData ] = useState<EquipmentFormData>({
         parts: 'NECKLACE',
-        setEffect: "NONE",
+        setEffect: "ATTACK",
         enhance: 0,
         grade: "EPIC",
         level: "F",
@@ -96,7 +96,7 @@ export const useItemForm = () => {
     })
     const [ ringFormData, setRingFormData ] = useState<EquipmentFormData>({
         parts: 'RING',
-        setEffect: "NONE",
+        setEffect: "ATTACK",
         enhance: 0,
         grade: "EPIC",
         level: "F",
@@ -113,7 +113,7 @@ export const useItemForm = () => {
     })
     const [ bootsFormData, setBootsFormData ] = useState<EquipmentFormData>({
         parts: 'BOOTS',
-        setEffect: "NONE",
+        setEffect: "ATTACK",
         enhance: 0,
         grade: "EPIC",
         level: "F",
@@ -169,7 +169,7 @@ export const useItemForm = () => {
         if( option === "NONE" ) return true;
 
         // 장비 레벨별 +3마다 올라가는 최대 수치값 지정
-        if( level === 71 ){
+        if( level === "B" ){
             if( option === "ATTACK_PER" || option === "DEFENSE_PER" || option === "HEALTH_PER" || option === "EFFECT_RESISTANCE" || option === "EFFECTIVENESS" ) maxIncrement = 7;
             else if( option === "ATTACK" ) maxIncrement = 42;
             else if( option === "DEFENSE" ) maxIncrement = 30;
@@ -178,7 +178,7 @@ export const useItemForm = () => {
             else if( option === "CRITICAL_HIT_DAMAGE" ) maxIncrement = 6;
             else if( option === "SPEED" ) maxIncrement = 4;
         }
-        else if( level === 75 || level === "D" || level === 80 || level === 78 || level === 85 ) {
+        else if( level === "C" || level === "A" || level === "D" || level === "E" || level === "F" ) {
             if( option === "ATTACK_PER" || option === "DEFENSE_PER" || option === "HEALTH_PER" || option === "EFFECT_RESISTANCE" || option === "EFFECTIVENESS" ) maxIncrement = 8;
             else if( option === "ATTACK" ) maxIncrement = 47;
             else if( option === "DEFENSE" ) maxIncrement = 34;
@@ -187,7 +187,7 @@ export const useItemForm = () => {
             else if( option === "CRITICAL_HIT_DAMAGE" ) maxIncrement = 7;
             else if( option === "SPEED" ) maxIncrement = 5;
         }
-        else if( level === 88 ){
+        else if( level === "G" ){
             if( option === "ATTACK_PER" || option === "DEFENSE_PER" || option === "HEALTH_PER" || option === "EFFECT_RESISTANCE" || option === "EFFECTIVENESS" ) maxIncrement = 9;
             else if( option === "ATTACK" ) maxIncrement = 50;
             else if( option === "DEFENSE" ) maxIncrement = 36;
@@ -196,7 +196,7 @@ export const useItemForm = () => {
             else if( option === "CRITICAL_HIT_DAMAGE" ) maxIncrement = 8;
             else if( option === "SPEED" ) maxIncrement = 5;
         }
-        else if( level === 90 ){
+        else if( level === "H" ){
             if( enhance !== 15 ) return false;
             if( option === "ATTACK_PER" || option === "DEFENSE_PER" || option === "HEALTH_PER" || option === "EFFECT_RESISTANCE" || option === "EFFECTIVENESS" ) maxIncrement = 8;
             else if( option === "ATTACK" ) maxIncrement = 47;

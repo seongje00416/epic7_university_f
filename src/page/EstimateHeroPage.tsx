@@ -135,13 +135,13 @@ const EstimateHeroPage = () => {
     };
 
     // 장비 스탯 적용 함수
-    const applyEquipementStat = ( stat:string, value:number, isPercent: boolean ) => {
+    const applyEquipmentStat = ( stat:string, value:number, isPercent: boolean ) => {
         switch( stat ) {
             case "ATTACK" :
                 {
                     let updatedValue = 0;
                     if( isPercent ) updatedValue = attack[0] + ( attack[0] * ( value / 100 ) )
-                    else updatedValue = attack[0] + value
+                    else updatedValue = attack[0] + Number(value)
                     setAttack( [ attack[0], updatedValue ] );
                     break
                 }
@@ -149,7 +149,7 @@ const EstimateHeroPage = () => {
                 {
                     let updatedValue = 0;
                     if( isPercent ) updatedValue = defense[0] + ( defense[0] * ( value / 100 ) )
-                    else updatedValue = defense[0] + value
+                    else updatedValue = defense[0] + Number(value)
                     setDefense( [ defense[0], updatedValue ] );
                     break
                 }
@@ -185,32 +185,6 @@ const EstimateHeroPage = () => {
         setEffectiveness( [ response.effectiveness, response.effectiveness ] )
         setEffectResistance( [ response.effectResistance, response.effectResistance ] )
         setDualAttackChance( [ response.dualAttackChance, response.dualAttackChance ] )
-    }
-
-    // 장비 업데이트
-    const updateEquipment = ( option:string, type:string, value:string ) => {
-        switch(option) {
-            case "weapon":
-                setWeapon(prev => prev.map(item => ({...item, [type]: value})));
-                break;
-            case "helmet":
-                setHelmet(prev => prev.map(item => ({...item, [type]: value})));
-                break;
-            case "armor":
-                setArmor(prev => prev.map(item => ({...item, [type]: value})));
-                break;
-            case "necklace":
-                setNecklace(prev => prev.map(item => ({...item, [type]: value})));
-                break;
-            case "ring":
-                setRing(prev => prev.map(item => ({...item, [type]: value})));
-                break;
-            case "boots":
-                setBoots(prev => prev.map(item => ({...item, [type]: value})));
-                break;
-            default:
-                return "ERROR";
-        }
     }
 
     return (
@@ -374,12 +348,12 @@ const EstimateHeroPage = () => {
                         { item === "none" && <DefaultInputBox> 장비를 선택해주세요. </DefaultInputBox> }
                         { item === "artifact" && <InputArtifact />}
                         { item === "exclusive" && <InputExclusiveItem />}
-                        { item === "weapon" && <InputEquipment ref={ref} onChangeIcon={handleEquipmentIconChange} formData={weaponFormData} handleChange={handleEquipmentChange} itemType="weapon"/>}
-                        { item === "helmet" && <InputEquipment ref={ref} onChangeIcon={handleEquipmentIconChange} formData={helmetFormData} handleChange={handleEquipmentChange} itemType="helmet"/>}
-                        { item === "armor" && <InputEquipment ref={ref} onChangeIcon={handleEquipmentIconChange} formData={armorFormData} handleChange={handleEquipmentChange} itemType="armor"/>}
-                        { item === "necklace" && <InputEquipment ref={ref} onChangeIcon={handleEquipmentIconChange} formData={necklaceFormData} handleChange={handleEquipmentChange} itemType="necklace"/>}
-                        { item === "ring" && <InputEquipment ref={ref} onChangeIcon={handleEquipmentIconChange} formData={ringFormData} handleChange={handleEquipmentChange} itemType="ring"/>}
-                        { item === "boots" && <InputEquipment ref={ref} onChangeIcon={handleEquipmentIconChange} formData={bootsFormData} handleChange={handleEquipmentChange} itemType="boots"/>}
+                        { item === "weapon" && <InputEquipment ref={ref} heroStatUpdate={applyEquipmentStat} onChangeIcon={handleEquipmentIconChange} formData={weaponFormData} handleChange={handleEquipmentChange} itemType="weapon"/>}
+                        { item === "helmet" && <InputEquipment ref={ref} heroStatUpdate={applyEquipmentStat} onChangeIcon={handleEquipmentIconChange} formData={helmetFormData} handleChange={handleEquipmentChange} itemType="helmet"/>}
+                        { item === "armor" && <InputEquipment ref={ref} heroStatUpdate={applyEquipmentStat} onChangeIcon={handleEquipmentIconChange} formData={armorFormData} handleChange={handleEquipmentChange} itemType="armor"/>}
+                        { item === "necklace" && <InputEquipment ref={ref} heroStatUpdate={applyEquipmentStat} onChangeIcon={handleEquipmentIconChange} formData={necklaceFormData} handleChange={handleEquipmentChange} itemType="necklace"/>}
+                        { item === "ring" && <InputEquipment ref={ref} heroStatUpdate={applyEquipmentStat} onChangeIcon={handleEquipmentIconChange} formData={ringFormData} handleChange={handleEquipmentChange} itemType="ring"/>}
+                        { item === "boots" && <InputEquipment ref={ref} heroStatUpdate={applyEquipmentStat} onChangeIcon={handleEquipmentIconChange} formData={bootsFormData} handleChange={handleEquipmentChange} itemType="boots"/>}
                     </InputCard>
                 </CardContainer>
                 <ResultContainer>
@@ -542,20 +516,100 @@ const EstimateHeroPage = () => {
                                         </EstimateEquipmentDescription>
                                         <DescriptionLine />
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> { helmetFormData.subOption1 === "NONE" && "보조옵션1" } </EstimateEquipmentDescriptionLabel>
-                                            <EstimateEquipmentDescriptionValueLabel> { helmetFormData.subValue1 as number } </EstimateEquipmentDescriptionValueLabel>
+                                            <EstimateEquipmentDescriptionLabel>
+                                                { helmetFormData.subOption1 === "NONE" && "-" }
+                                                { helmetFormData.subOption1 === "ATTACK_PER" && "공격력(%)" }
+                                                { helmetFormData.subOption1 === "HEALTH" && "생명력" }
+                                                { helmetFormData.subOption1 === "HEALTH_PER" && "생명력(%)" }
+                                                { helmetFormData.subOption1 === "SPEED" && "속도" }
+                                                { helmetFormData.subOption1 === "CRITICAL_HIT_CHANCE" && "치명확률" }
+                                                { helmetFormData.subOption1 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
+                                                { helmetFormData.subOption1 === "EFFECTIVENESS" && "효과적중" }
+                                                { helmetFormData.subOption1 === "EFFECT_RESISTANCE" && "효과저항" }
+                                            </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel>
+                                                { helmetFormData.subOption1 === "NONE" && "-" }
+                                                { helmetFormData.subOption1 === "ATTACK_PER" && helmetFormData.subValue1 + "%" }
+                                                { helmetFormData.subOption1 === "HEALTH" && helmetFormData.subValue1 }
+                                                { helmetFormData.subOption1 === "HEALTH_PER" && helmetFormData.subValue1  + "%" }
+                                                { helmetFormData.subOption1 === "SPEED" && helmetFormData.subValue1 }
+                                                { helmetFormData.subOption1 === "CRITICAL_HIT_CHANCE" && helmetFormData.subValue1  + "%" }
+                                                { helmetFormData.subOption1 === "CRITICAL_HIT_DAMAGE" && helmetFormData.subValue1  + "%" }
+                                                { helmetFormData.subOption1 === "EFFECTIVENESS" && helmetFormData.subValue1  + "%" }
+                                                { helmetFormData.subOption1 === "EFFECT_RESISTANCE" && helmetFormData.subValue1  + "%" }
+                                            </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> { helmetFormData.subOption2 === "NONE" && "보조옵션2" } </EstimateEquipmentDescriptionLabel>
-                                            <EstimateEquipmentDescriptionValueLabel> { helmetFormData.subValue2 as number } </EstimateEquipmentDescriptionValueLabel>
+                                            <EstimateEquipmentDescriptionLabel>
+                                                { helmetFormData.subOption2 === "NONE" && "-" }
+                                                { helmetFormData.subOption2 === "ATTACK_PER" && "공격력(%)" }
+                                                { helmetFormData.subOption2 === "HEALTH" && "생명력" }
+                                                { helmetFormData.subOption2 === "HEALTH_PER" && "생명력(%)" }
+                                                { helmetFormData.subOption2 === "SPEED" && "속도" }
+                                                { helmetFormData.subOption2 === "CRITICAL_HIT_CHANCE" && "치명확률" }
+                                                { helmetFormData.subOption2 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
+                                                { helmetFormData.subOption2 === "EFFECTIVENESS" && "효과적중" }
+                                                { helmetFormData.subOption2 === "EFFECT_RESISTANCE" && "효과저항" }
+                                            </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel>
+                                                { helmetFormData.subOption2 === "NONE" && "-" }
+                                                { helmetFormData.subOption2 === "ATTACK_PER" && helmetFormData.subValue2 + "%" }
+                                                { helmetFormData.subOption2 === "HEALTH" && helmetFormData.subValue2 }
+                                                { helmetFormData.subOption2 === "HEALTH_PER" && helmetFormData.subValue2  + "%" }
+                                                { helmetFormData.subOption2 === "SPEED" && helmetFormData.subValue2 }
+                                                { helmetFormData.subOption2 === "CRITICAL_HIT_CHANCE" && helmetFormData.subValue2  + "%" }
+                                                { helmetFormData.subOption2 === "CRITICAL_HIT_DAMAGE" && helmetFormData.subValue2  + "%" }
+                                                { helmetFormData.subOption2 === "EFFECTIVENESS" && helmetFormData.subValue2  + "%" }
+                                                { helmetFormData.subOption2 === "EFFECT_RESISTANCE" && helmetFormData.subValue2  + "%" }
+                                            </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> { helmetFormData.subOption3 === "NONE" && "보조옵션3" } </EstimateEquipmentDescriptionLabel>
-                                            <EstimateEquipmentDescriptionValueLabel> { helmetFormData.subValue3 as number } </EstimateEquipmentDescriptionValueLabel>
+                                            <EstimateEquipmentDescriptionLabel>
+                                                { helmetFormData.subOption3 === "NONE" && "-" }
+                                                { helmetFormData.subOption3 === "ATTACK_PER" && "공격력(%)" }
+                                                { helmetFormData.subOption3 === "HEALTH" && "생명력" }
+                                                { helmetFormData.subOption3 === "HEALTH_PER" && "생명력(%)" }
+                                                { helmetFormData.subOption3 === "SPEED" && "속도" }
+                                                { helmetFormData.subOption3 === "CRITICAL_HIT_CHANCE" && "치명확률" }
+                                                { helmetFormData.subOption3 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
+                                                { helmetFormData.subOption3 === "EFFECTIVENESS" && "효과적중" }
+                                                { helmetFormData.subOption3 === "EFFECT_RESISTANCE" && "효과저항" }
+                                            </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel>
+                                                { helmetFormData.subOption3 === "NONE" && "-" }
+                                                { helmetFormData.subOption3 === "ATTACK_PER" && helmetFormData.subValue3 + "%" }
+                                                { helmetFormData.subOption3 === "HEALTH" && helmetFormData.subValue3 }
+                                                { helmetFormData.subOption3 === "HEALTH_PER" && helmetFormData.subValue3  + "%" }
+                                                { helmetFormData.subOption3 === "SPEED" && helmetFormData.subValue3 }
+                                                { helmetFormData.subOption3 === "CRITICAL_HIT_CHANCE" && helmetFormData.subValue3  + "%" }
+                                                { helmetFormData.subOption3 === "CRITICAL_HIT_DAMAGE" && helmetFormData.subValue3  + "%" }
+                                                { helmetFormData.subOption3 === "EFFECTIVENESS" && helmetFormData.subValue3  + "%" }
+                                                { helmetFormData.subOption3 === "EFFECT_RESISTANCE" && helmetFormData.subValue3  + "%" }
+                                            </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> { helmetFormData.subOption4 === "NONE" && "보조옵션4" } </EstimateEquipmentDescriptionLabel>
-                                            <EstimateEquipmentDescriptionValueLabel> { helmetFormData.subValue4 as number } </EstimateEquipmentDescriptionValueLabel>
+                                            <EstimateEquipmentDescriptionLabel>
+                                                { helmetFormData.subOption4 === "NONE" && "-" }
+                                                { helmetFormData.subOption4 === "ATTACK_PER" && "공격력(%)" }
+                                                { helmetFormData.subOption4 === "HEALTH" && "생명력" }
+                                                { helmetFormData.subOption4 === "HEALTH_PER" && "생명력(%)" }
+                                                { helmetFormData.subOption4 === "SPEED" && "속도" }
+                                                { helmetFormData.subOption4 === "CRITICAL_HIT_CHANCE" && "치명확률" }
+                                                { helmetFormData.subOption4 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
+                                                { helmetFormData.subOption4 === "EFFECTIVENESS" && "효과적중" }
+                                                { helmetFormData.subOption4 === "EFFECT_RESISTANCE" && "효과저항" }
+                                            </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionValueLabel>
+                                                { helmetFormData.subOption4 === "NONE" && "-" }
+                                                { helmetFormData.subOption4 === "ATTACK_PER" && helmetFormData.subValue4 + "%" }
+                                                { helmetFormData.subOption4 === "HEALTH" && helmetFormData.subValue4 }
+                                                { helmetFormData.subOption4 === "HEALTH_PER" && helmetFormData.subValue4  + "%" }
+                                                { helmetFormData.subOption4 === "SPEED" && helmetFormData.subValue4 }
+                                                { helmetFormData.subOption4 === "CRITICAL_HIT_CHANCE" && helmetFormData.subValue4  + "%" }
+                                                { helmetFormData.subOption4 === "CRITICAL_HIT_DAMAGE" && helmetFormData.subValue4  + "%" }
+                                                { helmetFormData.subOption4 === "EFFECTIVENESS" && helmetFormData.subValue4  + "%" }
+                                                { helmetFormData.subOption4 === "EFFECT_RESISTANCE" && helmetFormData.subValue4  + "%" }
+                                            </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
                                             <EstimateEquipmentDescriptionLabel> { helmetFormData.setEffect === "NONE" && "세트효과" } </EstimateEquipmentDescriptionLabel>
