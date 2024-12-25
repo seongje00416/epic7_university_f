@@ -168,7 +168,7 @@ const InputEquipment = forwardRef<Ref, Props>((props, ref) => {
                 <EquipmentSelect value={equipSet} onChange={ (e) => {onChangeValue("setEffect", e.target.value);} }>
                     {
                         Object.entries( EquipSetEnum ).map( ( [key, value] ) => (
-                            <EquipmentOption value={key}> { value } </EquipmentOption>
+                            <EquipmentOption value={key} key={key}> { value } </EquipmentOption>
                             )
                         )
                     }
@@ -181,14 +181,14 @@ const InputEquipment = forwardRef<Ref, Props>((props, ref) => {
                 <EquipmentSelect value={grade} onChange={ (e) => {onChangeValue("grade", e.target.value);} }>
                     {
                         Object.entries( EquipGradeEnum ).map( ( [key, value]) => (
-                            <EquipmentOption value={key}> { value } </EquipmentOption>
+                            <EquipmentOption value={key} key={key}> { value } </EquipmentOption>
                         ))
                     }
                 </EquipmentSelect>
                 <EquipmentSubSelect value={level} onChange={ (e) => {onChangeValue("level", e.target.value);} }>
                     {
                         Object.entries( EquipLevelEnum ).map( ( [key, value]) => (
-                            <EquipmentOption value={key}> { value } </EquipmentOption>
+                            <EquipmentOption value={key} key={key}> { value } </EquipmentOption>
                         ))
                     }
                 </EquipmentSubSelect>
@@ -199,7 +199,7 @@ const InputEquipment = forwardRef<Ref, Props>((props, ref) => {
                 <EquipmentSelect value={mainOption} onChange={ (e) => {onChangeValue("mainOption", e.target.value);} }>
                     {
                         Object.entries( EquipOptionEnum ).map( ( [key, value]) => (
-                            <EquipmentOption value={key}> { value } </EquipmentOption>
+                            <EquipmentOption value={key} key={key}> { value } </EquipmentOption>
                         ))
                     }
                 </EquipmentSelect>
@@ -211,7 +211,7 @@ const InputEquipment = forwardRef<Ref, Props>((props, ref) => {
                 <EquipmentSelect value={subOption1} onChange={ (e) => { onChangeValue("subOption1", e.target.value); } }>
                     {
                         Object.entries( EquipOptionEnum ).map( ( [key, value]) => (
-                            <EquipmentOption value={key}> { value } </EquipmentOption>
+                            <EquipmentOption value={key} key={key}> { value } </EquipmentOption>
                         ))
                     }
                 </EquipmentSelect>
@@ -223,7 +223,7 @@ const InputEquipment = forwardRef<Ref, Props>((props, ref) => {
                 <EquipmentSelect value={subOption2} onChange={ (e) => {onChangeValue("subOption2", e.target.value);} }>
                     {
                         Object.entries( EquipOptionEnum ).map( ( [key, value]) => (
-                            <EquipmentOption value={key}> { value } </EquipmentOption>
+                            <EquipmentOption value={key} key={key}> { value } </EquipmentOption>
                         ))
                     }
                 </EquipmentSelect>
@@ -236,7 +236,7 @@ const InputEquipment = forwardRef<Ref, Props>((props, ref) => {
                     <EquipmentOption value="NONE"> 없음 </EquipmentOption>
                     {
                         Object.entries( EquipOptionEnum ).map( ( [key, value]) => (
-                            <EquipmentOption value={key}> { value } </EquipmentOption>
+                            <EquipmentOption value={key} key={key}> { value } </EquipmentOption>
                         ))
                     }
                 </EquipmentSelect>
@@ -250,7 +250,7 @@ const InputEquipment = forwardRef<Ref, Props>((props, ref) => {
                     <EquipmentOption value="NONE"> 없음 </EquipmentOption>
                     {
                         Object.entries( EquipOptionEnum ).map( ( [key, value]) => (
-                            <EquipmentOption value={key}> { value } </EquipmentOption>
+                            <EquipmentOption value={key} key={key}> { value } </EquipmentOption>
                         ))
                     }
                 </EquipmentSelect>

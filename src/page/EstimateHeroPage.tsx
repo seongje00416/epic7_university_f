@@ -633,8 +633,11 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { weaponFormData.subOption1 === "NONE" && "-" }
                                                 { weaponFormData.subOption1 === "ATTACK_PER" && "공격력(%)" }
+                                                { weaponFormData.subOption1 === "ATTACK" && "공격력" }
                                                 { weaponFormData.subOption1 === "HEALTH" && "생명력" }
                                                 { weaponFormData.subOption1 === "HEALTH_PER" && "생명력(%)" }
+                                                { weaponFormData.subOption1 === "DEFENSE_PER" && "방어력(%)" }
+                                                { weaponFormData.subOption1 === "DEFENSE" && "방어력" }
                                                 { weaponFormData.subOption1 === "SPEED" && "속도" }
                                                 { weaponFormData.subOption1 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { weaponFormData.subOption1 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
@@ -657,8 +660,11 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { weaponFormData.subOption2 === "NONE" && "-" }
                                                 { weaponFormData.subOption2 === "ATTACK_PER" && "공격력(%)" }
+                                                { weaponFormData.subOption2 === "ATTACK" && "공격력" }
                                                 { weaponFormData.subOption2 === "HEALTH" && "생명력" }
                                                 { weaponFormData.subOption2 === "HEALTH_PER" && "생명력(%)" }
+                                                { weaponFormData.subOption1 === "DEFENSE_PER" && "방어력(%)" }
+                                                { weaponFormData.subOption1 === "DEFENSE" && "방어력" }
                                                 { weaponFormData.subOption2 === "SPEED" && "속도" }
                                                 { weaponFormData.subOption2 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { weaponFormData.subOption2 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
@@ -681,10 +687,13 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { weaponFormData.subOption3 === "NONE" && "-" }
                                                 { weaponFormData.subOption3 === "ATTACK_PER" && "공격력(%)" }
+                                                { weaponFormData.subOption3 === "ATTACK" && "공격력" }
                                                 { weaponFormData.subOption3 === "HEALTH" && "생명력" }
                                                 { weaponFormData.subOption3 === "HEALTH_PER" && "생명력(%)" }
                                                 { weaponFormData.subOption3 === "SPEED" && "속도" }
                                                 { weaponFormData.subOption3 === "CRITICAL_HIT_CHANCE" && "치명확률" }
+                                                { weaponFormData.subOption1 === "DEFENSE_PER" && "방어력(%)" }
+                                                { weaponFormData.subOption1 === "DEFENSE" && "방어력" }
                                                 { weaponFormData.subOption3 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
                                                 { weaponFormData.subOption3 === "EFFECTIVENESS" && "효과적중" }
                                                 { weaponFormData.subOption3 === "EFFECT_RESISTANCE" && "효과저항" }
@@ -705,6 +714,9 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { weaponFormData.subOption4 === "NONE" && "-" }
                                                 { weaponFormData.subOption4 === "ATTACK_PER" && "공격력(%)" }
+                                                { weaponFormData.subOption4 === "ATTACK" && "공격력" }
+                                                { weaponFormData.subOption1 === "DEFENSE_PER" && "방어력(%)" }
+                                                { weaponFormData.subOption1 === "DEFENSE" && "방어력" }
                                                 { weaponFormData.subOption4 === "HEALTH" && "생명력" }
                                                 { weaponFormData.subOption4 === "HEALTH_PER" && "생명력(%)" }
                                                 { weaponFormData.subOption4 === "SPEED" && "속도" }
@@ -747,6 +759,9 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { helmetFormData.subOption1 === "NONE" && "-" }
                                                 { helmetFormData.subOption1 === "ATTACK_PER" && "공격력(%)" }
+                                                { helmetFormData.subOption1 === "ATTACK" && "공격력" }
+                                                { helmetFormData.subOption1 === "DEFENSE_PER" && "방어력(%)" }
+                                                { helmetFormData.subOption1 === "DEFENSE" && "방어력" }
                                                 { helmetFormData.subOption1 === "HEALTH" && "생명력" }
                                                 { helmetFormData.subOption1 === "HEALTH_PER" && "생명력(%)" }
                                                 { helmetFormData.subOption1 === "SPEED" && "속도" }
@@ -771,6 +786,9 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { helmetFormData.subOption2 === "NONE" && "-" }
                                                 { helmetFormData.subOption2 === "ATTACK_PER" && "공격력(%)" }
+                                                { helmetFormData.subOption2 === "ATTACK" && "공격력" }
+                                                { helmetFormData.subOption2 === "DEFENSE_PER" && "방어력(%)" }
+                                                { helmetFormData.subOption2 === "DEFENSE" && "방어력" }
                                                 { helmetFormData.subOption2 === "HEALTH" && "생명력" }
                                                 { helmetFormData.subOption2 === "HEALTH_PER" && "생명력(%)" }
                                                 { helmetFormData.subOption2 === "SPEED" && "속도" }
@@ -795,6 +813,9 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { helmetFormData.subOption3 === "NONE" && "-" }
                                                 { helmetFormData.subOption3 === "ATTACK_PER" && "공격력(%)" }
+                                                { helmetFormData.subOption3 === "ATTACK" && "공격력" }
+                                                { helmetFormData.subOption3 === "DEFENSE_PER" && "방어력(%)" }
+                                                { helmetFormData.subOption3 === "DEFENSE" && "방어력" }
                                                 { helmetFormData.subOption3 === "HEALTH" && "생명력" }
                                                 { helmetFormData.subOption3 === "HEALTH_PER" && "생명력(%)" }
                                                 { helmetFormData.subOption3 === "SPEED" && "속도" }
@@ -819,6 +840,9 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { helmetFormData.subOption4 === "NONE" && "-" }
                                                 { helmetFormData.subOption4 === "ATTACK_PER" && "공격력(%)" }
+                                                { helmetFormData.subOption4 === "ATTACK" && "공격력" }
+                                                { helmetFormData.subOption4 === "DEFENSE_PER" && "방어력(%)" }
+                                                { helmetFormData.subOption4 === "DEFENSE" && "방어력" }
                                                 { helmetFormData.subOption4 === "HEALTH" && "생명력" }
                                                 { helmetFormData.subOption4 === "HEALTH_PER" && "생명력(%)" }
                                                 { helmetFormData.subOption4 === "SPEED" && "속도" }
@@ -861,11 +885,14 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { armorFormData.subOption1 === "NONE" && "-" }
                                                 { armorFormData.subOption1 === "ATTACK_PER" && "공격력(%)" }
+                                                { armorFormData.subOption1 === "ATTACK" && "공격력" }
                                                 { armorFormData.subOption1 === "HEALTH" && "생명력" }
                                                 { armorFormData.subOption1 === "HEALTH_PER" && "생명력(%)" }
                                                 { armorFormData.subOption1 === "SPEED" && "속도" }
                                                 { armorFormData.subOption1 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { armorFormData.subOption1 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
+                                                { armorFormData.subOption1 === "DEFENSE_PER" && "방어력(%)" }
+                                                { armorFormData.subOption1 === "DEFENSE" && "방어력" }
                                                 { armorFormData.subOption1 === "EFFECTIVENESS" && "효과적중" }
                                                 { armorFormData.subOption1 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
@@ -885,11 +912,14 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { armorFormData.subOption2 === "NONE" && "-" }
                                                 { armorFormData.subOption2 === "ATTACK_PER" && "공격력(%)" }
+                                                { armorFormData.subOption2 === "ATTACK" && "공격력" }
                                                 { armorFormData.subOption2 === "HEALTH" && "생명력" }
                                                 { armorFormData.subOption2 === "HEALTH_PER" && "생명력(%)" }
                                                 { armorFormData.subOption2 === "SPEED" && "속도" }
                                                 { armorFormData.subOption2 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { armorFormData.subOption2 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
+                                                { armorFormData.subOption2 === "DEFENSE_PER" && "방어력(%)" }
+                                                { armorFormData.subOption2 === "DEFENSE" && "방어력" }
                                                 { armorFormData.subOption2 === "EFFECTIVENESS" && "효과적중" }
                                                 { armorFormData.subOption2 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
@@ -909,11 +939,14 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { armorFormData.subOption3 === "NONE" && "-" }
                                                 { armorFormData.subOption3 === "ATTACK_PER" && "공격력(%)" }
+                                                { armorFormData.subOption3 === "ATTACK" && "공격력" }
                                                 { armorFormData.subOption3 === "HEALTH" && "생명력" }
                                                 { armorFormData.subOption3 === "HEALTH_PER" && "생명력(%)" }
                                                 { armorFormData.subOption3 === "SPEED" && "속도" }
                                                 { armorFormData.subOption3 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { armorFormData.subOption3 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
+                                                { armorFormData.subOption3 === "DEFENSE_PER" && "방어력(%)" }
+                                                { armorFormData.subOption3 === "DEFENSE" && "방어력" }
                                                 { armorFormData.subOption3 === "EFFECTIVENESS" && "효과적중" }
                                                 { armorFormData.subOption3 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
@@ -933,11 +966,14 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { armorFormData.subOption4 === "NONE" && "-" }
                                                 { armorFormData.subOption4 === "ATTACK_PER" && "공격력(%)" }
+                                                { armorFormData.subOption4 === "ATTACK" && "공격력" }
                                                 { armorFormData.subOption4 === "HEALTH" && "생명력" }
                                                 { armorFormData.subOption4 === "HEALTH_PER" && "생명력(%)" }
                                                 { armorFormData.subOption4 === "SPEED" && "속도" }
                                                 { armorFormData.subOption4 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { armorFormData.subOption4 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
+                                                { armorFormData.subOption4 === "DEFENSE_PER" && "방어력(%)" }
+                                                { armorFormData.subOption4 === "DEFENSE" && "방어력" }
                                                 { armorFormData.subOption4 === "EFFECTIVENESS" && "효과적중" }
                                                 { armorFormData.subOption4 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
@@ -972,8 +1008,11 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { necklaceFormData.mainOption === "NONE" && "-" }
                                                 { necklaceFormData.mainOption === "ATTACK_PER" && "공격력(%)" }
+                                                { necklaceFormData.mainOption === "ATTACK" && "공격력" }
                                                 { necklaceFormData.mainOption === "HEALTH" && "생명력" }
                                                 { necklaceFormData.mainOption === "HEALTH_PER" && "생명력(%)" }
+                                                { necklaceFormData.mainOption === "DEFENSE_PER" && "방어력(%)" }
+                                                { necklaceFormData.mainOption === "DEFENSE" && "방어력" }
                                                 { necklaceFormData.mainOption === "SPEED" && "속도" }
                                                 { necklaceFormData.mainOption === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { necklaceFormData.mainOption === "CRITICAL_HIT_DAMAGE" && "치명피해" }
@@ -997,8 +1036,11 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { necklaceFormData.subOption1 === "NONE" && "-" }
                                                 { necklaceFormData.subOption1 === "ATTACK_PER" && "공격력(%)" }
+                                                { necklaceFormData.subOption1 === "ATTACK" && "공격력" }
                                                 { necklaceFormData.subOption1 === "HEALTH" && "생명력" }
                                                 { necklaceFormData.subOption1 === "HEALTH_PER" && "생명력(%)" }
+                                                { necklaceFormData.subOption1 === "DEFENSE_PER" && "방어력(%)" }
+                                                { necklaceFormData.subOption1 === "DEFENSE" && "방어력" }
                                                 { necklaceFormData.subOption1 === "SPEED" && "속도" }
                                                 { necklaceFormData.subOption1 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { necklaceFormData.subOption1 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
@@ -1021,8 +1063,11 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { necklaceFormData.subOption2 === "NONE" && "-" }
                                                 { necklaceFormData.subOption2 === "ATTACK_PER" && "공격력(%)" }
+                                                { necklaceFormData.subOption2 === "ATTACK" && "공격력" }
                                                 { necklaceFormData.subOption2 === "HEALTH" && "생명력" }
                                                 { necklaceFormData.subOption2 === "HEALTH_PER" && "생명력(%)" }
+                                                { necklaceFormData.subOption2 === "DEFENSE_PER" && "방어력(%)" }
+                                                { necklaceFormData.subOption2 === "DEFENSE" && "방어력" }
                                                 { necklaceFormData.subOption2 === "SPEED" && "속도" }
                                                 { necklaceFormData.subOption2 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { necklaceFormData.subOption2 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
@@ -1045,8 +1090,11 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { necklaceFormData.subOption3 === "NONE" && "-" }
                                                 { necklaceFormData.subOption3 === "ATTACK_PER" && "공격력(%)" }
+                                                { necklaceFormData.subOption3 === "ATTACK" && "공격력" }
                                                 { necklaceFormData.subOption3 === "HEALTH" && "생명력" }
                                                 { necklaceFormData.subOption3 === "HEALTH_PER" && "생명력(%)" }
+                                                { necklaceFormData.subOption3 === "DEFENSE_PER" && "방어력(%)" }
+                                                { necklaceFormData.subOption3 === "DEFENSE" && "방어력" }
                                                 { necklaceFormData.subOption3 === "SPEED" && "속도" }
                                                 { necklaceFormData.subOption3 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { necklaceFormData.subOption3 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
@@ -1069,8 +1117,11 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { necklaceFormData.subOption4 === "NONE" && "-" }
                                                 { necklaceFormData.subOption4 === "ATTACK_PER" && "공격력(%)" }
+                                                { necklaceFormData.subOption4 === "ATTACK" && "공격력" }
                                                 { necklaceFormData.subOption4 === "HEALTH" && "생명력" }
                                                 { necklaceFormData.subOption4 === "HEALTH_PER" && "생명력(%)" }
+                                                { necklaceFormData.subOption4 === "DEFENSE_PER" && "방어력(%)" }
+                                                { necklaceFormData.subOption4 === "DEFENSE" && "방어력" }
                                                 { necklaceFormData.subOption4 === "SPEED" && "속도" }
                                                 { necklaceFormData.subOption4 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { necklaceFormData.subOption4 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
@@ -1106,8 +1157,11 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { ringFormData.mainOption === "NONE" && "-" }
                                                 { ringFormData.mainOption === "ATTACK_PER" && "공격력(%)" }
+                                                { ringFormData.mainOption === "ATTACK" && "공격력" }
                                                 { ringFormData.mainOption === "HEALTH" && "생명력" }
                                                 { ringFormData.mainOption === "HEALTH_PER" && "생명력(%)" }
+                                                { ringFormData.mainOption === "DEFENSE_PER" && "방어력(%)" }
+                                                { ringFormData.mainOption === "DEFENSE" && "방어력" }
                                                 { ringFormData.mainOption === "SPEED" && "속도" }
                                                 { ringFormData.mainOption === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { ringFormData.mainOption === "CRITICAL_HIT_DAMAGE" && "치명피해" }
@@ -1131,8 +1185,11 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { ringFormData.subOption1 === "NONE" && "-" }
                                                 { ringFormData.subOption1 === "ATTACK_PER" && "공격력(%)" }
+                                                { ringFormData.subOption1 === "ATTACK" && "공격력" }
                                                 { ringFormData.subOption1 === "HEALTH" && "생명력" }
                                                 { ringFormData.subOption1 === "HEALTH_PER" && "생명력(%)" }
+                                                { ringFormData.subOption1 === "DEFENSE_PER" && "방어력(%)" }
+                                                { ringFormData.subOption1 === "DEFENSE" && "방어력" }
                                                 { ringFormData.subOption1 === "SPEED" && "속도" }
                                                 { ringFormData.subOption1 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { ringFormData.subOption1 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
@@ -1155,8 +1212,11 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { ringFormData.subOption2 === "NONE" && "-" }
                                                 { ringFormData.subOption2 === "ATTACK_PER" && "공격력(%)" }
+                                                { ringFormData.subOption2 === "ATTACK" && "공격력" }
                                                 { ringFormData.subOption2 === "HEALTH" && "생명력" }
                                                 { ringFormData.subOption2 === "HEALTH_PER" && "생명력(%)" }
+                                                { ringFormData.subOption2 === "DEFENSE_PER" && "방어력(%)" }
+                                                { ringFormData.subOption2 === "DEFENSE" && "방어력" }
                                                 { ringFormData.subOption2 === "SPEED" && "속도" }
                                                 { ringFormData.subOption2 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { ringFormData.subOption2 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
@@ -1179,8 +1239,11 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { ringFormData.subOption3 === "NONE" && "-" }
                                                 { ringFormData.subOption3 === "ATTACK_PER" && "공격력(%)" }
+                                                { ringFormData.subOption3 === "ATTACK" && "공격력" }
                                                 { ringFormData.subOption3 === "HEALTH" && "생명력" }
                                                 { ringFormData.subOption3 === "HEALTH_PER" && "생명력(%)" }
+                                                { ringFormData.subOption3 === "DEFENSE_PER" && "방어력(%)" }
+                                                { ringFormData.subOption3 === "DEFENSE" && "방어력" }
                                                 { ringFormData.subOption3 === "SPEED" && "속도" }
                                                 { ringFormData.subOption3 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { ringFormData.subOption3 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
@@ -1203,8 +1266,11 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { ringFormData.subOption4 === "NONE" && "-" }
                                                 { ringFormData.subOption4 === "ATTACK_PER" && "공격력(%)" }
+                                                { ringFormData.subOption4 === "ATTACK" && "공격력" }
                                                 { ringFormData.subOption4 === "HEALTH" && "생명력" }
                                                 { ringFormData.subOption4 === "HEALTH_PER" && "생명력(%)" }
+                                                { ringFormData.subOption4 === "DEFENSE_PER" && "방어력(%)" }
+                                                { ringFormData.subOption4 === "DEFENSE" && "방어력" }
                                                 { ringFormData.subOption4 === "SPEED" && "속도" }
                                                 { ringFormData.subOption4 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { ringFormData.subOption4 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
@@ -1240,8 +1306,11 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { bootsFormData.mainOption === "NONE" && "-" }
                                                 { bootsFormData.mainOption === "ATTACK_PER" && "공격력(%)" }
+                                                { bootsFormData.mainOption === "ATTACK" && "공격력" }
                                                 { bootsFormData.mainOption === "HEALTH" && "생명력" }
                                                 { bootsFormData.mainOption === "HEALTH_PER" && "생명력(%)" }
+                                                { bootsFormData.mainOption === "DEFENSE_PER" && "방어력(%)" }
+                                                { bootsFormData.mainOption === "DEFENSE" && "방어력" }
                                                 { bootsFormData.mainOption === "SPEED" && "속도" }
                                                 { bootsFormData.mainOption === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { bootsFormData.mainOption === "CRITICAL_HIT_DAMAGE" && "치명피해" }
@@ -1265,9 +1334,12 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { bootsFormData.subOption1 === "NONE" && "-" }
                                                 { bootsFormData.subOption1 === "ATTACK_PER" && "공격력(%)" }
+                                                { bootsFormData.subOption1 === "ATTACK" && "공격력" }
                                                 { bootsFormData.subOption1 === "HEALTH" && "생명력" }
                                                 { bootsFormData.subOption1 === "HEALTH_PER" && "생명력(%)" }
                                                 { bootsFormData.subOption1 === "SPEED" && "속도" }
+                                                { bootsFormData.subOption1 === "DEFENSE_PER" && "방어력(%)" }
+                                                { bootsFormData.subOption1 === "DEFENSE" && "방어력" }
                                                 { bootsFormData.subOption1 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { bootsFormData.subOption1 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
                                                 { bootsFormData.subOption1 === "EFFECTIVENESS" && "효과적중" }
@@ -1289,8 +1361,11 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { bootsFormData.subOption2 === "NONE" && "-" }
                                                 { bootsFormData.subOption2 === "ATTACK_PER" && "공격력(%)" }
+                                                { bootsFormData.subOption2 === "ATTACK" && "공격력" }
                                                 { bootsFormData.subOption2 === "HEALTH" && "생명력" }
                                                 { bootsFormData.subOption2 === "HEALTH_PER" && "생명력(%)" }
+                                                { bootsFormData.subOption2 === "DEFENSE_PER" && "방어력(%)" }
+                                                { bootsFormData.subOption2 === "DEFENSE" && "방어력" }
                                                 { bootsFormData.subOption2 === "SPEED" && "속도" }
                                                 { bootsFormData.subOption2 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { bootsFormData.subOption2 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
@@ -1313,9 +1388,12 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { bootsFormData.subOption3 === "NONE" && "-" }
                                                 { bootsFormData.subOption3 === "ATTACK_PER" && "공격력(%)" }
+                                                { bootsFormData.subOption3 === "ATTACK" && "공격력" }
                                                 { bootsFormData.subOption3 === "HEALTH" && "생명력" }
                                                 { bootsFormData.subOption3 === "HEALTH_PER" && "생명력(%)" }
                                                 { bootsFormData.subOption3 === "SPEED" && "속도" }
+                                                { bootsFormData.subOption3 === "DEFENSE_PER" && "방어력(%)" }
+                                                { bootsFormData.subOption3 === "DEFENSE" && "방어력" }
                                                 { bootsFormData.subOption3 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { bootsFormData.subOption3 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
                                                 { bootsFormData.subOption3 === "EFFECTIVENESS" && "효과적중" }
@@ -1337,9 +1415,12 @@ const EstimateHeroPage = () => {
                                             <EstimateEquipmentDescriptionLabel>
                                                 { bootsFormData.subOption4 === "NONE" && "-" }
                                                 { bootsFormData.subOption4 === "ATTACK_PER" && "공격력(%)" }
+                                                { bootsFormData.subOption4 === "ATTACK" && "공격력" }
                                                 { bootsFormData.subOption4 === "HEALTH" && "생명력" }
                                                 { bootsFormData.subOption4 === "HEALTH_PER" && "생명력(%)" }
                                                 { bootsFormData.subOption4 === "SPEED" && "속도" }
+                                                { bootsFormData.subOption4 === "DEFENSE_PER" && "방어력(%)" }
+                                                { bootsFormData.subOption4 === "DEFENSE" && "방어력" }
                                                 { bootsFormData.subOption4 === "CRITICAL_HIT_CHANCE" && "치명확률" }
                                                 { bootsFormData.subOption4 === "CRITICAL_HIT_DAMAGE" && "치명피해" }
                                                 { bootsFormData.subOption4 === "EFFECTIVENESS" && "효과적중" }
