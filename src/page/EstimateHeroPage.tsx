@@ -67,7 +67,7 @@ import { HeroStatEnum} from "@/types/Hero.ts";
 
 import {useEffect, useRef, useState} from "react";
 import {HeroShow, retrieveAllHero, retrieveBaseStat} from "@/service/api/heroApi.ts";
-import { EquipmentApplyStat } from "@/types/Equipment.ts";
+import {EquipmentApplyStat, EquipSetEnum} from "@/types/Equipment.ts";
 
 const EstimateHeroPage = () => {
     const [ item, setItem ] = useState("none");
@@ -647,7 +647,8 @@ const EstimateHeroPage = () => {
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
                                             <EstimateEquipmentDescriptionLabel>
-                                                { weaponFormData.setEffect === "NONE" ? "세트효과" : weaponFormData.setEffect }
+                                                { weaponFormData.setEffect === "NONE" && "세트효과" }
+                                                { Object.entries( EquipSetEnum ).map( ( [key, value] ) => (key === weaponFormData.setEffect && value)) }
                                             </EstimateEquipmentDescriptionLabel>
                                         </EstimateEquipmentDescription>
                                     </EstimateEquipmentDescriptionLine>
@@ -759,7 +760,10 @@ const EstimateHeroPage = () => {
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> { helmetFormData.setEffect === "NONE" ? "세트효과" : helmetFormData.setEffect } </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionLabel>
+                                                { helmetFormData.setEffect === "NONE" && "세트효과" }
+                                                { Object.entries( EquipSetEnum ).map( ( [key, value] ) => (key === helmetFormData.setEffect && value)) }
+                                            </EstimateEquipmentDescriptionLabel>
                                         </EstimateEquipmentDescription>
                                     </EstimateEquipmentDescriptionLine>
                                     <EstimateEquipmentIcon>
@@ -870,7 +874,10 @@ const EstimateHeroPage = () => {
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> { armorFormData.setEffect === "NONE" ? "세트효과" : armorFormData.setEffect } </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionLabel>
+                                                { armorFormData.setEffect === "NONE" && "세트효과"}
+                                                { Object.entries( EquipSetEnum ).map( ( [key, value] ) => (key === armorFormData.setEffect && value)) }
+                                            </EstimateEquipmentDescriptionLabel>
                                         </EstimateEquipmentDescription>
                                     </EstimateEquipmentDescriptionLine>
                                 </EstimateEquipmentRow>
@@ -1003,7 +1010,10 @@ const EstimateHeroPage = () => {
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> { necklaceFormData.setEffect === "NONE" ? "세트효과" : necklaceFormData.setEffect } </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionLabel>
+                                                { necklaceFormData.setEffect === "NONE" && "세트효과" }
+                                                { Object.entries( EquipSetEnum ).map( ( [key, value] ) => (key === necklaceFormData.setEffect && value)) }
+                                            </EstimateEquipmentDescriptionLabel>
                                         </EstimateEquipmentDescription>
                                     </EstimateEquipmentDescriptionLine>
                                     <EstimateEquipmentIcon>
@@ -1134,7 +1144,10 @@ const EstimateHeroPage = () => {
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> { ringFormData.setEffect === "NONE" ? "세트효과" : necklaceFormData.setEffect } </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionLabel>
+                                                { ringFormData.setEffect === "NONE" && "세트효과" }
+                                                { Object.entries( EquipSetEnum ).map( ( [key, value] ) => (key === ringFormData.setEffect && value)) }
+                                            </EstimateEquipmentDescriptionLabel>
                                         </EstimateEquipmentDescription>
                                     </EstimateEquipmentDescriptionLine>
                                     <EstimateEquipmentIcon>
@@ -1265,7 +1278,10 @@ const EstimateHeroPage = () => {
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
-                                            <EstimateEquipmentDescriptionLabel> { bootsFormData.setEffect === "NONE" ? "세트효과" : necklaceFormData.setEffect } </EstimateEquipmentDescriptionLabel>
+                                            <EstimateEquipmentDescriptionLabel>
+                                                { bootsFormData.setEffect === "NONE" && "세트효과" }
+                                                { Object.entries( EquipSetEnum ).map( ( [key, value] ) => (key === bootsFormData.setEffect && value)) }
+                                            </EstimateEquipmentDescriptionLabel>
                                         </EstimateEquipmentDescription>
                                     </EstimateEquipmentDescriptionLine>
                                 </EstimateEquipmentRow>
