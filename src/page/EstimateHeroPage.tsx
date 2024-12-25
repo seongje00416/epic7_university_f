@@ -645,15 +645,11 @@ const EstimateHeroPage = () => {
                                                 { weaponFormData.subOption1 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { weaponFormData.subOption1 === "NONE" && "-" }
-                                                { weaponFormData.subOption1 === "ATTACK_PER" && weaponFormData.subValue1 + "%" }
-                                                { weaponFormData.subOption1 === "HEALTH" && weaponFormData.subValue1 }
-                                                { weaponFormData.subOption1 === "HEALTH_PER" && weaponFormData.subValue1  + "%" }
-                                                { weaponFormData.subOption1 === "SPEED" && weaponFormData.subValue1 }
-                                                { weaponFormData.subOption1 === "CRITICAL_HIT_CHANCE" && weaponFormData.subValue1  + "%" }
-                                                { weaponFormData.subOption1 === "CRITICAL_HIT_DAMAGE" && weaponFormData.subValue1  + "%" }
-                                                { weaponFormData.subOption1 === "EFFECTIVENESS" && weaponFormData.subValue1  + "%" }
-                                                { weaponFormData.subOption1 === "EFFECT_RESISTANCE" && weaponFormData.subValue1  + "%" }
+                                                {
+                                                    weaponFormData.subOption1 === "NONE" ?
+                                                        "-" : weaponFormData.subOption1 === "HEALTH" || weaponFormData.subOption1 === "ATTACK" || weaponFormData.subOption1 === "DEFENSE" ?
+                                                            weaponFormData.subValue1 : weaponFormData.subValue1 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -672,15 +668,11 @@ const EstimateHeroPage = () => {
                                                 { weaponFormData.subOption2 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { weaponFormData.subOption2 === "NONE" && "-" }
-                                                { weaponFormData.subOption2 === "ATTACK_PER" && weaponFormData.subValue2 + "%" }
-                                                { weaponFormData.subOption2 === "HEALTH" && weaponFormData.subValue2 }
-                                                { weaponFormData.subOption2 === "HEALTH_PER" && weaponFormData.subValue2  + "%" }
-                                                { weaponFormData.subOption2 === "SPEED" && weaponFormData.subValue2 }
-                                                { weaponFormData.subOption2 === "CRITICAL_HIT_CHANCE" && weaponFormData.subValue2  + "%" }
-                                                { weaponFormData.subOption2 === "CRITICAL_HIT_DAMAGE" && weaponFormData.subValue2  + "%" }
-                                                { weaponFormData.subOption2 === "EFFECTIVENESS" && weaponFormData.subValue2  + "%" }
-                                                { weaponFormData.subOption2 === "EFFECT_RESISTANCE" && weaponFormData.subValue2  + "%" }
+                                                {
+                                                    weaponFormData.subOption2 === "NONE" ?
+                                                        "-" : weaponFormData.subOption2 === "HEALTH" || weaponFormData.subOption2 === "ATTACK" || weaponFormData.subOption2 === "DEFENSE" ?
+                                                            weaponFormData.subValue2 : weaponFormData.subValue2 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -699,15 +691,11 @@ const EstimateHeroPage = () => {
                                                 { weaponFormData.subOption3 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { weaponFormData.subOption3 === "NONE" && "-" }
-                                                { weaponFormData.subOption3 === "ATTACK_PER" && weaponFormData.subValue3 + "%" }
-                                                { weaponFormData.subOption3 === "HEALTH" && weaponFormData.subValue3 }
-                                                { weaponFormData.subOption3 === "HEALTH_PER" && weaponFormData.subValue3  + "%" }
-                                                { weaponFormData.subOption3 === "SPEED" && weaponFormData.subValue3 }
-                                                { weaponFormData.subOption3 === "CRITICAL_HIT_CHANCE" && weaponFormData.subValue3  + "%" }
-                                                { weaponFormData.subOption3 === "CRITICAL_HIT_DAMAGE" && weaponFormData.subValue3  + "%" }
-                                                { weaponFormData.subOption3 === "EFFECTIVENESS" && weaponFormData.subValue3  + "%" }
-                                                { weaponFormData.subOption3 === "EFFECT_RESISTANCE" && weaponFormData.subValue3  + "%" }
+                                                {
+                                                    weaponFormData.subOption3 === "NONE" ?
+                                                        "-" : weaponFormData.subOption3 === "HEALTH" || weaponFormData.subOption3 === "ATTACK" || weaponFormData.subOption3 === "DEFENSE" ?
+                                                            weaponFormData.subValue3 : weaponFormData.subValue3 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -726,15 +714,11 @@ const EstimateHeroPage = () => {
                                                 { weaponFormData.subOption4 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { weaponFormData.subOption4 === "NONE" && "-" }
-                                                { weaponFormData.subOption4 === "ATTACK_PER" && weaponFormData.subValue4 + "%" }
-                                                { weaponFormData.subOption4 === "HEALTH" && weaponFormData.subValue4 }
-                                                { weaponFormData.subOption4 === "HEALTH_PER" && weaponFormData.subValue4  + "%" }
-                                                { weaponFormData.subOption4 === "SPEED" && weaponFormData.subValue4 }
-                                                { weaponFormData.subOption4 === "CRITICAL_HIT_CHANCE" && weaponFormData.subValue4  + "%" }
-                                                { weaponFormData.subOption4 === "CRITICAL_HIT_DAMAGE" && weaponFormData.subValue4  + "%" }
-                                                { weaponFormData.subOption4 === "EFFECTIVENESS" && weaponFormData.subValue4  + "%" }
-                                                { weaponFormData.subOption4 === "EFFECT_RESISTANCE" && weaponFormData.subValue4  + "%" }
+                                                {
+                                                    weaponFormData.subOption4 === "NONE" ?
+                                                        "-" : weaponFormData.subOption4 === "HEALTH" || weaponFormData.subOption4 === "ATTACK" || weaponFormData.subOption4 === "DEFENSE" ?
+                                                            weaponFormData.subValue4 : weaponFormData.subValue4 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -771,15 +755,11 @@ const EstimateHeroPage = () => {
                                                 { helmetFormData.subOption1 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { helmetFormData.subOption1 === "NONE" && "-" }
-                                                { helmetFormData.subOption1 === "ATTACK_PER" && helmetFormData.subValue1 + "%" }
-                                                { helmetFormData.subOption1 === "HEALTH" && helmetFormData.subValue1 }
-                                                { helmetFormData.subOption1 === "HEALTH_PER" && helmetFormData.subValue1  + "%" }
-                                                { helmetFormData.subOption1 === "SPEED" && helmetFormData.subValue1 }
-                                                { helmetFormData.subOption1 === "CRITICAL_HIT_CHANCE" && helmetFormData.subValue1  + "%" }
-                                                { helmetFormData.subOption1 === "CRITICAL_HIT_DAMAGE" && helmetFormData.subValue1  + "%" }
-                                                { helmetFormData.subOption1 === "EFFECTIVENESS" && helmetFormData.subValue1  + "%" }
-                                                { helmetFormData.subOption1 === "EFFECT_RESISTANCE" && helmetFormData.subValue1  + "%" }
+                                                {
+                                                    helmetFormData.subOption1 === "NONE" ?
+                                                        "-" : helmetFormData.subOption1 === "HEALTH" || helmetFormData.subOption1 === "ATTACK" || helmetFormData.subOption1 === "DEFENSE" ?
+                                                            helmetFormData.subValue1 : helmetFormData.subValue1 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -798,15 +778,11 @@ const EstimateHeroPage = () => {
                                                 { helmetFormData.subOption2 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { helmetFormData.subOption2 === "NONE" && "-" }
-                                                { helmetFormData.subOption2 === "ATTACK_PER" && helmetFormData.subValue2 + "%" }
-                                                { helmetFormData.subOption2 === "HEALTH" && helmetFormData.subValue2 }
-                                                { helmetFormData.subOption2 === "HEALTH_PER" && helmetFormData.subValue2  + "%" }
-                                                { helmetFormData.subOption2 === "SPEED" && helmetFormData.subValue2 }
-                                                { helmetFormData.subOption2 === "CRITICAL_HIT_CHANCE" && helmetFormData.subValue2  + "%" }
-                                                { helmetFormData.subOption2 === "CRITICAL_HIT_DAMAGE" && helmetFormData.subValue2  + "%" }
-                                                { helmetFormData.subOption2 === "EFFECTIVENESS" && helmetFormData.subValue2  + "%" }
-                                                { helmetFormData.subOption2 === "EFFECT_RESISTANCE" && helmetFormData.subValue2  + "%" }
+                                                {
+                                                    helmetFormData.subOption2 === "NONE" ?
+                                                        "-" : helmetFormData.subOption2 === "HEALTH" || helmetFormData.subOption2 === "ATTACK" || helmetFormData.subOption2 === "DEFENSE" ?
+                                                            helmetFormData.subValue2 : helmetFormData.subValue2 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -825,15 +801,11 @@ const EstimateHeroPage = () => {
                                                 { helmetFormData.subOption3 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { helmetFormData.subOption3 === "NONE" && "-" }
-                                                { helmetFormData.subOption3 === "ATTACK_PER" && helmetFormData.subValue3 + "%" }
-                                                { helmetFormData.subOption3 === "HEALTH" && helmetFormData.subValue3 }
-                                                { helmetFormData.subOption3 === "HEALTH_PER" && helmetFormData.subValue3  + "%" }
-                                                { helmetFormData.subOption3 === "SPEED" && helmetFormData.subValue3 }
-                                                { helmetFormData.subOption3 === "CRITICAL_HIT_CHANCE" && helmetFormData.subValue3  + "%" }
-                                                { helmetFormData.subOption3 === "CRITICAL_HIT_DAMAGE" && helmetFormData.subValue3  + "%" }
-                                                { helmetFormData.subOption3 === "EFFECTIVENESS" && helmetFormData.subValue3  + "%" }
-                                                { helmetFormData.subOption3 === "EFFECT_RESISTANCE" && helmetFormData.subValue3  + "%" }
+                                                {
+                                                    helmetFormData.subOption3 === "NONE" ?
+                                                        "-" : helmetFormData.subOption3 === "HEALTH" || helmetFormData.subOption3 === "ATTACK" || helmetFormData.subOption3 === "DEFENSE" ?
+                                                            helmetFormData.subValue3 : helmetFormData.subValue3 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -852,15 +824,11 @@ const EstimateHeroPage = () => {
                                                 { helmetFormData.subOption4 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { helmetFormData.subOption4 === "NONE" && "-" }
-                                                { helmetFormData.subOption4 === "ATTACK_PER" && helmetFormData.subValue4 + "%" }
-                                                { helmetFormData.subOption4 === "HEALTH" && helmetFormData.subValue4 }
-                                                { helmetFormData.subOption4 === "HEALTH_PER" && helmetFormData.subValue4  + "%" }
-                                                { helmetFormData.subOption4 === "SPEED" && helmetFormData.subValue4 }
-                                                { helmetFormData.subOption4 === "CRITICAL_HIT_CHANCE" && helmetFormData.subValue4  + "%" }
-                                                { helmetFormData.subOption4 === "CRITICAL_HIT_DAMAGE" && helmetFormData.subValue4  + "%" }
-                                                { helmetFormData.subOption4 === "EFFECTIVENESS" && helmetFormData.subValue4  + "%" }
-                                                { helmetFormData.subOption4 === "EFFECT_RESISTANCE" && helmetFormData.subValue4  + "%" }
+                                                {
+                                                    helmetFormData.subOption4 === "NONE" ?
+                                                        "-" : helmetFormData.subOption4 === "HEALTH" || helmetFormData.subOption4 === "ATTACK" || helmetFormData.subOption4 === "DEFENSE" ?
+                                                            helmetFormData.subValue4 : helmetFormData.subValue4 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -897,15 +865,11 @@ const EstimateHeroPage = () => {
                                                 { armorFormData.subOption1 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { armorFormData.subOption1 === "NONE" && "-" }
-                                                { armorFormData.subOption1 === "ATTACK_PER" && armorFormData.subValue1 + "%" }
-                                                { armorFormData.subOption1 === "HEALTH" && armorFormData.subValue1 }
-                                                { armorFormData.subOption1 === "HEALTH_PER" && armorFormData.subValue1  + "%" }
-                                                { armorFormData.subOption1 === "SPEED" && armorFormData.subValue1 }
-                                                { armorFormData.subOption1 === "CRITICAL_HIT_CHANCE" && armorFormData.subValue1  + "%" }
-                                                { armorFormData.subOption1 === "CRITICAL_HIT_DAMAGE" && armorFormData.subValue1  + "%" }
-                                                { armorFormData.subOption1 === "EFFECTIVENESS" && armorFormData.subValue1  + "%" }
-                                                { armorFormData.subOption1 === "EFFECT_RESISTANCE" && armorFormData.subValue1  + "%" }
+                                                {
+                                                    armorFormData.subOption1 === "NONE" ?
+                                                        "-" : armorFormData.subOption1 === "HEALTH" || armorFormData.subOption1 === "ATTACK" || armorFormData.subOption1 === "DEFENSE" ?
+                                                            armorFormData.subValue1 : armorFormData.subValue1 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -924,15 +888,11 @@ const EstimateHeroPage = () => {
                                                 { armorFormData.subOption2 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { armorFormData.subOption2 === "NONE" && "-" }
-                                                { armorFormData.subOption2 === "ATTACK_PER" && armorFormData.subValue2 + "%" }
-                                                { armorFormData.subOption2 === "HEALTH" && armorFormData.subValue2 }
-                                                { armorFormData.subOption2 === "HEALTH_PER" && armorFormData.subValue2  + "%" }
-                                                { armorFormData.subOption2 === "SPEED" && armorFormData.subValue2 }
-                                                { armorFormData.subOption2 === "CRITICAL_HIT_CHANCE" && armorFormData.subValue2  + "%" }
-                                                { armorFormData.subOption2 === "CRITICAL_HIT_DAMAGE" && armorFormData.subValue2  + "%" }
-                                                { armorFormData.subOption2 === "EFFECTIVENESS" && armorFormData.subValue2  + "%" }
-                                                { armorFormData.subOption2 === "EFFECT_RESISTANCE" && armorFormData.subValue2  + "%" }
+                                                {
+                                                    armorFormData.subOption2 === "NONE" ?
+                                                        "-" : armorFormData.subOption2 === "HEALTH" || armorFormData.subOption2 === "ATTACK" || armorFormData.subOption2 === "DEFENSE" ?
+                                                            armorFormData.subValue2 : armorFormData.subValue2 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -951,15 +911,11 @@ const EstimateHeroPage = () => {
                                                 { armorFormData.subOption3 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { armorFormData.subOption3 === "NONE" && "-" }
-                                                { armorFormData.subOption3 === "ATTACK_PER" && armorFormData.subValue3 + "%" }
-                                                { armorFormData.subOption3 === "HEALTH" && armorFormData.subValue3 }
-                                                { armorFormData.subOption3 === "HEALTH_PER" && armorFormData.subValue3  + "%" }
-                                                { armorFormData.subOption3 === "SPEED" && armorFormData.subValue3 }
-                                                { armorFormData.subOption3 === "CRITICAL_HIT_CHANCE" && armorFormData.subValue3  + "%" }
-                                                { armorFormData.subOption3 === "CRITICAL_HIT_DAMAGE" && armorFormData.subValue3  + "%" }
-                                                { armorFormData.subOption3 === "EFFECTIVENESS" && armorFormData.subValue3  + "%" }
-                                                { armorFormData.subOption3 === "EFFECT_RESISTANCE" && armorFormData.subValue3  + "%" }
+                                                {
+                                                    armorFormData.subOption3 === "NONE" ?
+                                                        "-" : armorFormData.subOption3 === "HEALTH" || armorFormData.subOption3 === "ATTACK" || armorFormData.subOption3 === "DEFENSE" ?
+                                                            armorFormData.subValue3 : armorFormData.subValue3 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -978,15 +934,11 @@ const EstimateHeroPage = () => {
                                                 { armorFormData.subOption4 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { armorFormData.subOption4 === "NONE" && "-" }
-                                                { armorFormData.subOption4 === "ATTACK_PER" && armorFormData.subValue4 + "%" }
-                                                { armorFormData.subOption4 === "HEALTH" && armorFormData.subValue4 }
-                                                { armorFormData.subOption4 === "HEALTH_PER" && armorFormData.subValue4  + "%" }
-                                                { armorFormData.subOption4 === "SPEED" && armorFormData.subValue4 }
-                                                { armorFormData.subOption4 === "CRITICAL_HIT_CHANCE" && armorFormData.subValue4  + "%" }
-                                                { armorFormData.subOption4 === "CRITICAL_HIT_DAMAGE" && armorFormData.subValue4  + "%" }
-                                                { armorFormData.subOption4 === "EFFECTIVENESS" && armorFormData.subValue4  + "%" }
-                                                { armorFormData.subOption4 === "EFFECT_RESISTANCE" && armorFormData.subValue4  + "%" }
+                                                {
+                                                    armorFormData.subOption4 === "NONE" ?
+                                                        "-" : armorFormData.subOption4 === "HEALTH" || armorFormData.subOption4 === "ATTACK" || armorFormData.subOption4 === "DEFENSE" ?
+                                                            armorFormData.subValue4 : armorFormData.subValue4 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -1020,15 +972,11 @@ const EstimateHeroPage = () => {
                                                 { necklaceFormData.mainOption === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { necklaceFormData.mainOption === "NONE" && "-" }
-                                                { necklaceFormData.mainOption === "ATTACK_PER" && necklaceFormData.mainValue + "%" }
-                                                { necklaceFormData.mainOption === "HEALTH" && necklaceFormData.mainValue }
-                                                { necklaceFormData.mainOption === "HEALTH_PER" && necklaceFormData.mainValue  + "%" }
-                                                { necklaceFormData.mainOption === "SPEED" && necklaceFormData.mainValue }
-                                                { necklaceFormData.mainOption === "CRITICAL_HIT_CHANCE" && necklaceFormData.mainValue  + "%" }
-                                                { necklaceFormData.mainOption === "CRITICAL_HIT_DAMAGE" && necklaceFormData.mainValue  + "%" }
-                                                { necklaceFormData.mainOption === "EFFECTIVENESS" && necklaceFormData.mainValue  + "%" }
-                                                { necklaceFormData.mainOption === "EFFECT_RESISTANCE" && necklaceFormData.mainValue  + "%" }
+                                                {
+                                                    necklaceFormData.mainOption === "NONE" ?
+                                                        "-" : necklaceFormData.mainOption === "HEALTH" || necklaceFormData.mainOption === "ATTACK" || necklaceFormData.mainOption === "DEFENSE" ?
+                                                            necklaceFormData.mainValue : necklaceFormData.mainValue + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <DescriptionLine />
@@ -1048,15 +996,11 @@ const EstimateHeroPage = () => {
                                                 { necklaceFormData.subOption1 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { necklaceFormData.subOption1 === "NONE" && "-" }
-                                                { necklaceFormData.subOption1 === "ATTACK_PER" && necklaceFormData.subValue1 + "%" }
-                                                { necklaceFormData.subOption1 === "HEALTH" && necklaceFormData.subValue1 }
-                                                { necklaceFormData.subOption1 === "HEALTH_PER" && necklaceFormData.subValue1  + "%" }
-                                                { necklaceFormData.subOption1 === "SPEED" && necklaceFormData.subValue1 }
-                                                { necklaceFormData.subOption1 === "CRITICAL_HIT_CHANCE" && necklaceFormData.subValue1  + "%" }
-                                                { necklaceFormData.subOption1 === "CRITICAL_HIT_DAMAGE" && necklaceFormData.subValue1  + "%" }
-                                                { necklaceFormData.subOption1 === "EFFECTIVENESS" && necklaceFormData.subValue1  + "%" }
-                                                { necklaceFormData.subOption1 === "EFFECT_RESISTANCE" && necklaceFormData.subValue1  + "%" }
+                                                {
+                                                    necklaceFormData.subOption1 === "NONE" ?
+                                                        "-" : necklaceFormData.subOption1 === "HEALTH" || necklaceFormData.subOption1 === "ATTACK" || necklaceFormData.subOption1 === "DEFENSE" ?
+                                                            necklaceFormData.subValue1 : necklaceFormData.subValue1 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -1075,15 +1019,11 @@ const EstimateHeroPage = () => {
                                                 { necklaceFormData.subOption2 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { necklaceFormData.subOption2 === "NONE" && "-" }
-                                                { necklaceFormData.subOption2 === "ATTACK_PER" && necklaceFormData.subValue2 + "%" }
-                                                { necklaceFormData.subOption2 === "HEALTH" && necklaceFormData.subValue2 }
-                                                { necklaceFormData.subOption2 === "HEALTH_PER" && necklaceFormData.subValue2  + "%" }
-                                                { necklaceFormData.subOption2 === "SPEED" && necklaceFormData.subValue2 }
-                                                { necklaceFormData.subOption2 === "CRITICAL_HIT_CHANCE" && necklaceFormData.subValue2  + "%" }
-                                                { necklaceFormData.subOption2 === "CRITICAL_HIT_DAMAGE" && necklaceFormData.subValue2  + "%" }
-                                                { necklaceFormData.subOption2 === "EFFECTIVENESS" && necklaceFormData.subValue2  + "%" }
-                                                { necklaceFormData.subOption2 === "EFFECT_RESISTANCE" && necklaceFormData.subValue2  + "%" }
+                                                {
+                                                    necklaceFormData.subOption2 === "NONE" ?
+                                                        "-" : necklaceFormData.subOption2 === "HEALTH" || necklaceFormData.subOption2 === "ATTACK" || necklaceFormData.subOption2 === "DEFENSE" ?
+                                                            necklaceFormData.subValue2 : necklaceFormData.subValue2 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -1102,15 +1042,11 @@ const EstimateHeroPage = () => {
                                                 { necklaceFormData.subOption3 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { necklaceFormData.subOption3 === "NONE" && "-" }
-                                                { necklaceFormData.subOption3 === "ATTACK_PER" && necklaceFormData.subValue3 + "%" }
-                                                { necklaceFormData.subOption3 === "HEALTH" && necklaceFormData.subValue3 }
-                                                { necklaceFormData.subOption3 === "HEALTH_PER" && necklaceFormData.subValue3  + "%" }
-                                                { necklaceFormData.subOption3 === "SPEED" && necklaceFormData.subValue3 }
-                                                { necklaceFormData.subOption3 === "CRITICAL_HIT_CHANCE" && necklaceFormData.subValue3  + "%" }
-                                                { necklaceFormData.subOption3 === "CRITICAL_HIT_DAMAGE" && necklaceFormData.subValue3  + "%" }
-                                                { necklaceFormData.subOption3 === "EFFECTIVENESS" && necklaceFormData.subValue3  + "%" }
-                                                { necklaceFormData.subOption3 === "EFFECT_RESISTANCE" && necklaceFormData.subValue3  + "%" }
+                                                {
+                                                    necklaceFormData.subOption3 === "NONE" ?
+                                                        "-" : necklaceFormData.subOption3 === "HEALTH" || necklaceFormData.subOption3 === "ATTACK" || necklaceFormData.subOption3 === "DEFENSE" ?
+                                                            necklaceFormData.subValue3 : necklaceFormData.subValue3 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -1129,15 +1065,11 @@ const EstimateHeroPage = () => {
                                                 { necklaceFormData.subOption4 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { necklaceFormData.subOption4 === "NONE" && "-" }
-                                                { necklaceFormData.subOption4 === "ATTACK_PER" && necklaceFormData.subValue4 + "%" }
-                                                { necklaceFormData.subOption4 === "HEALTH" && necklaceFormData.subValue4 }
-                                                { necklaceFormData.subOption4 === "HEALTH_PER" && necklaceFormData.subValue4  + "%" }
-                                                { necklaceFormData.subOption4 === "SPEED" && necklaceFormData.subValue4 }
-                                                { necklaceFormData.subOption4 === "CRITICAL_HIT_CHANCE" && necklaceFormData.subValue4  + "%" }
-                                                { necklaceFormData.subOption4 === "CRITICAL_HIT_DAMAGE" && necklaceFormData.subValue4  + "%" }
-                                                { necklaceFormData.subOption4 === "EFFECTIVENESS" && necklaceFormData.subValue4  + "%" }
-                                                { necklaceFormData.subOption4 === "EFFECT_RESISTANCE" && necklaceFormData.subValue4  + "%" }
+                                                {
+                                                    necklaceFormData.subOption4 === "NONE" ?
+                                                        "-" : necklaceFormData.subOption4 === "HEALTH" || necklaceFormData.subOption4 === "ATTACK" || necklaceFormData.subOption4 === "DEFENSE" ?
+                                                            necklaceFormData.subValue4 : necklaceFormData.subValue4 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -1169,15 +1101,11 @@ const EstimateHeroPage = () => {
                                                 { ringFormData.mainOption === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { ringFormData.mainOption === "NONE" && "-" }
-                                                { ringFormData.mainOption === "ATTACK_PER" && ringFormData.mainValue + "%" }
-                                                { ringFormData.mainOption === "HEALTH" && ringFormData.mainValue }
-                                                { ringFormData.mainOption === "HEALTH_PER" && ringFormData.mainValue  + "%" }
-                                                { ringFormData.mainOption === "SPEED" && ringFormData.mainValue }
-                                                { ringFormData.mainOption === "CRITICAL_HIT_CHANCE" && ringFormData.mainValue  + "%" }
-                                                { ringFormData.mainOption === "CRITICAL_HIT_DAMAGE" && ringFormData.mainValue  + "%" }
-                                                { ringFormData.mainOption === "EFFECTIVENESS" && ringFormData.mainValue  + "%" }
-                                                { ringFormData.mainOption === "EFFECT_RESISTANCE" && ringFormData.mainValue  + "%" }
+                                                {
+                                                    ringFormData.mainOption === "NONE" ?
+                                                        "-" : ringFormData.mainOption === "HEALTH" || ringFormData.mainOption === "ATTACK" || ringFormData.mainOption === "DEFENSE" ?
+                                                            ringFormData.mainValue : ringFormData.mainValue + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <DescriptionLine />
@@ -1197,15 +1125,11 @@ const EstimateHeroPage = () => {
                                                 { ringFormData.subOption1 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { ringFormData.subOption1 === "NONE" && "-" }
-                                                { ringFormData.subOption1 === "ATTACK_PER" && ringFormData.subValue1 + "%" }
-                                                { ringFormData.subOption1 === "HEALTH" && ringFormData.subValue1 }
-                                                { ringFormData.subOption1 === "HEALTH_PER" && ringFormData.subValue1  + "%" }
-                                                { ringFormData.subOption1 === "SPEED" && ringFormData.subValue1 }
-                                                { ringFormData.subOption1 === "CRITICAL_HIT_CHANCE" && ringFormData.subValue1  + "%" }
-                                                { ringFormData.subOption1 === "CRITICAL_HIT_DAMAGE" && ringFormData.subValue1  + "%" }
-                                                { ringFormData.subOption1 === "EFFECTIVENESS" && ringFormData.subValue1  + "%" }
-                                                { ringFormData.subOption1 === "EFFECT_RESISTANCE" && ringFormData.subValue1  + "%" }
+                                                {
+                                                    ringFormData.subOption1 === "NONE" ?
+                                                        "-" : ringFormData.subOption1 === "HEALTH" || ringFormData.subOption1 === "ATTACK" || ringFormData.subOption1 === "DEFENSE" ?
+                                                            ringFormData.subValue1 : ringFormData.subValue1 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -1224,15 +1148,11 @@ const EstimateHeroPage = () => {
                                                 { ringFormData.subOption2 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { ringFormData.subOption2 === "NONE" && "-" }
-                                                { ringFormData.subOption2 === "ATTACK_PER" && ringFormData.subValue2 + "%" }
-                                                { ringFormData.subOption2 === "HEALTH" && ringFormData.subValue2 }
-                                                { ringFormData.subOption2 === "HEALTH_PER" && ringFormData.subValue2  + "%" }
-                                                { ringFormData.subOption2 === "SPEED" && ringFormData.subValue2 }
-                                                { ringFormData.subOption2 === "CRITICAL_HIT_CHANCE" && ringFormData.subValue2  + "%" }
-                                                { ringFormData.subOption2 === "CRITICAL_HIT_DAMAGE" && ringFormData.subValue2  + "%" }
-                                                { ringFormData.subOption2 === "EFFECTIVENESS" && ringFormData.subValue2  + "%" }
-                                                { ringFormData.subOption2 === "EFFECT_RESISTANCE" && ringFormData.subValue2  + "%" }
+                                                {
+                                                    ringFormData.subOption2 === "NONE" ?
+                                                        "-" : ringFormData.subOption2 === "HEALTH" || ringFormData.subOption2 === "ATTACK" || ringFormData.subOption2 === "DEFENSE" ?
+                                                            ringFormData.subValue2 : ringFormData.subValue2 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -1251,15 +1171,11 @@ const EstimateHeroPage = () => {
                                                 { ringFormData.subOption3 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { ringFormData.subOption3 === "NONE" && "-" }
-                                                { ringFormData.subOption3 === "ATTACK_PER" && ringFormData.subValue3 + "%" }
-                                                { ringFormData.subOption3 === "HEALTH" && ringFormData.subValue3 }
-                                                { ringFormData.subOption3 === "HEALTH_PER" && ringFormData.subValue3  + "%" }
-                                                { ringFormData.subOption3 === "SPEED" && ringFormData.subValue3 }
-                                                { ringFormData.subOption3 === "CRITICAL_HIT_CHANCE" && ringFormData.subValue3  + "%" }
-                                                { ringFormData.subOption3 === "CRITICAL_HIT_DAMAGE" && ringFormData.subValue3  + "%" }
-                                                { ringFormData.subOption3 === "EFFECTIVENESS" && ringFormData.subValue3  + "%" }
-                                                { ringFormData.subOption3 === "EFFECT_RESISTANCE" && ringFormData.subValue3  + "%" }
+                                                {
+                                                    ringFormData.subOption3 === "NONE" ?
+                                                        "-" : ringFormData.subOption3 === "HEALTH" || ringFormData.subOption3 === "ATTACK" || ringFormData.subOption3 === "DEFENSE" ?
+                                                            ringFormData.subValue3 : ringFormData.subValue3 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -1278,15 +1194,11 @@ const EstimateHeroPage = () => {
                                                 { ringFormData.subOption4 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { ringFormData.subOption4 === "NONE" && "-" }
-                                                { ringFormData.subOption4 === "ATTACK_PER" && ringFormData.subValue4 + "%" }
-                                                { ringFormData.subOption4 === "HEALTH" && ringFormData.subValue4 }
-                                                { ringFormData.subOption4 === "HEALTH_PER" && ringFormData.subValue4  + "%" }
-                                                { ringFormData.subOption4 === "SPEED" && ringFormData.subValue4 }
-                                                { ringFormData.subOption4 === "CRITICAL_HIT_CHANCE" && ringFormData.subValue4  + "%" }
-                                                { ringFormData.subOption4 === "CRITICAL_HIT_DAMAGE" && ringFormData.subValue4  + "%" }
-                                                { ringFormData.subOption4 === "EFFECTIVENESS" && ringFormData.subValue4  + "%" }
-                                                { ringFormData.subOption4 === "EFFECT_RESISTANCE" && ringFormData.subValue4  + "%" }
+                                                {
+                                                    ringFormData.subOption4 === "NONE" ?
+                                                        "-" : ringFormData.subOption4 === "HEALTH" || ringFormData.subOption4 === "ATTACK" || ringFormData.subOption4 === "DEFENSE" ?
+                                                            ringFormData.subValue4 : ringFormData.subValue4 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -1318,15 +1230,11 @@ const EstimateHeroPage = () => {
                                                 { bootsFormData.mainOption === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { bootsFormData.mainOption === "NONE" && "-" }
-                                                { bootsFormData.mainOption === "ATTACK_PER" && bootsFormData.mainValue + "%" }
-                                                { bootsFormData.mainOption === "HEALTH" && bootsFormData.mainValue }
-                                                { bootsFormData.mainOption === "HEALTH_PER" && bootsFormData.mainValue  + "%" }
-                                                { bootsFormData.mainOption === "SPEED" && bootsFormData.mainValue }
-                                                { bootsFormData.mainOption === "CRITICAL_HIT_CHANCE" && bootsFormData.mainValue  + "%" }
-                                                { bootsFormData.mainOption === "CRITICAL_HIT_DAMAGE" && bootsFormData.mainValue  + "%" }
-                                                { bootsFormData.mainOption === "EFFECTIVENESS" && bootsFormData.mainValue  + "%" }
-                                                { bootsFormData.mainOption === "EFFECT_RESISTANCE" && bootsFormData.mainValue  + "%" }
+                                                {
+                                                    bootsFormData.mainOption === "NONE" ?
+                                                        "-" : bootsFormData.mainOption === "HEALTH" || bootsFormData.mainOption === "ATTACK" || bootsFormData.mainOption === "DEFENSE" ?
+                                                            bootsFormData.mainValue : bootsFormData.mainValue + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <DescriptionLine />
@@ -1346,15 +1254,11 @@ const EstimateHeroPage = () => {
                                                 { bootsFormData.subOption1 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { bootsFormData.subOption1 === "NONE" && "-" }
-                                                { bootsFormData.subOption1 === "ATTACK_PER" && bootsFormData.subValue1 + "%" }
-                                                { bootsFormData.subOption1 === "HEALTH" && bootsFormData.subValue1 }
-                                                { bootsFormData.subOption1 === "HEALTH_PER" && bootsFormData.subValue1  + "%" }
-                                                { bootsFormData.subOption1 === "SPEED" && bootsFormData.subValue1 }
-                                                { bootsFormData.subOption1 === "CRITICAL_HIT_CHANCE" && bootsFormData.subValue1  + "%" }
-                                                { bootsFormData.subOption1 === "CRITICAL_HIT_DAMAGE" && bootsFormData.subValue1  + "%" }
-                                                { bootsFormData.subOption1 === "EFFECTIVENESS" && bootsFormData.subValue1  + "%" }
-                                                { bootsFormData.subOption1 === "EFFECT_RESISTANCE" && bootsFormData.subValue1  + "%" }
+                                                {
+                                                    bootsFormData.subOption1 === "NONE" ?
+                                                        "-" : bootsFormData.subOption1 === "HEALTH" || bootsFormData.subOption1 === "ATTACK" || bootsFormData.subOption1 === "DEFENSE" ?
+                                                            bootsFormData.subValue1 : bootsFormData.subValue1 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -1373,15 +1277,11 @@ const EstimateHeroPage = () => {
                                                 { bootsFormData.subOption2 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { bootsFormData.subOption2 === "NONE" && "-" }
-                                                { bootsFormData.subOption2 === "ATTACK_PER" && bootsFormData.subValue2 + "%" }
-                                                { bootsFormData.subOption2 === "HEALTH" && bootsFormData.subValue2 }
-                                                { bootsFormData.subOption2 === "HEALTH_PER" && bootsFormData.subValue2  + "%" }
-                                                { bootsFormData.subOption2 === "SPEED" && bootsFormData.subValue2 }
-                                                { bootsFormData.subOption2 === "CRITICAL_HIT_CHANCE" && bootsFormData.subValue2  + "%" }
-                                                { bootsFormData.subOption2 === "CRITICAL_HIT_DAMAGE" && bootsFormData.subValue2  + "%" }
-                                                { bootsFormData.subOption2 === "EFFECTIVENESS" && bootsFormData.subValue2  + "%" }
-                                                { bootsFormData.subOption2 === "EFFECT_RESISTANCE" && bootsFormData.subValue2  + "%" }
+                                                {
+                                                    bootsFormData.subOption2 === "NONE" ?
+                                                        "-" : bootsFormData.subOption2 === "HEALTH" || bootsFormData.subOption2 === "ATTACK" || bootsFormData.subOption2 === "DEFENSE" ?
+                                                            bootsFormData.subValue2 : bootsFormData.subValue2 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -1400,15 +1300,11 @@ const EstimateHeroPage = () => {
                                                 { bootsFormData.subOption3 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { bootsFormData.subOption3 === "NONE" && "-" }
-                                                { bootsFormData.subOption3 === "ATTACK_PER" && bootsFormData.subValue3 + "%" }
-                                                { bootsFormData.subOption3 === "HEALTH" && bootsFormData.subValue3 }
-                                                { bootsFormData.subOption3 === "HEALTH_PER" && bootsFormData.subValue3  + "%" }
-                                                { bootsFormData.subOption3 === "SPEED" && bootsFormData.subValue3 }
-                                                { bootsFormData.subOption3 === "CRITICAL_HIT_CHANCE" && bootsFormData.subValue3  + "%" }
-                                                { bootsFormData.subOption3 === "CRITICAL_HIT_DAMAGE" && bootsFormData.subValue3  + "%" }
-                                                { bootsFormData.subOption3 === "EFFECTIVENESS" && bootsFormData.subValue3  + "%" }
-                                                { bootsFormData.subOption3 === "EFFECT_RESISTANCE" && bootsFormData.subValue3  + "%" }
+                                                {
+                                                    bootsFormData.subOption3 === "NONE" ?
+                                                        "-" : bootsFormData.subOption3 === "HEALTH" || bootsFormData.subOption3 === "ATTACK" || bootsFormData.subOption3 === "DEFENSE" ?
+                                                            bootsFormData.subValue3 : bootsFormData.subValue3 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>
@@ -1427,15 +1323,11 @@ const EstimateHeroPage = () => {
                                                 { bootsFormData.subOption4 === "EFFECT_RESISTANCE" && "효과저항" }
                                             </EstimateEquipmentDescriptionLabel>
                                             <EstimateEquipmentDescriptionValueLabel>
-                                                { bootsFormData.subOption4 === "NONE" && "-" }
-                                                { bootsFormData.subOption4 === "ATTACK_PER" && bootsFormData.subValue4 + "%" }
-                                                { bootsFormData.subOption4 === "HEALTH" && bootsFormData.subValue4 }
-                                                { bootsFormData.subOption4 === "HEALTH_PER" && bootsFormData.subValue4  + "%" }
-                                                { bootsFormData.subOption4 === "SPEED" && bootsFormData.subValue4 }
-                                                { bootsFormData.subOption4 === "CRITICAL_HIT_CHANCE" && bootsFormData.subValue4  + "%" }
-                                                { bootsFormData.subOption4 === "CRITICAL_HIT_DAMAGE" && bootsFormData.subValue4  + "%" }
-                                                { bootsFormData.subOption4 === "EFFECTIVENESS" && bootsFormData.subValue4  + "%" }
-                                                { bootsFormData.subOption4 === "EFFECT_RESISTANCE" && bootsFormData.subValue4  + "%" }
+                                                {
+                                                    bootsFormData.subOption4 === "NONE" ?
+                                                        "-" : bootsFormData.subOption4 === "HEALTH" || bootsFormData.subOption4 === "ATTACK" || bootsFormData.subOption4 === "DEFENSE" ?
+                                                            bootsFormData.subValue4 : bootsFormData.subValue4 + "%"
+                                                }
                                             </EstimateEquipmentDescriptionValueLabel>
                                         </EstimateEquipmentDescription>
                                         <EstimateEquipmentDescription>

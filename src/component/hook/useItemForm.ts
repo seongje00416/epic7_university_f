@@ -462,6 +462,6 @@ export const useItemForm = () => {
         isHelmetFormValid,
         isWeaponFormValid,
         isNecklaceFormValid,
-        statValueValidate
+        statValueValidate,
     }
 }
