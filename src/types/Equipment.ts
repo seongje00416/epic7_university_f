@@ -77,3 +77,16 @@ export interface Equipment {
     subOption4: EquipOption
     subValue4: number
 }
+
+export interface EquipmentApplyStat {
+    mainOption: EquipOption
+    mainValue: number
+    subOption1: EquipOption
+    subValue1: number
+    subOption2: EquipOption
+    subValue2: number
+    subOption3: EquipOption
+    subValue3: number
+    subOption4: EquipOption
+    subValue4: number
+}
