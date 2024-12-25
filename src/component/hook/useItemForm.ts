@@ -18,7 +18,6 @@ interface EquipmentFormData {
     subOption4: EquipOption,
     subValue4: number,
 }
-
 interface ExclusiveItemFormData {
     option: EquipOption,
     value: number,

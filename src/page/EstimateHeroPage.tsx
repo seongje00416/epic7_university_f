@@ -296,7 +296,6 @@ const EstimateHeroPage = () => {
         }
     }
 
-
     // API를 통한 영웅 목록 조회
     useEffect( () => {
         const fetchHero = async () => {
@@ -316,6 +315,87 @@ const EstimateHeroPage = () => {
     // 장비 변경 감지
     useEffect(() => {
         console.log( "CHANGED" )
+    }, [weapon, helmet, armor, necklace, ring, boots]);
+
+    // 장비의 옵션 적용
+    useEffect(() => {
+        const equipList = [weapon, helmet, armor, necklace, ring, boots];
+        let attackIncrease = 0;
+        let defenseIncrease = 0;
+        let healthIncrease = 0;
+        let criticalChanceIncrease = 0;
+        let criticalDamageIncrease = 0;
+        let effectivenessIncrease = 0;
+        let effectResistanceIncrease = 0;
+        let speedIncrease = 0;
+
+        console.log( helmet )
+
+        equipList.forEach(equip => {
+            if (equip) {
+                // 주 옵션
+                if (equip.mainOption.includes("ATTACK")) attackIncrease += Number(equip.mainValue);
+                else if (equip.mainOption.includes("DEFENSE")) defenseIncrease += Number(equip.mainValue);
+                else if (equip.mainOption.includes("HEALTH")) healthIncrease += Number(equip.mainValue);
+                else if (equip.mainOption === "CRITICAL_HIT_CHANCE") criticalChanceIncrease += Number(equip.mainValue);
+                else if (equip.mainOption === "CRITICAL_HIT_DAMAGE") criticalDamageIncrease += Number(equip.mainValue);
+                else if (equip.mainOption === "EFFECTIVENESS") effectivenessIncrease += Number(equip.mainValue);
+                else if (equip.mainOption === "EFFECT_RESISTANCE") effectResistanceIncrease += Number(equip.mainValue);
+                else if (equip.mainOption === "SPEED") speedIncrease += Number(equip.mainValue);
+
+                // 보조 옵션 1
+                if (equip.subOption1.includes("ATTACK")) attackIncrease += Number(equip.subValue1);
+                else if (equip.subOption1.includes("DEFENSE")) defenseIncrease += Number(equip.subValue1);
+                else if (equip.subOption1.includes("HEALTH")) healthIncrease += Number(equip.subValue1);
+                else if (equip.subOption1 === "CRITICAL_HIT_CHANCE") criticalChanceIncrease += Number(equip.subValue1);
+                else if (equip.subOption1 === "CRITICAL_HIT_DAMAGE") criticalDamageIncrease += Number(equip.subValue1);
+                else if (equip.subOption1 === "EFFECTIVENESS") effectivenessIncrease += Number(equip.subValue1);
+                else if (equip.subOption1 === "EFFECT_RESISTANCE") effectResistanceIncrease += Number(equip.subValue1);
+                else if (equip.subOption1 === "SPEED") speedIncrease += Number(equip.subValue1);
+
+                // 보조 옵션 2
+                if (equip.subOption2.includes("ATTACK")) attackIncrease += Number(equip.subValue2);
+                else if (equip.subOption2.includes("DEFENSE")) defenseIncrease += Number(equip.subValue2);
+                else if (equip.subOption2.includes("HEALTH")) healthIncrease += Number(equip.subValue2);
+                else if (equip.subOption2 === "CRITICAL_HIT_CHANCE") criticalChanceIncrease += Number(equip.subValue2);
+                else if (equip.subOption2 === "CRITICAL_HIT_DAMAGE") criticalDamageIncrease += Number(equip.subValue2);
+                else if (equip.subOption2 === "EFFECTIVENESS") effectivenessIncrease += Number(equip.subValue2);
+                else if (equip.subOption2 === "EFFECT_RESISTANCE") effectResistanceIncrease += Number(equip.subValue2);
+                else if (equip.subOption2 === "SPEED") speedIncrease += Number(equip.subValue2);
+
+                // 보조 옵션 3
+                if (equip.subOption3.includes("ATTACK")) attackIncrease += Number(equip.subValue3);
+                else if (equip.subOption3.includes("DEFENSE")) defenseIncrease += Number(equip.subValue3);
+                else if (equip.subOption1.includes("HEALTH")) healthIncrease += Number(equip.subValue3);
+                else if (equip.subOption1 === "CRITICAL_HIT_CHANCE") criticalChanceIncrease += Number(equip.subValue3);
+                else if (equip.subOption3 === "CRITICAL_HIT_DAMAGE") criticalDamageIncrease += Number(equip.subValue3);
+                else if (equip.subOption3 === "EFFECTIVENESS") effectivenessIncrease += Number(equip.subValue3);
+                else if (equip.subOption3 === "EFFECT_RESISTANCE") effectResistanceIncrease += Number(equip.subValue3);
+                else if (equip.subOption3 === "SPEED") speedIncrease += Number(equip.subValue3);
+
+                // 보조 옵션 1
+                if (equip.subOption4.includes("ATTACK")) attackIncrease += Number(equip.subValue4);
+                else if (equip.subOption4.includes("DEFENSE")) defenseIncrease += Number(equip.subValue4);
+                else if (equip.subOption4.includes("HEALTH")) healthIncrease += Number(equip.subValue4);
+                else if (equip.subOption4 === "CRITICAL_HIT_CHANCE") criticalChanceIncrease += Number(equip.subValue4);
+                else if (equip.subOption4 === "CRITICAL_HIT_DAMAGE") criticalDamageIncrease += Number(equip.subValue4);
+                else if (equip.subOption4 === "EFFECTIVENESS") effectivenessIncrease += Number(equip.subValue4);
+                else if (equip.subOption4 === "EFFECT_RESISTANCE") effectResistanceIncrease += Number(equip.subValue4);
+                else if (equip.subOption4 === "SPEED") speedIncrease += Number(equip.subValue4);
+
+                console.log( healthIncrease )
+            }
+        });
+
+        setAttack([attack[0], attack[0] + Number(attackIncrease)]);
+        setDefense([defense[0], defense[0] + Number(defenseIncrease)]);
+        setHealth([health[0], health[0] + Number(healthIncrease)]);
+        setSpeed([speed[0], speed[0] + Number(speedIncrease)]);
+        setCriticalChance([criticalChance[0], criticalChance[0] + Number(criticalChanceIncrease)]);
+        setCriticalDamage([criticalDamage[0], criticalDamage[0] + Number(criticalDamageIncrease)]);
+        setEffectiveness([effectiveness[0], effectiveness[0] + Number(effectivenessIncrease)]);
+        setEffectResistance([effectResistance[0], effectResistance[0] + Number(effectResistanceIncrease)]);
+
     }, [weapon, helmet, armor, necklace, ring, boots]);
 
     // [ 기본 스탯, 장비 적용 스탯 ]

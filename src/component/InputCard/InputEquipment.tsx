@@ -30,7 +30,6 @@ interface EquipmentFormData {
     subOption4: EquipOption;
     subValue4: number;
 }
-
 interface Props {
     onChangeIcon: (itemType:string) => void;
     itemType: string;
@@ -38,7 +37,6 @@ interface Props {
     handleChange: ( type:string, name:string, value:string ) => void;
     heroStatUpdate: () => void;
 }
-
 export interface Ref {
     settingInputCard: () => void;
 }
