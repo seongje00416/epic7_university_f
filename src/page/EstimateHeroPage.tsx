@@ -69,6 +69,8 @@ import {useEffect, useRef, useState} from "react";
 import {HeroShow, retrieveAllHero, retrieveBaseStat} from "@/service/api/heroApi.ts";
 import {EquipmentApplyStat, EquipSetEnum} from "@/types/Equipment.ts";
 
+import { estimateEquipment } from "@/service/estimateService.ts";
+
 const EstimateHeroPage = () => {
     const [ item, setItem ] = useState("none");
 
@@ -88,6 +90,13 @@ const EstimateHeroPage = () => {
     const [ necklace, setNecklace ] = useState<EquipmentApplyStat>()
     const [ ring, setRing ] = useState<EquipmentApplyStat>()
     const [ boots, setBoots ] = useState<EquipmentApplyStat>()
+
+    const [ weaponGrade, setWeaponGrade ] = useState<string | undefined>("-")
+    const [ helmetGrade, setHelmetGrade ] = useState<string | undefined>("-")
+    const [armorGrade, setArmorGrade ] = useState<string | undefined>("-")
+    const [necklaceGrade, setNecklaceGrade ] = useState<string | undefined>("-")
+    const [ringGrade, setRingGrade ] = useState<string | undefined>("-")
+    const [bootsGrade, setBootsGrade ] = useState<string | undefined>("-")
 
     // 화면에 표시되는 스탯
     // [ 베이스 스탯, 장비 옵션 적용 스탯 ]
@@ -395,8 +404,16 @@ const EstimateHeroPage = () => {
         setCriticalDamage([criticalDamage[0], criticalDamage[0] + Number(criticalDamageIncrease)]);
         setEffectiveness([effectiveness[0], effectiveness[0] + Number(effectivenessIncrease)]);
         setEffectResistance([effectResistance[0], effectResistance[0] + Number(effectResistanceIncrease)]);
+        
+        // 등급 산출
+        if( item === "weapon" ) setWeaponGrade( estimateEquipment(weaponFormData) )
+        else if( item === "helmet" ) setHelmetGrade( estimateEquipment(helmetFormData) )
+        else if( item === "armor" ) setArmorGrade( estimateEquipment(armorFormData) )
+        else if( item === "necklace" ) setNecklaceGrade( estimateEquipment(necklaceFormData) )
+        else if( item === "ring" ) setRingGrade( estimateEquipment(ringFormData) )
+        else if( item === "boots" ) setBootsGrade( estimateEquipment(bootsFormData) )
 
-    }, [weapon, helmet, armor, necklace, ring, boots]);
+    }, [weapon, helmet, armor, necklace, ring, boots, weaponGrade, helmetGrade, armorGrade, necklaceGrade, ringGrade, bootsGrade ]);
 
     // [ 기본 스탯, 장비 적용 스탯 ]
     const settingBaseStat = async ( heroID:number ) => {
@@ -620,8 +637,12 @@ const EstimateHeroPage = () => {
                                     <EstimateEquipmentIcon>
                                         { weaponIcon[2] ? <EstimateEquipmentImage src={ '/src/assets/' + weaponIcon[1] } /> : <EstimateEquipmentImage src={ '/src/assets/golem_weapon.png' } />}
                                         { weaponIcon[2] ? <EstimateEquipmentGradeImage src={ '/src/assets/' + weaponIcon[0]} /> : <EstimateEquipmentGradeImage src={ '/src/assets/equip_epic.png'} />}
-                                        { /* 점수에 따라 등급을 보여주기 */}
-                                        <ItemEstimatedGradeLabel color={"red"}> S </ItemEstimatedGradeLabel>
+                                        {weaponGrade === "C" && <ItemEstimatedGradeLabel color={"green"}> { weaponGrade } </ItemEstimatedGradeLabel>}
+                                        {weaponGrade === "B" && <ItemEstimatedGradeLabel color={"blue"}> { weaponGrade } </ItemEstimatedGradeLabel>}
+                                        {weaponGrade === "A" && <ItemEstimatedGradeLabel color={"purple"}> { weaponGrade } </ItemEstimatedGradeLabel>}
+                                        {weaponGrade === "S" && <ItemEstimatedGradeLabel color={"red"}> { weaponGrade } </ItemEstimatedGradeLabel>}
+                                        {weaponGrade === "SS" && <ItemEstimatedGradeLabel color={"red"}> { weaponGrade } </ItemEstimatedGradeLabel>}
+                                        {weaponGrade === "SSS" && <ItemEstimatedGradeLabel color={"darkred"}> { weaponGrade } </ItemEstimatedGradeLabel>}
                                     </EstimateEquipmentIcon>
                                     <EstimateEquipmentDescriptionLine>
                                         <EstimateEquipmentDescription>
@@ -731,7 +752,12 @@ const EstimateHeroPage = () => {
                                     <EstimateEquipmentIcon>
                                         { helmetIcon[2] ? <EstimateEquipmentImage src={ '/src/assets/' + helmetIcon[1] } /> : <EstimateEquipmentImage src={ '/src/assets/golem_armor.png' } />}
                                         { helmetIcon[2] ? <EstimateEquipmentGradeImage src={ '/src/assets/' + helmetIcon[0]} /> : <EstimateEquipmentGradeImage src={ '/src/assets/equip_epic.png'} />}
-                                        <ItemEstimatedGradeLabel color={"red"}> SS </ItemEstimatedGradeLabel>
+                                        {helmetGrade === "C" && <ItemEstimatedGradeLabel color={"green"}> { helmetGrade } </ItemEstimatedGradeLabel>}
+                                        {helmetGrade === "B" && <ItemEstimatedGradeLabel color={"blue"}> { helmetGrade } </ItemEstimatedGradeLabel>}
+                                        {helmetGrade === "A" && <ItemEstimatedGradeLabel color={"purple"}> { helmetGrade } </ItemEstimatedGradeLabel>}
+                                        {helmetGrade === "S" && <ItemEstimatedGradeLabel color={"red"}> { helmetGrade } </ItemEstimatedGradeLabel>}
+                                        {helmetGrade === "SS" && <ItemEstimatedGradeLabel color={"red"}> { helmetGrade } </ItemEstimatedGradeLabel>}
+                                        {helmetGrade === "SSS" && <ItemEstimatedGradeLabel color={"darkred"}> { helmetGrade } </ItemEstimatedGradeLabel>}
                                     </EstimateEquipmentIcon>
                                     <EstimateEquipmentDescriptionLine>
                                         <EstimateEquipmentDescription>
@@ -841,7 +867,12 @@ const EstimateHeroPage = () => {
                                     <EstimateEquipmentIcon>
                                         { armorIcon[2] ? <EstimateEquipmentImage src={ '/src/assets/' + armorIcon[1] } /> : <EstimateEquipmentImage src={ '/src/assets/golem_armor.png' } />}
                                         { armorIcon[2] ? <EstimateEquipmentGradeImage src={ '/src/assets/' + armorIcon[0]} /> : <EstimateEquipmentGradeImage src={ '/src/assets/equip_epic.png'} />}
-                                        <ItemEstimatedGradeLabel color={"blue"}> C </ItemEstimatedGradeLabel>
+                                        {armorGrade === "C" && <ItemEstimatedGradeLabel color={"green"}> { armorGrade } </ItemEstimatedGradeLabel>}
+                                        {armorGrade === "B" && <ItemEstimatedGradeLabel color={"blue"}> { armorGrade } </ItemEstimatedGradeLabel>}
+                                        {armorGrade === "A" && <ItemEstimatedGradeLabel color={"purple"}> { armorGrade } </ItemEstimatedGradeLabel>}
+                                        {armorGrade === "S" && <ItemEstimatedGradeLabel color={"red"}> { armorGrade } </ItemEstimatedGradeLabel>}
+                                        {armorGrade === "SS" && <ItemEstimatedGradeLabel color={"red"}> { armorGrade } </ItemEstimatedGradeLabel>}
+                                        {armorGrade === "SSS" && <ItemEstimatedGradeLabel color={"darkred"}> { armorGrade } </ItemEstimatedGradeLabel>}
                                     </EstimateEquipmentIcon>
                                     <EstimateEquipmentDescriptionLine>
                                         <EstimateEquipmentDescription>
@@ -953,7 +984,12 @@ const EstimateHeroPage = () => {
                                     <EstimateEquipmentIcon>
                                         { necklaceIcon[2] ? <EstimateEquipmentImage src={ '/src/assets/' + necklaceIcon[1] } /> : <EstimateEquipmentImage src={ '/src/assets/golem_necklace.png' } />}
                                         { necklaceIcon[2] ? <EstimateEquipmentGradeImage src={ '/src/assets/' + necklaceIcon[0]} /> : <EstimateEquipmentGradeImage src={ '/src/assets/equip_epic.png'} />}
-                                        <ItemEstimatedGradeLabel color={"green"}> B </ItemEstimatedGradeLabel>
+                                        {necklaceGrade === "C" && <ItemEstimatedGradeLabel color={"green"}> { necklaceGrade } </ItemEstimatedGradeLabel>}
+                                        {necklaceGrade === "B" && <ItemEstimatedGradeLabel color={"blue"}> { necklaceGrade } </ItemEstimatedGradeLabel>}
+                                        {necklaceGrade === "A" && <ItemEstimatedGradeLabel color={"purple"}> { necklaceGrade } </ItemEstimatedGradeLabel>}
+                                        {necklaceGrade === "S" && <ItemEstimatedGradeLabel color={"red"}> { necklaceGrade } </ItemEstimatedGradeLabel>}
+                                        {necklaceGrade === "SS" && <ItemEstimatedGradeLabel color={"red"}> { necklaceGrade } </ItemEstimatedGradeLabel>}
+                                        {necklaceGrade === "SSS" && <ItemEstimatedGradeLabel color={"darkred"}> { necklaceGrade } </ItemEstimatedGradeLabel>}
                                     </EstimateEquipmentIcon>
                                     <EstimateEquipmentDescriptionLine>
                                         <EstimateEquipmentDescription>
@@ -1082,7 +1118,12 @@ const EstimateHeroPage = () => {
                                     <EstimateEquipmentIcon>
                                         { ringIcon[2] ? <EstimateEquipmentImage src={ '/src/assets/' + ringIcon[1] } /> : <EstimateEquipmentImage src={ '/src/assets/golem_ring.png' } />}
                                         { ringIcon[2] ? <EstimateEquipmentGradeImage src={ '/src/assets/' + ringIcon[0]} /> : <EstimateEquipmentGradeImage src={ '/src/assets/equip_epic.png'} />}
-                                        <ItemEstimatedGradeLabel color={"purple"}> A </ItemEstimatedGradeLabel>
+                                        {ringGrade === "C" && <ItemEstimatedGradeLabel color={"green"}> { ringGrade } </ItemEstimatedGradeLabel>}
+                                        {ringGrade === "B" && <ItemEstimatedGradeLabel color={"blue"}> { ringGrade } </ItemEstimatedGradeLabel>}
+                                        {ringGrade === "A" && <ItemEstimatedGradeLabel color={"purple"}> { ringGrade } </ItemEstimatedGradeLabel>}
+                                        {ringGrade === "S" && <ItemEstimatedGradeLabel color={"red"}> { ringGrade } </ItemEstimatedGradeLabel>}
+                                        {ringGrade === "SS" && <ItemEstimatedGradeLabel color={"red"}> { ringGrade } </ItemEstimatedGradeLabel>}
+                                        {ringGrade === "SSS" && <ItemEstimatedGradeLabel color={"darkred"}> { ringGrade } </ItemEstimatedGradeLabel>}
                                     </EstimateEquipmentIcon>
                                     <EstimateEquipmentDescriptionLine>
                                         <EstimateEquipmentDescription>
@@ -1211,7 +1252,12 @@ const EstimateHeroPage = () => {
                                     <EstimateEquipmentIcon>
                                         { bootsIcon[2] ? <EstimateEquipmentImage src={ '/src/assets/' + bootsIcon[1] } /> : <EstimateEquipmentImage src={ '/src/assets/golem_boots.png' } />}
                                         { bootsIcon[2] ? <EstimateEquipmentGradeImage src={ '/src/assets/' + bootsIcon[0]} /> : <EstimateEquipmentGradeImage src={ '/src/assets/equip_epic.png'} />}
-                                        <ItemEstimatedGradeLabel color={"darkred"}> SSS </ItemEstimatedGradeLabel>
+                                        {bootsGrade === "C" && <ItemEstimatedGradeLabel color={"green"}> { bootsGrade } </ItemEstimatedGradeLabel>}
+                                        {bootsGrade === "B" && <ItemEstimatedGradeLabel color={"blue"}> { bootsGrade } </ItemEstimatedGradeLabel>}
+                                        {bootsGrade === "A" && <ItemEstimatedGradeLabel color={"purple"}> { bootsGrade } </ItemEstimatedGradeLabel>}
+                                        {bootsGrade === "S" && <ItemEstimatedGradeLabel color={"red"}> { bootsGrade } </ItemEstimatedGradeLabel>}
+                                        {bootsGrade === "SS" && <ItemEstimatedGradeLabel color={"red"}> { bootsGrade } </ItemEstimatedGradeLabel>}
+                                        {bootsGrade === "SSS" && <ItemEstimatedGradeLabel color={"darkred"}> { bootsGrade } </ItemEstimatedGradeLabel>}
                                     </EstimateEquipmentIcon>
                                     <EstimateEquipmentDescriptionLine>
                                         <EstimateEquipmentDescription>
