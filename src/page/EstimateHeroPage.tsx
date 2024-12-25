@@ -538,8 +538,8 @@ const EstimateHeroPage = () => {
                             <EstimateEquipmentWrapper>
                                 <EstimateEquipmentRow>
                                     <EstimateEquipmentIcon>
-                                        <EstimateEquipmentImage src="/src/assets/golem_weapon.png" />
-                                        <EstimateEquipmentGradeImage src="/src/assets/equip_epic.png" />
+                                        { weaponIcon[2] ? <EstimateEquipmentImage src={ '/src/assets/' + weaponIcon[1] } /> : <EstimateEquipmentImage src={ '/src/assets/golem_weapon.png' } />}
+                                        { weaponIcon[2] ? <EstimateEquipmentGradeImage src={ '/src/assets/' + weaponIcon[0]} /> : <EstimateEquipmentGradeImage src={ '/src/assets/equip_epic.png'} />}
                                         { /* 점수에 따라 등급을 보여주기 */}
                                         <ItemEstimatedGradeLabel color={"red"}> S </ItemEstimatedGradeLabel>
                                     </EstimateEquipmentIcon>
@@ -652,8 +652,8 @@ const EstimateHeroPage = () => {
                                         </EstimateEquipmentDescription>
                                     </EstimateEquipmentDescriptionLine>
                                     <EstimateEquipmentIcon>
-                                        <EstimateEquipmentImage src="/src/assets/banshee_weapon.png" />
-                                        <EstimateEquipmentGradeImage src="/src/assets/equip_epic.png" />
+                                        { helmetIcon[2] ? <EstimateEquipmentImage src={ '/src/assets/' + helmetIcon[1] } /> : <EstimateEquipmentImage src={ '/src/assets/golem_armor.png' } />}
+                                        { helmetIcon[2] ? <EstimateEquipmentGradeImage src={ '/src/assets/' + helmetIcon[0]} /> : <EstimateEquipmentGradeImage src={ '/src/assets/equip_epic.png'} />}
                                         <ItemEstimatedGradeLabel color={"red"}> SS </ItemEstimatedGradeLabel>
                                     </EstimateEquipmentIcon>
                                     <EstimateEquipmentDescriptionLine>
@@ -763,8 +763,8 @@ const EstimateHeroPage = () => {
                                         </EstimateEquipmentDescription>
                                     </EstimateEquipmentDescriptionLine>
                                     <EstimateEquipmentIcon>
-                                        <EstimateEquipmentImage src="/src/assets/banshee_weapon.png" />
-                                        <EstimateEquipmentGradeImage src="/src/assets/equip_epic.png" />
+                                        { armorIcon[2] ? <EstimateEquipmentImage src={ '/src/assets/' + armorIcon[1] } /> : <EstimateEquipmentImage src={ '/src/assets/golem_armor.png' } />}
+                                        { armorIcon[2] ? <EstimateEquipmentGradeImage src={ '/src/assets/' + armorIcon[0]} /> : <EstimateEquipmentGradeImage src={ '/src/assets/equip_epic.png'} />}
                                         <ItemEstimatedGradeLabel color={"blue"}> C </ItemEstimatedGradeLabel>
                                     </EstimateEquipmentIcon>
                                     <EstimateEquipmentDescriptionLine>
@@ -876,8 +876,8 @@ const EstimateHeroPage = () => {
                                 </EstimateEquipmentRow>
                                 <EstimateEquipmentRow>
                                     <EstimateEquipmentIcon>
-                                        <EstimateEquipmentImage src="/src/assets/banshee_weapon.png" />
-                                        <EstimateEquipmentGradeImage src="/src/assets/equip_epic.png" />
+                                        { necklaceIcon[2] ? <EstimateEquipmentImage src={ '/src/assets/' + necklaceIcon[1] } /> : <EstimateEquipmentImage src={ '/src/assets/golem_necklace.png' } />}
+                                        { necklaceIcon[2] ? <EstimateEquipmentGradeImage src={ '/src/assets/' + necklaceIcon[0]} /> : <EstimateEquipmentGradeImage src={ '/src/assets/equip_epic.png'} />}
                                         <ItemEstimatedGradeLabel color={"green"}> B </ItemEstimatedGradeLabel>
                                     </EstimateEquipmentIcon>
                                     <EstimateEquipmentDescriptionLine>
@@ -1007,8 +1007,8 @@ const EstimateHeroPage = () => {
                                         </EstimateEquipmentDescription>
                                     </EstimateEquipmentDescriptionLine>
                                     <EstimateEquipmentIcon>
-                                        <EstimateEquipmentImage src="/src/assets/banshee_weapon.png" />
-                                        <EstimateEquipmentGradeImage src="/src/assets/equip_epic.png" />
+                                        { ringIcon[2] ? <EstimateEquipmentImage src={ '/src/assets/' + ringIcon[1] } /> : <EstimateEquipmentImage src={ '/src/assets/golem_ring.png' } />}
+                                        { ringIcon[2] ? <EstimateEquipmentGradeImage src={ '/src/assets/' + ringIcon[0]} /> : <EstimateEquipmentGradeImage src={ '/src/assets/equip_epic.png'} />}
                                         <ItemEstimatedGradeLabel color={"purple"}> A </ItemEstimatedGradeLabel>
                                     </EstimateEquipmentIcon>
                                     <EstimateEquipmentDescriptionLine>
@@ -1138,8 +1138,8 @@ const EstimateHeroPage = () => {
                                         </EstimateEquipmentDescription>
                                     </EstimateEquipmentDescriptionLine>
                                     <EstimateEquipmentIcon>
-                                        <EstimateEquipmentImage src="/src/assets/banshee_weapon.png" />
-                                        <EstimateEquipmentGradeImage src="/src/assets/equip_epic.png" />
+                                        { bootsIcon[2] ? <EstimateEquipmentImage src={ '/src/assets/' + bootsIcon[1] } /> : <EstimateEquipmentImage src={ '/src/assets/golem_boots.png' } />}
+                                        { bootsIcon[2] ? <EstimateEquipmentGradeImage src={ '/src/assets/' + bootsIcon[0]} /> : <EstimateEquipmentGradeImage src={ '/src/assets/equip_epic.png'} />}
                                         <ItemEstimatedGradeLabel color={"darkred"}> SSS </ItemEstimatedGradeLabel>
                                     </EstimateEquipmentIcon>
                                     <EstimateEquipmentDescriptionLine>
