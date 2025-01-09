@@ -1,13 +1,11 @@
-import { Container, PageWrapper } from "@/style/Style_MainPage.ts";
 
-const MainPage: React.FC = () => {
+
+const MainPage = () => {
     return (
-        <Container>
-            <PageWrapper>
-
-            </PageWrapper>
-        </Container>
-    )
+        <div>
+            hello
+        </div>
+    );
 }
 
 export default MainPage;
