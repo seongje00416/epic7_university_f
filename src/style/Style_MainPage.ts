@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Color} from "@/style/component/CustomColor.ts";
 
 // 메인 컨테이너
 export const MainContainer = styled.div`
@@ -11,7 +12,7 @@ export const MenuBarContainer = styled.div`
     display: flex;
     height: 5vh;
     width: 100vw;
-    background-color: black;
+    background-color: ${Color.custom_dark};
 `
 // 컨텐츠 컨테이너
 export const ContentContainer = styled.div`
@@ -49,6 +50,25 @@ export const CarouselContainer = styled.div`
 
 // Contents 컨테이너
 export const SitemapContainer = styled.div`
+    display: flex;
     justify-content: center;
+    height: 45vh;
+    background-color: #F9F9F9;
+`
+export const SitemapWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    width: 15vw;
+    padding: 15px;
+`
+export const SitemapCategory = styled.div`
+    font-size: 20px;
+    padding: 5px;
+    font-weight: bold;
+    border-bottom: 1px solid lightgray;
+`
+export const SitemapItem = styled.div`
+    font-size: 16px;
+    padding: 5px;
 `

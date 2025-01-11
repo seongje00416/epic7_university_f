@@ -7,6 +7,9 @@ import {
     MenuBar,
     MenuItem,
     LogoItem,
+    SitemapWrapper,
+    SitemapCategory,
+    SitemapItem,
 } from "@/style/Style_MainPage.ts";
 
 const MainPage = () => {
@@ -23,7 +26,16 @@ const MainPage = () => {
                     456454
                 </CarouselContainer>
                 <SitemapContainer>
-                    ddd
+                    <SitemapWrapper>
+                        <SitemapCategory> 영웅 </SitemapCategory>
+                        <SitemapItem> 영웅 평가 </SitemapItem>
+                        <SitemapItem> 영웅 목록 </SitemapItem>
+                    </SitemapWrapper>
+                    <SitemapWrapper>
+                        <SitemapCategory> 장비 </SitemapCategory>
+                        <SitemapItem> 장비 평가 </SitemapItem>
+                        <SitemapItem> 세트 정보 </SitemapItem>
+                    </SitemapWrapper>
                 </SitemapContainer>
             </ContentContainer>
         </MainContainer>
