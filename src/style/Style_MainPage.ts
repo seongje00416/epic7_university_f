@@ -4,15 +4,21 @@ import {Color} from "@/style/component/CustomColor.ts";
 // 메인 컨테이너
 export const MainContainer = styled.div`
     display: flex;
+    width: 100vw;
     flex-direction: column;
+    margin-top: 5vh;
 `
 // --------------------------------------------- //
 // 상단 메뉴 바 컨테이너
 export const MenuBarContainer = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     height: 5vh;
     width: 100vw;
     background-color: ${Color.custom_dark};
+    z-index: 1000;
 `
 // 컨텐츠 컨테이너
 export const ContentContainer = styled.div`

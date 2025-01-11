@@ -1,12 +1,8 @@
 import {
     MainContainer,
-    MenuBarContainer,
     ContentContainer,
     CarouselContainer,
     SitemapContainer,
-    MenuBar,
-    MenuItem,
-    LogoItem,
     SitemapWrapper,
     SitemapCategory,
     SitemapItem,
@@ -15,12 +11,6 @@ import {
 const MainPage = () => {
     return (
         <MainContainer>
-            <MenuBarContainer>
-                <MenuBar>
-                    <LogoItem> Epic7 UNIVERSITY </LogoItem>
-                    <MenuItem> 설정 </MenuItem>
-                </MenuBar>
-            </MenuBarContainer>
             <ContentContainer>
                 <CarouselContainer>
                     456454
