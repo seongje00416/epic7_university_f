@@ -45,6 +45,11 @@ export const MenuItem = styled.div`
     margin: 10px;
     font-size: 16px;
     font-weight: bold;
+    
+    &:hover {
+        cursor: pointer;
+        opacity: 80%;
+    }
 `
 // --------------------------------------------- //
 // Carousel 컨테이너
@@ -77,4 +82,8 @@ export const SitemapCategory = styled.div`
 export const SitemapItem = styled.div`
     font-size: 16px;
     padding: 5px;
+    &:hover {
+        cursor: pointer;
+        opacity: 80%;
+    }
 `

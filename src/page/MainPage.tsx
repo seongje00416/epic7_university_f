@@ -17,14 +17,19 @@ const MainPage = () => {
                 </CarouselContainer>
                 <SitemapContainer>
                     <SitemapWrapper>
-                        <SitemapCategory> 영웅 </SitemapCategory>
-                        <SitemapItem> 영웅 평가 </SitemapItem>
-                        <SitemapItem> 영웅 목록 </SitemapItem>
+                        <SitemapCategory> 뉴스 </SitemapCategory>
+                        <SitemapItem> 공지사항 </SitemapItem>
+                        <SitemapItem> 소개 </SitemapItem>
                     </SitemapWrapper>
                     <SitemapWrapper>
-                        <SitemapCategory> 장비 </SitemapCategory>
+                        <SitemapCategory> 평가 </SitemapCategory>
+                        <SitemapItem> 영웅 평가 </SitemapItem>
                         <SitemapItem> 장비 평가 </SitemapItem>
-                        <SitemapItem> 세트 정보 </SitemapItem>
+                    </SitemapWrapper>
+                    <SitemapWrapper>
+                        <SitemapCategory> 퀴즈 </SitemapCategory>
+                        <SitemapItem> 에픽 퀴즈 </SitemapItem>
+                        <SitemapItem> 퀴즈 랭킹 </SitemapItem>
                     </SitemapWrapper>
                 </SitemapContainer>
             </ContentContainer>
