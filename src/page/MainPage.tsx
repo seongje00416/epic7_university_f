@@ -7,8 +7,11 @@ import {
     SitemapCategory,
     SitemapItem,
 } from "@/style/Style_MainPage.ts";
+import { useNavigate } from "react-router-dom";
 
 const MainPage = () => {
+    const navigate = useNavigate();
+
     return (
         <MainContainer>
             <ContentContainer>
@@ -23,8 +26,8 @@ const MainPage = () => {
                     </SitemapWrapper>
                     <SitemapWrapper>
                         <SitemapCategory> 평가 </SitemapCategory>
-                        <SitemapItem> 영웅 평가 </SitemapItem>
-                        <SitemapItem> 장비 평가 </SitemapItem>
+                        <SitemapItem onClick = { () => navigate('/estimate/hero')}> 영웅 평가 </SitemapItem>
+                        <SitemapItem onClick = { () => navigate('/estimate/equipment')}> 장비 평가 </SitemapItem>
                     </SitemapWrapper>
                     <SitemapWrapper>
                         <SitemapCategory> 퀴즈 </SitemapCategory>
