@@ -39,6 +39,9 @@ export const LogoItem = styled.div`
     margin-right: 30px;
     font-size: 20px;
     font-weight: bold;
+    &:hover {
+        cursor: pointer;
+    }
 `
 export const MenuItem = styled.div`
     color: white;

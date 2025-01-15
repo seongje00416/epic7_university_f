@@ -1,18 +1,17 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import MainPage from '@/page/MainPage.tsx';
-import { MenuBarContainer, MenuBar, LogoItem, MenuItem } from "@/style/Style_MainPage";
+import EstimateHeroPage from "@/page/estimating/EstimateHeroPage.tsx";
+import EstimateEquipmentPage from "@/page/estimating/EstimateEquipmentPage.tsx";
+import MenuBarComponent from "@/component/MenuBarComponent.tsx";
 
 const Router = () => {
     return (
         <BrowserRouter>
-            <MenuBarContainer>
-                <MenuBar>
-                    <LogoItem> Epic7 UNIVERSITY </LogoItem>
-                    <MenuItem> 설정 </MenuItem>
-                </MenuBar>
-            </MenuBarContainer>
+            <MenuBarComponent />
             <Routes>
                 <Route path='/' element={<MainPage />} />
+                <Route path='/estimate/hero' element={<EstimateHeroPage />} />
+                <Route path='/estimate/equipment' element={<EstimateEquipmentPage />} />
             </Routes>
         </BrowserRouter>
     )
