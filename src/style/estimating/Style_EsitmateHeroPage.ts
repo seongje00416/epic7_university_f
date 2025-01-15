@@ -26,7 +26,7 @@ export const EstimateContainer = styled.div`
 // 좌측 선택된 정보 디스플레이 컨테이너
 export const SelectedContainer = styled.div`
     width: 35%;
-    height: 70%;
+    height: 80%;
     border-left: 1px solid lightgray;
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
@@ -35,7 +35,7 @@ export const SelectedContainer = styled.div`
 // 우측 정보 선택 및 입력 디스플레이 컨테이너
 export const SelectContainer = styled.div`
     width: 55%;
-    height: 70%;
+    height: 80%;
     border: 1px solid lightgray;
     display: flex;
     flex-direction: column;
@@ -63,21 +63,54 @@ export const StepInfo = styled.p`
 `
 
 //      입력 컨테이너
-export const InputContainer = styled.div`
-    display: flex;
+export const InputContainer = styled.div<StepProps>`
+    display: ${ props => props.isCurrent ? "flex" : "none" };
     flex-direction: column;
 `
-export const InputWrapper = styled.div`
+//          영웅 선택
+export const HeroContainer = styled.div`
 
 `
-export const InputLabel = styled.div`
+//          능력치 입력
+export const StatContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+`
+export const StatWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 80%;
+    margin: 10px;
+`
+export const StatLabel = styled.div`
+    text-align: center;
+    font-size: 18px;
+    width: 30%;
+`
+export const StatInput = styled.input`
+    width: 70%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 2px 8px;
+    font-size: 16px;
+`
+export const StatSelect = styled.select`
+    width: 70%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 2px 8px;
+    font-size: 16px;
+`
+export const StatOption = styled.option`
+    font-size: 16px;
+`
+//          아티팩트 및 전용장비 입력
+export const EquipContainer = styled.div`
 
 `
-export const InputBlank = styled.div`
-
-`
-export const Input = styled.input`
-
-`
-
 
