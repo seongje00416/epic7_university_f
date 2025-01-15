@@ -18,15 +18,15 @@ const EstimateHeroPage = () => {
                 </SelectedContainer>
                 <SelectContainer>
                     <StepContainer>
-                        <Step> 
+                        <Step id="step01" isCurrent={true} >
                             <StepText> 1 </StepText>
                             <StepInfo> 영웅 선택 </StepInfo>
                         </Step>
-                        <Step>
+                        <Step id="step02" isCurrent={false} >
                             <StepText> 2 </StepText>
                             <StepInfo> 능력치 입력 </StepInfo>
                         </Step>
-                        <Step>
+                        <Step id="step03" isCurrent={false} >
                             <StepText> 3 </StepText>
                             <StepInfo> 아티팩트 및 전용장비 입력 </StepInfo>
                         </Step>

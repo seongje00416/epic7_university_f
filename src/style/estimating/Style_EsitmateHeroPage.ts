@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import {Color} from "@/style/component/CustomColor.ts";
 
+interface StepProps {
+    isCurrent?: boolean;    // ? 를 붙이면 optional prop이 됩니다
+}
+
 // 메인 컨테이너
 export const MainContainer = styled.div`
     height: 95vh;
@@ -41,10 +45,12 @@ export const SelectContainer = styled.div`
 export const StepContainer = styled.div`
     display: flex;
 `
-export const Step = styled.div`
+export const Step = styled.div<StepProps>`
     text-align: center;
     flex: 1;
-    background-color: ${Color.custom_color_2}
+    background-color: ${Color.custom_color_2};
+    opacity: ${ props => props.isCurrent ? 1 : 0.5 };
+    font-weight: ${ props => props.isCurrent ? "bold" : "normal" };
 `
 export const StepText = styled.p`
     font-size: 18px;
