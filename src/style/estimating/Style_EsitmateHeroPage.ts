@@ -69,7 +69,22 @@ export const InputContainer = styled.div<StepProps>`
 `
 //          영웅 선택
 export const HeroContainer = styled.div`
-
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
+`
+export const HeroCard = styled.div`
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    margin: 20px;
+`
+export const HeroCardImage = styled.img`
+    width: 100%;
+    height: auto;
+`
+export const HeroCardText = styled.p`
+    text-align: center;
 `
 //          능력치 입력
 export const StatContainer = styled.div`

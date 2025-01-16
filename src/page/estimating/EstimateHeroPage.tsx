@@ -8,7 +8,15 @@ import {
     Step,
     StepText,
     StepInfo,
-    StatContainer, StatWrapper, StatLabel, StatInput, StatSelect, StatOption,
+    StatContainer,
+    StatWrapper,
+    StatLabel,
+    StatInput,
+    StatSelect,
+    StatOption,
+    HeroContainer,
+    HeroCardImage,
+    HeroCardText, HeroCard,
 } from "@/style/estimating/Style_EsitmateHeroPage.ts";
 
 const EstimateHeroPage = () => {
@@ -34,10 +42,35 @@ const EstimateHeroPage = () => {
                             <StepInfo> 아티팩트 및 전용장비 입력 </StepInfo>
                         </Step>
                     </StepContainer>
-                    <InputContainer id="input_heroSelect" isCurrent = {false} >
-                        1111
+                    <InputContainer id="input_heroSelect" isCurrent = {true} >
+                        <HeroContainer>
+                            <HeroCard>
+                                <HeroCardImage src="/src/assets/vivian_B_avatar.png" />
+                                <HeroCardText> 숲의 현자 비비안 </HeroCardText>
+                            </HeroCard>
+                            <HeroCard>
+                                <HeroCardImage src="/src/assets/vivian_B_avatar.png" />
+                                <HeroCardText> 숲의 현자 비비안 </HeroCardText>
+                            </HeroCard>
+                            <HeroCard>
+                                <HeroCardImage src="/src/assets/vivian_B_avatar.png" />
+                                <HeroCardText> 숲의 현자 비비안 </HeroCardText>
+                            </HeroCard>
+                            <HeroCard>
+                                <HeroCardImage src="/src/assets/vivian_B_avatar.png" />
+                                <HeroCardText> 숲의 현자 비비안 </HeroCardText>
+                            </HeroCard>
+                            <HeroCard>
+                                <HeroCardImage src="/src/assets/vivian_B_avatar.png" />
+                                <HeroCardText> 숲의 현자 비비안 </HeroCardText>
+                            </HeroCard>
+                            <HeroCard>
+                                <HeroCardImage src="/src/assets/vivian_B_avatar.png" />
+                                <HeroCardText> 숲의 현자 비비안 </HeroCardText>
+                            </HeroCard>
+                        </HeroContainer>
                     </InputContainer>
-                    <InputContainer id="input_statInput" isCurrent = {true}>
+                    <InputContainer id="input_statInput" isCurrent = {false}>
                         <StatContainer>
                             <StatWrapper>
                                 <StatLabel> 공격력 </StatLabel>
